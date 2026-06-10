@@ -1,13 +1,14 @@
 "use client"
 
 import { useState, type ReactNode, type FormEvent } from "react";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Globe } from "lucide-react";
 import { EditorialHeading, Hairline, SectionLabel } from "@/components/luxury";
 import { PageHero } from "@/components/page-hero";
 import { toast } from "sonner";
 import contactHero from "@/assets/contact-hero.jpg";
+import { OFFICES, PHONES, PHONES_INTERNATIONAL, SITE } from "@/data/contact";
 
-const EVENT_TYPES = ["Wedding", "Corporate Event", "Entertainment Production", "Private Celebration", "Other"];
+const EVENT_TYPES = ["Wedding", "Corporate Event", "Entertainment", "Other"];
 
 function Field({ label, children }: { label: string; children: ReactNode }) {
     return (
@@ -30,15 +31,15 @@ export default function ContactPage() {
         setTimeout(() => {
             setPending(false);
             form.reset();
-            toast.success("Your enquiry has been received. The atelier will reply within one business day.");
+            toast.success("Your enquiry has been received. We will reply within one business day.");
         }, 600);
     }
     return (
         <>
             <PageHero
                 eyebrow="Contact"
-                title={<>Begin a <em className="not-italic text-gold">private</em> conversation.</>}
-                intro="Share a few details about the occasion you have in mind. Our atelier will reply within one business day."
+                title={<>Get in touch in <em className="not-italic text-gold">Dubai, UAE</em>.</>}
+                intro="Reach our team at any of our Dubai, Sharjah or Abu Dhabi offices. Call our 24-hour line or email us to start planning your event."
                 image={contactHero}
             />
 
@@ -46,40 +47,68 @@ export default function ContactPage() {
                 <div className="mx-auto grid max-w-[1400px] gap-20 px-6 lg:grid-cols-12 lg:px-12">
                     <aside className="lg:col-span-4 space-y-12">
                         <div>
-                            <SectionLabel label="Atelier" />
-                            <p className="mt-6 font-display text-2xl text-cream leading-snug">London &middot; Dubai &middot; Paris</p>
+                            <SectionLabel label="Contact" />
+                            <p className="mt-6 font-display text-2xl text-cream leading-snug">{SITE.name}</p>
+                            <p className="mt-3 text-sm text-muted-foreground">{SITE.region}</p>
                         </div>
 
                         <div className="space-y-6 text-sm">
                             <div className="flex items-start gap-4">
-                                <Mail className="h-4 w-4 mt-1 text-gold" strokeWidth={1.25} />
-                                <a href="mailto:atelier@futurevision.co" className="text-cream hover:text-gold transition-colors">atelier@futurevision.co</a>
+                                <Mail className="h-4 w-4 mt-1 text-gold shrink-0" strokeWidth={1.25} />
+                                <a href={`mailto:${SITE.email}`} className="text-cream hover:text-gold transition-colors">{SITE.email}</a>
                             </div>
+                            {PHONES.map((phone) => (
+                                <div key={phone.tel} className="flex items-start gap-4">
+                                    <Phone className="h-4 w-4 mt-1 text-gold shrink-0" strokeWidth={1.25} />
+                                    <div>
+                                        <a href={`tel:${phone.tel}`} className="text-cream hover:text-gold transition-colors">{phone.display}</a>
+                                        {"note" in phone && phone.note && (
+                                            <p className="mt-1 text-xs text-muted-foreground">{phone.note}</p>
+                                        )}
+                                    </div>
+                                </div>
+                            ))}
                             <div className="flex items-start gap-4">
-                                <Phone className="h-4 w-4 mt-1 text-gold" strokeWidth={1.25} />
-                                <span className="text-cream">+44 (0) 20 7946 0000</span>
-                            </div>
-                            <div className="flex items-start gap-4">
-                                <MapPin className="h-4 w-4 mt-1 text-gold" strokeWidth={1.25} />
-                                <span className="text-cream">14 Hertford Street, Mayfair, London</span>
+                                <Globe className="h-4 w-4 mt-1 text-gold shrink-0" strokeWidth={1.25} />
+                                <a href={SITE.url} className="text-cream hover:text-gold transition-colors">{SITE.url}</a>
                             </div>
                         </div>
 
                         <Hairline className="w-16!" />
+
                         <div>
-                            <SectionLabel label="Hours" />
-                            <p className="mt-6 text-sm text-muted-foreground leading-relaxed">
-                                By private appointment.<br />Monday to Friday &middot; 09:00 — 18:00 GMT
-                            </p>
+                            <SectionLabel label="International" />
+                            <div className="mt-6 space-y-3 text-sm">
+                                {PHONES_INTERNATIONAL.map((phone) => (
+                                    <a key={phone.tel} href={`tel:${phone.tel}`} className="block text-cream hover:text-gold transition-colors">
+                                        {phone.display}
+                                    </a>
+                                ))}
+                            </div>
+                        </div>
+
+                        <Hairline className="w-16!" />
+
+                        <div className="space-y-8">
+                            <SectionLabel label="Offices" />
+                            {OFFICES.map((office) => (
+                                <div key={office.city} className="flex items-start gap-4 text-sm">
+                                    <MapPin className="h-4 w-4 mt-1 text-gold shrink-0" strokeWidth={1.25} />
+                                    <div>
+                                        <p className="text-cream font-medium">{office.city} Office</p>
+                                        <p className="mt-1 text-muted-foreground leading-relaxed">{office.address}</p>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
                     </aside>
 
                     <form onSubmit={onSubmit} className="lg:col-span-7 lg:col-start-6 space-y-10">
-                        <EditorialHeading as="h2">Tell us about your occasion.</EditorialHeading>
+                        <EditorialHeading as="h2">Tell us about your event.</EditorialHeading>
                         <div className="grid gap-8 sm:grid-cols-2">
                             <Field label="Name"><input required name="name" type="text" className={inputCls} /></Field>
                             <Field label="Email"><input required name="email" type="email" className={inputCls} /></Field>
-                            <Field label="Phone"><input name="phone" type="tel" className={inputCls} /></Field>
+                            <Field label="Phone"><input name="phone" type="tel" className={inputCls} placeholder="+971 50 000 0000" /></Field>
                             <Field label="Event Date">
                                 <input name="date" type="date" className={inputCls + " scheme-dark"} />
                             </Field>
@@ -93,7 +122,7 @@ export default function ContactPage() {
                             </Field>
                         </div>
                         <Field label="Message">
-                            <textarea name="message" rows={5} className={inputCls + " resize-none"} placeholder="A few words about your vision, guest count, location..." />
+                            <textarea name="message" rows={5} className={inputCls + " resize-none"} placeholder="Tell us about your event — type, location, guest count, budget..." />
                         </Field>
                         <div className="pt-4">
                             <button

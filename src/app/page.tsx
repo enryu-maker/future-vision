@@ -10,25 +10,21 @@ import {
     Hairline,
     SectionLabel,
 } from "@/components/luxury";
-import heroImg from "@/assets/hero.jpg";
-import corpImg from "@/assets/service-corporate.jpg";
-import wedImg from "@/assets/service-weddings.jpg";
-import entImg from "@/assets/service-entertainment.jpg";
-import p1 from "@/assets/p1.jpg";
-import p2 from "@/assets/p2.jpg";
-import p3 from "@/assets/p3.jpg";
-import p4 from "@/assets/p4.jpg";
-import p5 from "@/assets/p5.jpg";
-import p6 from "@/assets/p6.jpg";
+import heroImg from "@/assets/portfolio/portfolio-wedding-arabic.png";
+import { PORTFOLIO_ITEMS, SERVICE_HERO_IMAGES } from "@/data/portfolio";
+import { SITE } from "@/data/contact";
+import { pageMetadata } from "@/data/seo";
 
-export const metadata: Metadata = {
-    title: "Future Vision — Crafting Extraordinary Experiences",
-    description: "Luxury weddings, corporate events and world-class entertainment, designed with precision, elegance, and vision.",
-    openGraph: {
-        title: "Future Vision — Crafting Extraordinary Experiences",
-        description: "Luxury weddings, corporate events and world-class entertainment, designed with precision, elegance, and vision.",
-    },
-};
+const corpImg = SERVICE_HERO_IMAGES.corporate;
+const wedImg = SERVICE_HERO_IMAGES.weddings;
+const entImg = SERVICE_HERO_IMAGES.entertainment;
+
+export const metadata: Metadata = pageMetadata({
+    title: "Event Management & Wedding Planners in Dubai, UAE",
+    description:
+        "Future Vision Events & Weddings — 14+ years of corporate events, Arabic, Indian & Western weddings, and live entertainment in Dubai, Sharjah and Abu Dhabi. Call +971-50-3576449.",
+    path: "/",
+});
 
 const SERVICES = [
     {
@@ -37,7 +33,7 @@ const SERVICES = [
         to: "/corporate-events",
         icon: Building2,
         image: corpImg,
-        copy: "Conferences, product launches, gala dinners and executive experiences for global brands and boards.",
+        copy: "Annual staff parties, family days, desert and dhow events, product launches, exhibition stands and conferences across Dubai and the UAE.",
     },
     {
         n: "02",
@@ -45,33 +41,31 @@ const SERVICES = [
         to: "/weddings",
         icon: Sparkles,
         image: wedImg,
-        copy: "Private celebrations and destination weddings, composed with discretion and timeless aesthetic.",
+        copy: "Certified wedding planners for Arabic, Indian and Western weddings — stage décor, mandap, fresh flowers and full planning in Dubai.",
     },
     {
         n: "03",
-        title: "Entertainment & Artists",
+        title: "Entertainment",
         to: "/entertainment",
         icon: Music2,
         image: entImg,
-        copy: "Celebrity management, live performances and cultural programming for the world's most exacting hosts.",
+        copy: "Live dance shows, musicians, DJs, magicians and performers for corporate events, weddings and private parties in Dubai.",
     },
 ] as const;
 
 const PILLARS = [
-    { n: "01", title: "Strategic Planning", body: "A considered framework behind every flourish — milestones, contingencies, and the quiet architecture of certainty." },
-    { n: "02", title: "Creative Excellence", body: "Original concepts shaped by editors, set designers and couturiers — not stock packages." },
-    { n: "03", title: "Global Standards", body: "From London to Lake Como, our protocol, partners and craft remain consistent." },
-    { n: "04", title: "Seamless Execution", body: "An invisible operation: the guest never sees the seams, only the experience." },
+    { n: "01", title: "Visualization", body: "Visualize the event theme, idea or motif — the creative foundation for every occasion we plan." },
+    { n: "02", title: "Realization", body: "Realistic budgeting and time frame planning aligned with your objectives and desired outcome." },
+    { n: "03", title: "Implementation", body: "Full detail planning — from concepts to decorations, vendors, logistics and production." },
+    { n: "04", title: "Execution", body: "Flawless on-the-day delivery with attention to every detail across Dubai, Sharjah and Abu Dhabi." },
 ];
 
-const PORTFOLIO = [
-    { title: "Maison Auriel, Capri", cat: "Weddings", year: "MMXXIV", image: p1 },
-    { title: "Halcyon Summit, Geneva", cat: "Corporate", year: "MMXXIV", image: p2 },
-    { title: "Soirée Noir, Marrakech", cat: "Entertainment", year: "MMXXIII", image: p3 },
-    { title: "Verdant Pavilion, Kyoto", cat: "Weddings", year: "MMXXIII", image: p4 },
-    { title: "Maison Verre Launch, Paris", cat: "Corporate", year: "MMXXIII", image: p5 },
-    { title: "Atrium Sessions, Vienna", cat: "Entertainment", year: "MMXXII", image: p6 },
-];
+const PORTFOLIO = PORTFOLIO_ITEMS.slice(0, 6).map((p) => ({
+    title: p.t,
+    cat: p.cat,
+    place: p.place,
+    image: p.image,
+}));
 
 export default function Home() {
     return (
@@ -94,14 +88,14 @@ export default function Home() {
                 <AbstractBackdrop hue="deep" className="mix-blend-soft-light" />
                 <div className="relative mx-auto w-full max-w-[1400px] px-6 lg:px-12 pb-24 pt-40">
                     <div className="max-w-4xl">
-                        <Eyebrow>An International Atelier</Eyebrow>
+                        <Eyebrow>Events &amp; Weddings &middot; Dubai, UAE</Eyebrow>
                         <h1 className="mt-8 font-display font-light text-cream leading-[0.98] tracking-[-0.02em] text-[clamp(3rem,9vw,8rem)]">
-                            Crafting<br />
-                            <em className="not-italic text-gold/95">Extraordinary</em><br />
-                            Experiences
+                            You imagine it.<br />
+                            <em className="not-italic text-gold/95">We make it</em><br />
+                            happen.
                         </h1>
                         <p className="mt-10 max-w-xl text-base sm:text-lg leading-relaxed text-muted-foreground">
-                            Luxury weddings, corporate events and world-class entertainment — designed with precision, elegance, and vision.
+                            Full-service event management and wedding planners in Dubai — corporate events, Arabic, Indian &amp; Western weddings, and live entertainment across the UAE.
                         </p>
                         <div className="mt-12 flex flex-wrap gap-4">
                             <GoldButton to="/portfolio" variant="solid">Explore Services</GoldButton>
@@ -126,13 +120,13 @@ export default function Home() {
                     </div>
                     <div className="lg:col-span-6 lg:col-start-7 space-y-6 text-muted-foreground leading-[1.85]">
                         <p>
-                            Future Vision is a private atelier serving an international circle of patrons, houses and boards. For more than a decade we have designed the gatherings that mark a life, a launch, a legacy.
+                            {SITE.name} is a full-service entertainment and event management company based in Dubai, UAE. With over 14 years of experience, we are a leading name in corporate events, weddings and live entertainment across the UAE and wider Middle East.
                         </p>
                         <p>
-                            We work in small numbers. Each commission is approached as a singular composition — a balance of place, hour, light, sound and ceremony, executed by an in-house team of producers, designers and protocol officers.
+                            We work with clients from concept development and venue selection through technical planning to managing the actual event production — for corporate conferences, staff parties, Arabic, Indian and Western weddings, and private celebrations.
                         </p>
                         <p className="font-display italic text-cream/90 text-xl pt-4">
-                            &mdash; The Atelier
+                            &mdash; {SITE.motto}
                         </p>
                     </div>
                 </div>
@@ -212,7 +206,7 @@ export default function Home() {
                                     }}
                                 />
                                 <div className="absolute inset-0 flex flex-col justify-end p-8">
-                                    <span className="eyebrow">{p.cat} &middot; {p.year}</span>
+                                    <span className="eyebrow">{p.cat} &middot; {p.place}</span>
                                     <h3 className="mt-3 font-display text-2xl lg:text-3xl text-cream leading-tight">{p.title}</h3>
                                 </div>
                             </article>
@@ -249,11 +243,11 @@ export default function Home() {
                 <div className="mx-auto max-w-4xl px-6 text-center">
                     <span className="font-display text-[8rem] leading-none text-gold/50">&ldquo;</span>
                     <blockquote className="-mt-12 font-display text-3xl sm:text-4xl lg:text-5xl font-light italic text-cream leading-tight tracking-tight">
-                        Future Vision composed a wedding that felt as much like a private exhibition as a celebration &mdash; restrained, unforgettable, entirely ours.
+                        You imagine it and we will make it happen — our wedding in Dubai was everything we dreamed of and more.
                     </blockquote>
                     <div className="mt-12 flex flex-col items-center gap-2">
                         <Hairline className="w-16!" />
-                        <p className="eyebrow mt-2">A. &amp; L. de Marchand &middot; Lake Como</p>
+                        <p className="eyebrow mt-2">{SITE.name} &middot; Dubai, UAE</p>
                     </div>
                 </div>
             </section>

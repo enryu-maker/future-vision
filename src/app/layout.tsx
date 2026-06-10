@@ -3,7 +3,10 @@ import { Inter, Cormorant_Garamond } from "next/font/google";
 import "../styles.css";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
+import { StructuredData } from "@/components/structured-data";
 import { Toaster } from "@/components/ui/sonner";
+import { SITE } from "@/data/contact";
+import { DEFAULT_DESCRIPTION, UAE_KEYWORDS } from "@/data/seo";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -18,26 +21,46 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Future Vision — Luxury Event Atelier",
-  description: "An international atelier crafting luxury weddings, corporate events and world-class entertainment.",
-  authors: [{ name: "Future Vision" }],
+  metadataBase: new URL(SITE.url),
+  title: {
+    default: `${SITE.name} — Dubai, UAE`,
+    template: `%s | ${SITE.shortName}`,
+  },
+  description: DEFAULT_DESCRIPTION,
+  keywords: [...UAE_KEYWORDS],
+  authors: [{ name: SITE.name, url: SITE.url }],
+  creator: SITE.name,
+  publisher: SITE.name,
+  formatDetection: {
+    telephone: true,
+    email: true,
+    address: true,
+  },
+  alternates: {
+    canonical: SITE.url,
+  },
   openGraph: {
-    title: "Future Vision — Luxury Event Atelier",
-    description: "An international atelier crafting luxury weddings, corporate events and world-class entertainment.",
+    title: `${SITE.name} — Dubai, UAE`,
+    description: DEFAULT_DESCRIPTION,
     type: "website",
-    siteName: "Future Vision",
-    images: [
-      {
-        url: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/87b47754-1438-4f37-b580-5ab281bf3bc6/id-preview-c4117534--80c25c06-2dcc-454b-815e-db587f29c6e0.lovable.app-1780632839222.png",
-      },
-    ],
+    siteName: SITE.name,
+    url: SITE.url,
+    locale: "en_AE",
   },
   twitter: {
-    card: "summary",
-    title: "Future Vision — Luxury Event Atelier",
-    description: "An international atelier crafting luxury weddings, corporate events and world-class entertainment.",
-    images: ["https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/87b47754-1438-4f37-b580-5ab281bf3bc6/id-preview-c4117534--80c25c06-2dcc-454b-815e-db587f29c6e0.lovable.app-1780632839222.png"],
+    card: "summary_large_image",
+    title: `${SITE.name} — Dubai, UAE`,
+    description: DEFAULT_DESCRIPTION,
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+  category: "Event Management",
 };
 
 export default function RootLayout({
@@ -46,8 +69,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${cormorant.variable}`}>
+    <html lang="en-AE" className={`${inter.variable} ${cormorant.variable}`}>
       <body className="antialiased bg-background text-foreground min-h-screen flex flex-col">
+        <StructuredData />
         <SiteNav />
         <main className="flex-grow">{children}</main>
         <SiteFooter />
@@ -56,4 +80,3 @@ export default function RootLayout({
     </html>
   );
 }
-
