@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { pageMetadata } from "@/data/seo";
 
 export const metadata: Metadata = pageMetadata({
-    title: "Contact Us — Event Planners in Dubai, UAE",
+    title: "Contact Event Planner Dubai | Event Management Company Dubai",
     description:
-        "Contact Future Vision Events & Weddings in Dubai, Sharjah or Abu Dhabi. Email futurevision@eim.ae or call +971-50-3576449 (24-hour line). Plan your corporate event or wedding today.",
+        "Contact the Best Event Management Company in Dubai — Future Vision. Call +971-50-3576449 (24-hour line). Corporate Event Management Dubai, Wedding Planner Dubai, Conference Organizer Dubai, Exhibition Management Company Dubai. Offices in Dubai, Sharjah & Abu Dhabi.",
     path: "/contact",
 });
 

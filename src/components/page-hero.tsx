@@ -1,5 +1,8 @@
+"use client";
+
 import type { ReactNode } from "react";
 import { AbstractBackdrop, Eyebrow, EditorialHeading } from "./luxury";
+import { ParallaxContent, ParallaxImage } from "./parallax";
 
 interface PageHeroProps {
   eyebrow: string;
@@ -22,12 +25,7 @@ export function PageHero({
     <section className="relative isolate overflow-hidden bg-background pt-44 pb-28 sm:pt-52 sm:pb-36">
       {imageUrl && (
         <>
-          <img
-            src={imageUrl}
-            alt=""
-            aria-hidden
-            className="absolute inset-0 h-full w-full object-cover opacity-50"
-          />
+          <ParallaxImage src={imageUrl} speed={0.4} scale={1.18} opacity={0.5} />
           <div
             className="absolute inset-0"
             style={{
@@ -38,17 +36,17 @@ export function PageHero({
         </>
       )}
       <AbstractBackdrop hue={hue} className={imageUrl ? "mix-blend-soft-light" : undefined} />
-      <div className="relative mx-auto max-w-[1400px] px-6 lg:px-12">
+      <ParallaxContent className="relative mx-auto max-w-[1400px] px-6 lg:px-12" speed={0.1}>
         <Eyebrow>{eyebrow}</Eyebrow>
         <EditorialHeading as="h1" className="mt-8 max-w-5xl">
           {title}
         </EditorialHeading>
         {intro && (
-          <p className="mt-10 max-w-2xl text-base sm:text-lg text-muted-foreground leading-relaxed">
+          <p className="mt-10 max-w-2xl text-sm sm:text-base text-muted-foreground leading-relaxed">
             {intro}
           </p>
         )}
-      </div>
+      </ParallaxContent>
     </section>
   );
 }

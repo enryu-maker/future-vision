@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Instagram, Linkedin, Mail, Phone } from "lucide-react";
 import { Monogram, Hairline } from "./luxury";
+import { SeoTags } from "./seo-tags";
 import { OFFICES, PHONES, SITE } from "@/data/contact";
 
 export function SiteFooter() {
@@ -11,8 +12,13 @@ export function SiteFooter() {
                     <div className="lg:col-span-4">
                         <Monogram />
                         <p className="mt-8 max-w-sm text-sm leading-relaxed text-muted-foreground">
-                            {SITE.name} — a full-service entertainment and event management company based in Dubai, UAE, with offices in Sharjah and Abu Dhabi.
+                            {SITE.name} — full-service event management in Dubai, UAE with offices in Sharjah and Abu Dhabi.
                         </p>
+                        <SeoTags
+                            className="mt-4"
+                            compact
+                            tags={["Event Management Company Dubai", "Corporate Event Management Dubai", "Wedding Planner Dubai", "Live Entertainment Dubai"]}
+                        />
                         <p className="mt-4 font-display italic text-cream/90 text-sm">
                             {SITE.motto}
                         </p>
@@ -31,9 +37,9 @@ export function SiteFooter() {
                     <div className="lg:col-span-3">
                         <h4 className="eyebrow">Services</h4>
                         <ul className="mt-6 space-y-3 text-sm">
-                            <li><Link href="/corporate-events" className="hover:text-gold transition-colors">Corporate Events</Link></li>
-                            <li><Link href="/weddings" className="hover:text-gold transition-colors">Weddings</Link></li>
-                            <li><Link href="/entertainment" className="hover:text-gold transition-colors">Entertainment</Link></li>
+                            <li><Link href="/corporate-events" title="Corporate Event Management Dubai" className="hover:text-gold transition-colors">Corporate Events</Link></li>
+                            <li><Link href="/weddings" title="Wedding Planner Dubai" className="hover:text-gold transition-colors">Weddings</Link></li>
+                            <li><Link href="/entertainment" title="Entertainment Agency Dubai" className="hover:text-gold transition-colors">Entertainment</Link></li>
                         </ul>
                     </div>
 
@@ -41,15 +47,15 @@ export function SiteFooter() {
                         <h4 className="eyebrow">Contact</h4>
                         <ul className="mt-6 space-y-3 text-sm">
                             <li>
-                                <a href={`mailto:${SITE.email}`} className="inline-flex items-center gap-2 hover:text-gold transition-colors">
-                                    <Mail className="h-3.5 w-3.5 text-gold" strokeWidth={1.25} />
+                                <a href={`mailto:${SITE.email}`} className="inline-flex items-center gap-2 hover:text-gold transition-colors break-all">
+                                    <Mail className="h-3.5 w-3.5 text-gold shrink-0" strokeWidth={1.25} />
                                     {SITE.email}
                                 </a>
                             </li>
                             {PHONES.map((phone) => (
                                 <li key={phone.tel}>
                                     <a href={`tel:${phone.tel}`} className="inline-flex items-center gap-2 hover:text-gold transition-colors">
-                                        <Phone className="h-3.5 w-3.5 text-gold" strokeWidth={1.25} />
+                                        <Phone className="h-3.5 w-3.5 text-gold shrink-0" strokeWidth={1.25} />
                                         {phone.display}
                                         {"note" in phone && phone.note ? ` (${phone.note})` : ""}
                                     </a>

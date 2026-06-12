@@ -14,18 +14,18 @@ import entMagician from "@/assets/portfolio/portfolio-entertainment-magician.png
 export type PortfolioCategory = "Corporate" | "Weddings" | "Entertainment";
 
 export const PORTFOLIO_ITEMS = [
-    { t: "Annual Staff Party", place: "Dubai", cat: "Corporate" as const, image: corpStaffParty },
-    { t: "Desert Corporate Party", place: "UAE", cat: "Corporate" as const, image: corpDesert },
-    { t: "Product Launch", place: "Dubai", cat: "Corporate" as const, image: corpLaunch },
-    { t: "Exhibition Stand", place: "Dubai", cat: "Corporate" as const, image: corpExhibition },
-    { t: "Dhow Party", place: "Dubai Creek", cat: "Corporate" as const, image: corpDhow },
-    { t: "Arabic Wedding", place: "Dubai", cat: "Weddings" as const, image: wedArabic },
-    { t: "Indian Wedding", place: "Dubai", cat: "Weddings" as const, image: wedIndian },
-    { t: "Western Wedding", place: "Dubai", cat: "Weddings" as const, image: wedWestern },
-    { t: "Wedding Stage Décor", place: "Dubai", cat: "Weddings" as const, image: wedDecor },
-    { t: "Dance Shows", place: "Dubai", cat: "Entertainment" as const, image: entDance },
-    { t: "Live Entertainment", place: "Dubai", cat: "Entertainment" as const, image: entLive },
-    { t: "Magician Sumeet", place: "Dubai", cat: "Entertainment" as const, image: entMagician },
+    { t: "Annual Staff Party", tag: "Corporate Event Management Dubai", place: "Dubai", cat: "Corporate" as const, image: corpStaffParty },
+    { t: "Desert Corporate Event", tag: "Team Building Events Dubai", place: "UAE", cat: "Corporate" as const, image: corpDesert },
+    { t: "Product Launch", tag: "Product Launch Event Agency Dubai", place: "Dubai", cat: "Corporate" as const, image: corpLaunch },
+    { t: "Exhibition Stand", tag: "Exhibition Stand Contractor Dubai", place: "Dubai", cat: "Corporate" as const, image: corpExhibition },
+    { t: "Dhow Party", tag: "Corporate Gala Dinner Dubai", place: "Dubai Creek", cat: "Corporate" as const, image: corpDhow },
+    { t: "Arabic Wedding", tag: "Luxury Wedding Planner Dubai", place: "Dubai", cat: "Weddings" as const, image: wedArabic },
+    { t: "Indian Wedding", tag: "Indian Wedding Planner Dubai", place: "Dubai", cat: "Weddings" as const, image: wedIndian },
+    { t: "Western Wedding", tag: "Destination Wedding Planner Dubai", place: "Dubai", cat: "Weddings" as const, image: wedWestern },
+    { t: "Wedding Stage Décor", tag: "Wedding Decoration Dubai", place: "Dubai", cat: "Weddings" as const, image: wedDecor },
+    { t: "Dance Shows", tag: "Live Entertainment Dubai", place: "Dubai", cat: "Entertainment" as const, image: entDance },
+    { t: "Live Entertainment", tag: "Corporate Entertainment Dubai", place: "Dubai", cat: "Entertainment" as const, image: entLive },
+    { t: "Magician Sumeet", tag: "Entertainment Agency Dubai", place: "Dubai", cat: "Entertainment" as const, image: entMagician },
 ] as const;
 
 export const PORTFOLIO_FILTERS = ["All", "Corporate", "Weddings", "Entertainment"] as const;

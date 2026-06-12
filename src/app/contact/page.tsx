@@ -3,6 +3,8 @@
 import { useState, type ReactNode, type FormEvent } from "react";
 import { Mail, Phone, MapPin, Globe } from "lucide-react";
 import { EditorialHeading, Hairline, SectionLabel } from "@/components/luxury";
+import { ParallaxReveal } from "@/components/parallax";
+import { SeoTags } from "@/components/seo-tags";
 import { PageHero } from "@/components/page-hero";
 import { toast } from "sonner";
 import contactHero from "@/assets/contact-hero.jpg";
@@ -38,13 +40,19 @@ export default function ContactPage() {
         <>
             <PageHero
                 eyebrow="Contact"
-                title={<>Get in touch in <em className="not-italic text-gold">Dubai, UAE</em>.</>}
-                intro="Reach our team at any of our Dubai, Sharjah or Abu Dhabi offices. Call our 24-hour line or email us to start planning your event."
+                title={<>Get in touch in <em className="not-italic text-gold">Dubai</em></>}
+                intro="Reach our team at any of our Dubai, Sharjah, or Abu Dhabi offices. Call +971-50-3576449 (24-hour line) or email us to start planning your event."
                 image={contactHero}
             />
 
-            <section className="bg-background pb-32">
-                <div className="mx-auto grid max-w-[1400px] gap-20 px-6 lg:grid-cols-12 lg:px-12">
+            <ParallaxReveal as="section" className="bg-background pb-32">
+                <div className="mx-auto max-w-[1400px] px-6 lg:px-12 pt-4">
+                    <SeoTags
+                        compact
+                        tags={["Event Management Company Dubai", "Corporate Event Management Dubai", "Wedding Planner Dubai", "Conference Organizer Dubai", "Live Entertainment Dubai"]}
+                    />
+                </div>
+                <div className="mx-auto grid max-w-[1400px] gap-20 px-6 lg:grid-cols-12 lg:px-12 mt-12">
                     <aside className="lg:col-span-4 space-y-12">
                         <div>
                             <SectionLabel label="Contact" />
@@ -135,7 +143,7 @@ export default function ContactPage() {
                         </div>
                     </form>
                 </div>
-            </section>
+            </ParallaxReveal>
         </>
     );
 }

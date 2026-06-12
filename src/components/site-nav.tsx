@@ -9,10 +9,10 @@ import { cn } from "@/lib/utils";
 
 const NAV = [
     { href: "/", label: "Home" },
-    { href: "/corporate-events", label: "Corporate Events" },
-    { href: "/weddings", label: "Weddings" },
-    { href: "/entertainment", label: "Entertainment" },
-    { href: "/portfolio", label: "Portfolio" },
+    { href: "/corporate-events", label: "Corporate", title: "Corporate Event Management Dubai" },
+    { href: "/weddings", label: "Weddings", title: "Wedding Planner Dubai" },
+    { href: "/entertainment", label: "Entertainment", title: "Entertainment Agency Dubai" },
+    { href: "/portfolio", label: "Portfolio", title: "Event Portfolio Dubai" },
     { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },
 ] as const;
@@ -44,18 +44,19 @@ export function SiteNav() {
                     : "bg-transparent border-b border-transparent",
             )}
         >
-            <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-5 lg:px-12">
+            <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-4 px-6 py-4 lg:px-12 lg:py-5">
                 <Monogram />
 
-                <nav className="hidden lg:flex items-center gap-8">
-                    {NAV.slice(1, -1).map((item) => {
-                        const isActive = pathname === item.href;
+                <nav className="hidden lg:flex items-center gap-5 xl:gap-6 2xl:gap-8">
+                    {NAV.slice(0, -1).map((item) => {
+                        const isActive = item.href === "/" ? pathname === "/" : pathname === item.href;
                         return (
                             <Link
                                 key={item.href}
                                 href={item.href}
+                                title={"title" in item ? item.title : undefined}
                                 className={cn(
-                                    "text-[0.72rem] uppercase tracking-[0.24em] transition-colors duration-500",
+                                    "text-[0.68rem] uppercase tracking-[0.22em] transition-colors duration-500 whitespace-nowrap",
                                     isActive ? "text-gold" : "text-cream/75 hover:text-gold"
                                 )}
                             >
@@ -65,13 +66,13 @@ export function SiteNav() {
                     })}
                 </nav>
 
-                <div className="hidden lg:block">
-                    <GoldButton to="/contact" variant="outline">Start Your Event</GoldButton>
+                <div className="hidden lg:block shrink-0">
+                    <GoldButton to="/contact" variant="outline">Contact</GoldButton>
                 </div>
 
                 <button
                     aria-label="Toggle menu"
-                    className="lg:hidden text-cream"
+                    className="lg:hidden text-cream shrink-0"
                     onClick={() => setOpen((v) => !v)}
                 >
                     {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -87,6 +88,7 @@ export function SiteNav() {
                                 <Link
                                     key={item.href}
                                     href={item.href}
+                                    title={"title" in item ? item.title : undefined}
                                     className={cn(
                                         "font-display text-2xl transition-colors",
                                         isActive ? "text-gold" : "text-cream hover:text-gold"
@@ -97,7 +99,7 @@ export function SiteNav() {
                             );
                         })}
                         <GoldButton to="/contact" variant="outline" className="mt-4 self-start">
-                            Start Your Event
+                            Contact
                         </GoldButton>
                     </div>
                 </div>

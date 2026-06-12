@@ -1,15 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, ChevronDown, Building2, Sparkles, Music2 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import type { ServiceIcon } from "@/components/service-row-image";
 import {
-    AbstractBackdrop,
     ContactBand,
     EditorialHeading,
-    Eyebrow,
     GoldButton,
     Hairline,
     SectionLabel,
 } from "@/components/luxury";
+import { GalleryCard } from "@/components/gallery-card";
+import { HomeHero } from "@/components/home-hero";
+import { ParallaxReveal } from "@/components/parallax";
+import { ServiceRowImage } from "@/components/service-row-image";
+import { SeoTags } from "@/components/seo-tags";
 import heroImg from "@/assets/portfolio/portfolio-wedding-arabic.png";
 import { PORTFOLIO_ITEMS, SERVICE_HERO_IMAGES } from "@/data/portfolio";
 import { SITE } from "@/data/contact";
@@ -20,9 +24,9 @@ const wedImg = SERVICE_HERO_IMAGES.weddings;
 const entImg = SERVICE_HERO_IMAGES.entertainment;
 
 export const metadata: Metadata = pageMetadata({
-    title: "Event Management & Wedding Planners in Dubai, UAE",
+    title: "Best Event Management Company in Dubai | Event Planner Dubai",
     description:
-        "Future Vision Events & Weddings — 14+ years of corporate events, Arabic, Indian & Western weddings, and live entertainment in Dubai, Sharjah and Abu Dhabi. Call +971-50-3576449.",
+        "Top Event Planners in Dubai — Future Vision is the Best Event Management Company in Dubai for Corporate Event Management Dubai, Wedding Planner Dubai, Conference Organizer Dubai, Exhibition Management Company Dubai, Product Launch Event Agency Dubai, Gala Dinner Organizer Dubai, and Live Entertainment Dubai.",
     path: "/",
 });
 
@@ -31,159 +35,111 @@ const SERVICES = [
         n: "01",
         title: "Corporate Events",
         to: "/corporate-events",
-        icon: Building2,
+        icon: "building" satisfies ServiceIcon,
         image: corpImg,
-        copy: "Annual staff parties, family days, desert and dhow events, product launches, exhibition stands and conferences across Dubai and the UAE.",
+        copy: "Conferences, product launches, gala dinners, exhibitions, team building, and annual corporate celebrations across Dubai and the UAE.",
+        tags: ["Corporate Event Management Dubai", "Conference Organizer Dubai", "Product Launch Event Agency Dubai", "Exhibition Management Company Dubai", "Gala Dinner Organizer Dubai"],
     },
     {
         n: "02",
         title: "Weddings",
         to: "/weddings",
-        icon: Sparkles,
+        icon: "sparkles" satisfies ServiceIcon,
         image: wedImg,
-        copy: "Certified wedding planners for Arabic, Indian and Western weddings — stage décor, mandap, fresh flowers and full planning in Dubai.",
+        copy: "Arabic, Indian, and Western weddings with full planning, stage décor, mandap, fresh flowers, and destination celebrations.",
+        tags: ["Wedding Planner Dubai", "Luxury Wedding Planner Dubai", "Indian Wedding Planner Dubai", "Wedding Decoration Dubai", "Destination Wedding Planner Dubai"],
     },
     {
         n: "03",
         title: "Entertainment",
         to: "/entertainment",
-        icon: Music2,
+        icon: "music" satisfies ServiceIcon,
         image: entImg,
-        copy: "Live dance shows, musicians, DJs, magicians and performers for corporate events, weddings and private parties in Dubai.",
+        copy: "Dance shows, live bands, DJs, musicians, magicians, and performers for corporate events, weddings, and private parties.",
+        tags: ["Entertainment Agency Dubai", "Live Entertainment Dubai", "Corporate Entertainment Dubai", "Event Performers Dubai", "Artist Management Company Dubai"],
     },
 ] as const;
 
 const PILLARS = [
-    { n: "01", title: "Visualization", body: "Visualize the event theme, idea or motif — the creative foundation for every occasion we plan." },
-    { n: "02", title: "Realization", body: "Realistic budgeting and time frame planning aligned with your objectives and desired outcome." },
-    { n: "03", title: "Implementation", body: "Full detail planning — from concepts to decorations, vendors, logistics and production." },
-    { n: "04", title: "Execution", body: "Flawless on-the-day delivery with attention to every detail across Dubai, Sharjah and Abu Dhabi." },
+    { n: "01", title: "Conferences", body: "Multi-day conferences, seminars, and business meetings with full AV, staging, and guest management.", tags: ["Conference Organizer Dubai", "Conference Management Company Dubai", "MICE Events Dubai"] },
+    { n: "02", title: "Exhibitions", body: "Custom exhibition stands, trade shows, and branded environments for expos across Dubai.", tags: ["Exhibition Management Company Dubai", "Trade Show Organizer Dubai", "Exhibition Stand Contractor Dubai"] },
+    { n: "03", title: "Product Launches", body: "Brand activations, experiential marketing, and launch events that make your product unforgettable.", tags: ["Product Launch Event Agency Dubai", "Brand Activation Agency Dubai", "Experiential Marketing Agency Dubai"] },
+    { n: "04", title: "Gala Dinners", body: "Annual galas, award ceremonies, and VIP evenings with luxury production and entertainment.", tags: ["Gala Dinner Organizer Dubai", "Corporate Gala Dinner Dubai", "Award Ceremony Organizer Dubai"] },
 ];
 
-const PORTFOLIO = PORTFOLIO_ITEMS.slice(0, 6).map((p) => ({
-    title: p.t,
-    cat: p.cat,
-    place: p.place,
-    image: p.image,
-}));
+const PORTFOLIO = PORTFOLIO_ITEMS.slice(0, 6);
 
 export default function Home() {
     return (
         <>
-            {/* HERO */}
-            <section className="relative isolate min-h-svh flex items-end overflow-hidden bg-background">
-                <img
-                    src={heroImg.src}
-                    alt=""
-                    aria-hidden
-                    className="absolute inset-0 h-full w-full object-cover opacity-55"
-                />
-                <div
-                    className="absolute inset-0"
-                    style={{
-                        background:
-                            "linear-gradient(180deg, oklch(0.16 0.005 60 / 0.65) 0%, oklch(0.14 0.005 60 / 0.55) 45%, var(--background) 100%)",
-                    }}
-                />
-                <AbstractBackdrop hue="deep" className="mix-blend-soft-light" />
-                <div className="relative mx-auto w-full max-w-[1400px] px-6 lg:px-12 pb-24 pt-40">
-                    <div className="max-w-4xl">
-                        <Eyebrow>Events &amp; Weddings &middot; Dubai, UAE</Eyebrow>
-                        <h1 className="mt-8 font-display font-light text-cream leading-[0.98] tracking-[-0.02em] text-[clamp(3rem,9vw,8rem)]">
-                            You imagine it.<br />
-                            <em className="not-italic text-gold/95">We make it</em><br />
-                            happen.
-                        </h1>
-                        <p className="mt-10 max-w-xl text-base sm:text-lg leading-relaxed text-muted-foreground">
-                            Full-service event management and wedding planners in Dubai — corporate events, Arabic, Indian &amp; Western weddings, and live entertainment across the UAE.
-                        </p>
-                        <div className="mt-12 flex flex-wrap gap-4">
-                            <GoldButton to="/portfolio" variant="solid">Explore Services</GoldButton>
-                            <GoldButton to="/contact" variant="outline">Start Your Event</GoldButton>
-                        </div>
-                    </div>
-                </div>
-                <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gold/70">
-                    <span className="eyebrow text-[0.6rem]!">Scroll</span>
-                    <ChevronDown className="h-4 w-4" style={{ animation: "fv-scroll-cue 2.4s ease-in-out infinite" }} />
-                </div>
-            </section>
+            <HomeHero imageSrc={heroImg.src} />
 
-            {/* INTRODUCTION */}
-            <section className="relative bg-background py-32 sm:py-44">
+            <ParallaxReveal as="section" className="relative bg-background py-32 sm:py-44">
                 <div className="mx-auto grid max-w-[1400px] gap-16 px-6 lg:grid-cols-12 lg:px-12">
                     <div className="lg:col-span-5">
-                        <SectionLabel index="I" label="Introduction" />
+                        <SectionLabel index="I" label="About" />
                         <EditorialHeading className="mt-10">
-                            Where vision<br />becomes <em className="not-italic text-gold">reality</em>.
+                            Event planners in<br /><em className="not-italic text-gold">Dubai, UAE</em>
                         </EditorialHeading>
                     </div>
-                    <div className="lg:col-span-6 lg:col-start-7 space-y-6 text-muted-foreground leading-[1.85]">
+                    <div className="lg:col-span-6 lg:col-start-7 space-y-6 text-muted-foreground leading-[1.85] text-sm sm:text-base">
                         <p>
-                            {SITE.name} is a full-service entertainment and event management company based in Dubai, UAE. With over 14 years of experience, we are a leading name in corporate events, weddings and live entertainment across the UAE and wider Middle East.
+                            {SITE.name} is a full-service event management company based in Dubai with over 14 years of experience — a leading name in corporate events, weddings, and live entertainment across the UAE and Middle East.
                         </p>
                         <p>
-                            We work with clients from concept development and venue selection through technical planning to managing the actual event production — for corporate conferences, staff parties, Arabic, Indian and Western weddings, and private celebrations.
+                            From concept development and venue selection through technical planning to on-the-day production, we handle conferences, staff parties, exhibitions, product launches, Arabic, Indian and Western weddings, and private celebrations.
                         </p>
-                        <p className="font-display italic text-cream/90 text-xl pt-4">
+                        <SeoTags
+                            tags={["Event Management Agency UAE", "Event Production Company Dubai", "Luxury Event Planner Dubai", "Event Management Services Dubai"]}
+                        />
+                        <p className="font-display italic text-cream/90 text-lg pt-2">
                             &mdash; {SITE.motto}
                         </p>
                     </div>
                 </div>
-            </section>
+            </ParallaxReveal>
 
-            {/* SERVICES */}
-            <section className="relative bg-surface">
+            <ParallaxReveal as="section" className="relative bg-surface" delay={100}>
                 <div className="mx-auto max-w-[1400px] px-6 lg:px-12 pt-24 pb-10">
                     <div className="flex flex-wrap items-end justify-between gap-6">
-                        <div>
-                            <SectionLabel index="II" label="Disciplines" />
-                            <EditorialHeading className="mt-8 max-w-xl">Three disciplines, one standard.</EditorialHeading>
+                        <div className="max-w-2xl">
+                            <SectionLabel index="II" label="Services" />
+                            <EditorialHeading className="mt-8">Three disciplines, one standard.</EditorialHeading>
                         </div>
-                        <Link href="/portfolio" className="eyebrow gold-underline">View all work</Link>
+                        <Link href="/portfolio" className="eyebrow gold-underline shrink-0">View portfolio</Link>
                     </div>
                 </div>
                 <div className="border-t border-border">
                     {SERVICES.map((s) => (
                         <Link key={s.to} href={s.to} className="group block border-b border-border transition-colors hover:bg-surface-2">
-                            <div className="mx-auto grid max-w-[1400px] grid-cols-12 items-center gap-6 px-6 lg:px-12 py-14 lg:py-20">
+                            <div className="mx-auto grid max-w-[1400px] grid-cols-12 items-start gap-6 px-6 lg:px-12 py-14 lg:py-20">
                                 <div className="col-span-12 lg:col-span-1 font-display text-3xl text-gold/70">{s.n}</div>
                                 <div className="col-span-12 lg:col-span-2">
-                                    <div className="relative aspect-4/5 w-full overflow-hidden bg-surface-2">
-                                        <img
-                                            src={s.image.src}
-                                            alt={s.title}
-                                            loading="lazy"
-                                            className="absolute inset-0 h-full w-full object-cover transition-transform duration-1200 ease-out group-hover:scale-[1.04]"
-                                        />
-                                        <div className="absolute inset-0 bg-background/30 group-hover:bg-background/10 transition-colors duration-700" />
-                                        <s.icon
-                                            className="absolute bottom-3 left-3 h-5 w-5 text-gold/90"
-                                            strokeWidth={1}
-                                        />
-                                    </div>
+                                    <ServiceRowImage src={s.image.src} alt={s.title} icon={s.icon} />
                                 </div>
-                                <h3 className="col-span-12 lg:col-span-4 font-display font-light text-cream text-3xl lg:text-5xl leading-[1.05] group-hover:text-gold transition-colors">{s.title}</h3>
-                                <p className="col-span-12 lg:col-span-4 text-muted-foreground leading-relaxed">{s.copy}</p>
-                                <div className="col-span-12 lg:col-span-1 flex lg:justify-end">
-                                    <ArrowRight className="h-5 w-5 text-gold/60 group-hover:text-gold transition-transform duration-500 group-hover:translate-x-1" strokeWidth={1} />
+                                <div className="col-span-12 lg:col-span-8 flex flex-col gap-4">
+                                    <div className="flex items-start justify-between gap-4">
+                                        <h2 className="font-display font-light text-cream text-3xl lg:text-5xl leading-[1.05] group-hover:text-gold transition-colors">{s.title}</h2>
+                                        <ArrowRight className="h-5 w-5 shrink-0 text-gold/60 group-hover:text-gold transition-transform duration-500 group-hover:translate-x-1 hidden lg:block" strokeWidth={1} />
+                                    </div>
+                                    <p className="text-muted-foreground leading-relaxed max-w-2xl">{s.copy}</p>
+                                    <SeoTags tags={s.tags} compact />
                                 </div>
                             </div>
                         </Link>
                     ))}
                 </div>
-            </section>
+            </ParallaxReveal>
 
-            {/* PORTFOLIO */}
-            <section className="relative bg-background py-32">
+            <ParallaxReveal as="section" className="relative bg-background py-32" delay={150}>
                 <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
                     <div className="flex flex-wrap items-end justify-between gap-6">
-                        <div>
-                            <SectionLabel index="III" label="Selected Commissions" />
-                            <EditorialHeading className="mt-8">A quiet portfolio.</EditorialHeading>
+                        <div className="max-w-2xl">
+                            <SectionLabel index="III" label="Portfolio" />
+                            <EditorialHeading className="mt-8">Recent work in Dubai.</EditorialHeading>
                         </div>
-                        <div className="flex gap-6">
-                            {["All", "Corporate", "Weddings", "Entertainment"].map((c, i) => (
+                        <div className="flex flex-wrap gap-4">
+                            {["Corporate", "Weddings", "Entertainment"].map((c, i) => (
                                 <span key={c} className={`eyebrow ${i === 0 ? "text-gold!" : "text-muted-foreground!"}`}>{c}</span>
                             ))}
                         </div>
@@ -191,25 +147,14 @@ export default function Home() {
 
                     <div className="mt-16 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-3">
                         {PORTFOLIO.map((p) => (
-                            <article key={p.title} className="group relative aspect-4/5 overflow-hidden bg-surface">
-                                <img
-                                    src={p.image.src}
-                                    alt={p.title}
-                                    loading="lazy"
-                                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-1400 ease-out group-hover:scale-[1.05]"
-                                />
-                                <div
-                                    className="absolute inset-0"
-                                    style={{
-                                        background:
-                                            "linear-gradient(180deg, transparent 40%, oklch(0.12 0.005 60 / 0.85) 100%)",
-                                    }}
-                                />
-                                <div className="absolute inset-0 flex flex-col justify-end p-8">
-                                    <span className="eyebrow">{p.cat} &middot; {p.place}</span>
-                                    <h3 className="mt-3 font-display text-2xl lg:text-3xl text-cream leading-tight">{p.title}</h3>
-                                </div>
-                            </article>
+                            <GalleryCard
+                                key={p.t}
+                                src={p.image.src}
+                                alt={`${p.t} — ${p.tag}`}
+                                eyebrow={p.tag}
+                                title={p.t}
+                                subtitle={p.place}
+                            />
                         ))}
                     </div>
 
@@ -217,40 +162,44 @@ export default function Home() {
                         <GoldButton to="/portfolio" variant="outline">View Full Portfolio</GoldButton>
                     </div>
                 </div>
-            </section>
+            </ParallaxReveal>
 
-            {/* PILLARS */}
-            <section className="relative bg-surface-2 py-32">
+            <ParallaxReveal as="section" className="relative bg-surface-2 py-32" delay={200}>
                 <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
                     <SectionLabel index="IV" label="Why Future Vision" />
-                    <EditorialHeading className="mt-8 max-w-2xl">Four pillars, quietly observed.</EditorialHeading>
+                    <EditorialHeading className="mt-8 max-w-2xl">What we specialise in.</EditorialHeading>
 
                     <div className="mt-20 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-4">
                         {PILLARS.map((p) => (
-                            <div key={p.n} className="bg-surface-2 p-10 lg:p-12">
+                            <div key={p.n} className="bg-surface-2 p-8 lg:p-10 flex flex-col">
                                 <span className="font-display text-2xl text-gold">{p.n}</span>
                                 <Hairline className="mt-6 w-12!" />
                                 <h3 className="mt-6 font-display text-2xl text-cream leading-tight">{p.title}</h3>
-                                <p className="mt-4 text-sm text-muted-foreground leading-relaxed">{p.body}</p>
+                                <p className="mt-4 text-sm text-muted-foreground leading-relaxed flex-grow">{p.body}</p>
+                                <SeoTags className="mt-6" tags={p.tags} compact />
                             </div>
                         ))}
                     </div>
                 </div>
-            </section>
+            </ParallaxReveal>
 
-            {/* TESTIMONIAL */}
-            <section className="relative bg-background py-32 sm:py-44">
-                <div className="mx-auto max-w-4xl px-6 text-center">
-                    <span className="font-display text-[8rem] leading-none text-gold/50">&ldquo;</span>
-                    <blockquote className="-mt-12 font-display text-3xl sm:text-4xl lg:text-5xl font-light italic text-cream leading-tight tracking-tight">
-                        You imagine it and we will make it happen — our wedding in Dubai was everything we dreamed of and more.
+            <ParallaxReveal as="section" className="relative bg-background py-32 sm:py-44" delay={250}>
+                <div className="mx-auto max-w-3xl px-6 text-center">
+                    <span className="font-display text-[6rem] sm:text-[8rem] leading-none text-gold/50">&ldquo;</span>
+                    <blockquote className="-mt-10 sm:-mt-12 font-display text-2xl sm:text-3xl lg:text-4xl font-light italic text-cream leading-snug tracking-tight">
+                        You imagine it and we will make it happen — the best event management team in Dubai.
                     </blockquote>
-                    <div className="mt-12 flex flex-col items-center gap-2">
+                    <div className="mt-10 flex flex-col items-center gap-4">
                         <Hairline className="w-16!" />
-                        <p className="eyebrow mt-2">{SITE.name} &middot; Dubai, UAE</p>
+                        <p className="eyebrow">{SITE.name} &middot; Dubai, UAE</p>
+                        <SeoTags
+                            className="justify-center"
+                            compact
+                            tags={["Best Event Management Company in Dubai", "Top Event Planners in Dubai"]}
+                        />
                     </div>
                 </div>
-            </section>
+            </ParallaxReveal>
 
             <ContactBand />
         </>

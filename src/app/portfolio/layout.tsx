@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { pageMetadata } from "@/data/seo";
 
 export const metadata: Metadata = pageMetadata({
-    title: "Portfolio — Corporate Events, Weddings & Entertainment in Dubai",
+    title: "Event Portfolio Dubai | Exhibition and Event Management Company Dubai",
     description:
-        "View Future Vision's portfolio of corporate events, Arabic, Indian and Western weddings, and live entertainment productions across Dubai, Sharjah and Abu Dhabi, UAE.",
+        "Event Portfolio Dubai — Corporate Event Management Dubai, Wedding Planner Dubai, Product Launch Event Management Dubai, Exhibition Stand Contractor Dubai, Indian Wedding Planner Dubai, and Live Entertainment Dubai by Future Vision.",
     path: "/portfolio",
 });
 
