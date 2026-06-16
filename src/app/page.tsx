@@ -14,7 +14,7 @@ import { HomeHero } from "@/components/home-hero";
 import { ParallaxReveal } from "@/components/parallax";
 import { ServiceRowImage } from "@/components/service-row-image";
 import { SeoTags } from "@/components/seo-tags";
-import heroImg from "@/assets/portfolio/portfolio-wedding-arabic.png";
+import heroImg from "@/assets/hero.jpg";
 import { PORTFOLIO_ITEMS, SERVICE_HERO_IMAGES } from "@/data/portfolio";
 import { SITE } from "@/data/contact";
 import { pageMetadata } from "@/data/seo";

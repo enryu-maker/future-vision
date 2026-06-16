@@ -37,5 +37,5 @@ export const ENTERTAINMENT_IMAGES = [entDance, entLive, entMagician] as const;
 export const SERVICE_HERO_IMAGES = {
     corporate: corpStaffParty,
     weddings: wedArabic,
-    entertainment: entDance,
+    entertainment: entLive,
 } as const;
