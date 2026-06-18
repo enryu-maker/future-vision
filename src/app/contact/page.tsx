@@ -45,7 +45,7 @@ export default function ContactPage() {
                 image={contactHero}
             />
 
-            <ParallaxReveal as="section" className="bg-background pb-32">
+            <ParallaxReveal as="section" className="bg-background pb-32 pt-20">
                 <div className="mx-auto max-w-[1400px] px-6 lg:px-12 pt-4">
                     <SeoTags
                         compact

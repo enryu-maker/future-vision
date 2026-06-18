@@ -10,7 +10,7 @@ export function StructuredData() {
         telephone: PHONES.map((p) => p.display),
         description:
             "Best Event Management Company in Dubai — Corporate Event Management Dubai, Wedding Planner Dubai, Conference Organizer Dubai, Exhibition Management Company Dubai, Product Launch Event Agency Dubai, Gala Dinner Organizer Dubai, Brand Activation Agency Dubai, and Live Entertainment Dubai across UAE.",
-        slogan: SITE.motto,
+        slogan: `${SITE.tagline} — ${SITE.motto}`,
         areaServed: [
             { "@type": "City", name: "Dubai" },
             { "@type": "City", name: "Dubai Marina" },

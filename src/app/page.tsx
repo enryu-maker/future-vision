@@ -79,12 +79,12 @@ export default function Home() {
                     <div className="lg:col-span-5">
                         <SectionLabel index="I" label="About" />
                         <EditorialHeading className="mt-10">
-                            Event planners in<br /><em className="not-italic text-gold">Dubai, UAE</em>
+                            Event Planners in<br /><em className="not-italic text-gold">Dubai, UAE</em>
                         </EditorialHeading>
                     </div>
                     <div className="lg:col-span-6 lg:col-start-7 space-y-6 text-muted-foreground leading-[1.85] text-sm sm:text-base">
                         <p>
-                            {SITE.name} is a full-service event management company based in Dubai with over 14 years of experience — a leading name in corporate events, weddings, and live entertainment across the UAE and Middle East.
+                            {SITE.name} is a full-service event management company based in Dubai with over 20 years of experience — a leading name in corporate events, weddings, and live entertainment across the UAE and Middle East.
                         </p>
                         <p>
                             From concept development and venue selection through technical planning to on-the-day production, we handle conferences, staff parties, exhibitions, product launches, Arabic, Indian and Western weddings, and private celebrations.
@@ -94,6 +94,9 @@ export default function Home() {
                         />
                         <p className="font-display italic text-cream/90 text-lg pt-2">
                             &mdash; {SITE.motto}
+                        </p>
+                        <p className="font-sans text-[0.72rem] uppercase tracking-[0.25em] text-gold/90 mt-2">
+                            {SITE.tagline}
                         </p>
                     </div>
                 </div>
@@ -187,8 +190,11 @@ export default function Home() {
                 <div className="mx-auto max-w-3xl px-6 text-center">
                     <span className="font-display text-[6rem] sm:text-[8rem] leading-none text-gold/50">&ldquo;</span>
                     <blockquote className="-mt-10 sm:-mt-12 font-display text-2xl sm:text-3xl lg:text-4xl font-light italic text-cream leading-snug tracking-tight">
-                        You imagine it and we will make it happen — the best event management team in Dubai.
+                        &ldquo;{SITE.motto}&rdquo;
                     </blockquote>
+                    <p className="mt-6 font-display text-lg sm:text-xl text-gold tracking-[0.15em] uppercase">
+                        {SITE.tagline}
+                    </p>
                     <div className="mt-10 flex flex-col items-center gap-4">
                         <Hairline className="w-16!" />
                         <p className="eyebrow">{SITE.name} &middot; Dubai, UAE</p>

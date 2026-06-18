@@ -31,11 +31,11 @@ export const PORTFOLIO_ITEMS = [
 export const PORTFOLIO_FILTERS = ["All", "Corporate", "Weddings", "Entertainment"] as const;
 
 export const CORPORATE_IMAGES = [corpStaffParty, corpDesert, corpLaunch, corpExhibition, corpDhow] as const;
-export const WEDDING_IMAGES = [wedArabic, wedIndian, wedWestern, wedDecor] as const;
+export const WEDDING_IMAGES = [ wedArabic, wedIndian, wedWestern, wedDecor] as const;
 export const ENTERTAINMENT_IMAGES = [entDance, entLive, entMagician] as const;
 
 export const SERVICE_HERO_IMAGES = {
-    corporate: corpStaffParty,
-    weddings: wedIndian,
+    corporate: corpDesert,
+    weddings: wedDecor,
     entertainment: entLive,
 } as const;

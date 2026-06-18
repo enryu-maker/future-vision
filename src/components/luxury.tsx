@@ -10,7 +10,7 @@ export function Monogram({ className }: { className?: string }) {
       <img
         src={logoUrl.src}
         alt="Future Vision — Events & Weddings"
-        className="h-12 w-auto sm:h-14 object-contain transition-opacity duration-500 group-hover:opacity-90"
+        className="h-12 w-auto sm:h-14 lg:h-16 object-contain transition-opacity duration-500 group-hover:opacity-90"
         loading="eager"
         decoding="async"
       />

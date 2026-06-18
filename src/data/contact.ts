@@ -4,16 +4,23 @@ export const SITE = {
     url: "https://futurevision.ae",
     email: "futurevision@eim.ae",
     motto: "You imagine it and we will make it happen",
+    tagline: "Elegance In Every Detail",
     region: "Dubai, UAE",
 } as const;
 
-export const PHONES = [
-    { display: "+971-50-3576449", tel: "+971503576449", note: "24-hour line" },
+export interface PhoneContact {
+    display: string;
+    tel: string;
+    note?: string;
+}
+
+export const PHONES: readonly PhoneContact[] = [
+    // { display: "+971-50-3576449", tel: "+971503576449", note: "24-hour line" },
     { display: "+971-56-9401230", tel: "+971569401230" },
-] as const;
+];
 
 export const PHONES_INTERNATIONAL = [
-    { display: "00971-50-3576449", tel: "+971503576449" },
+    // { display: "00971-50-3576449", tel: "+971503576449" },
     { display: "00971-56-9401230", tel: "+971569401230" },
 ] as const;
 

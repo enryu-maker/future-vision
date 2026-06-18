@@ -20,7 +20,11 @@ export function HomeHero({ imageSrc }: { imageSrc: string }) {
             <AbstractBackdrop hue="deep" className="mix-blend-soft-light" />
             <ParallaxContent className="relative mx-auto w-full max-w-[1400px] px-6 lg:px-12 pb-24 pt-40" speed={0.1}>
                 <div className="max-w-3xl">
-                    <Eyebrow>Dubai, UAE</Eyebrow>
+                    <Eyebrow className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                        <span>{SITE.tagline}</span>
+                        <span className="text-gold/30 hidden sm:inline">&middot;</span>
+                        <span>Dubai, UAE</span>
+                    </Eyebrow>
                     <h1 className="mt-8 font-display font-light text-cream leading-[1.02] tracking-[-0.02em] text-[clamp(2.25rem,7vw,5.5rem)]">
                         Best Event Management<br />
                         <em className="not-italic text-gold/95">Company in Dubai</em>

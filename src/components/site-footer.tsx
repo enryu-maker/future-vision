@@ -22,6 +22,9 @@ export function SiteFooter() {
                         <p className="mt-4 font-display italic text-cream/90 text-sm">
                             {SITE.motto}
                         </p>
+                        <p className="eyebrow text-gold/80 text-[0.65rem]! tracking-[0.25em] mt-2 block uppercase">
+                            {SITE.tagline}
+                        </p>
                     </div>
 
                     <div className="lg:col-span-2">

@@ -6,6 +6,7 @@ import { ParallaxReveal } from "@/components/parallax";
 import { SeoTags } from "@/components/seo-tags";
 import { CORPORATE_IMAGES, SERVICE_HERO_IMAGES } from "@/data/portfolio";
 import { pageMetadata } from "@/data/seo";
+import { SITE } from "@/data/contact";
 
 const heroImg = SERVICE_HERO_IMAGES.corporate;
 
@@ -57,7 +58,7 @@ export default function CorporatePage() {
         <>
             <PageHero
                 eyebrow="Corporate Events"
-                title={<>Corporate event management in <em className="not-italic text-gold">Dubai</em></>}
+                title={<>Corporate event management company in <em className="not-italic text-gold">Dubai</em></>}
                 intro="Premier corporate event organizers in Dubai and the UAE — from large formal conferences to intimate business gatherings for companies across industries."
                 hue="neutral"
                 image={heroImg}
@@ -82,7 +83,10 @@ export default function CorporatePage() {
                             We work with clients from concept development and venue selection through technical planning to managing the actual event production — including travel, sound, light, stage setup, translation equipment, and exhibition stands.
                         </p>
                         <p className="font-display italic text-cream/90 text-lg">
-                            You imagine it and we will make it happen.
+                            {SITE.motto}
+                        </p>
+                        <p className="font-sans text-[0.72rem] uppercase tracking-[0.25em] text-gold mt-2">
+                            {SITE.tagline}
                         </p>
                     </div>
                 </div>
