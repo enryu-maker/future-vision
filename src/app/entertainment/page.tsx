@@ -139,7 +139,7 @@ export default function EntertainmentPage() {
                     </div>
                     <div className="lg:col-span-6 lg:col-start-7 text-muted-foreground leading-[1.85] space-y-5 text-sm sm:text-base">
                         <p>
-                            Future Vision proudly presents Mr. Sumeet Spell — an acclaimed illusionist entertaining audiences in the UAE and Middle East since 2000.
+                            Future Vision proudly presents Magician Spell — an acclaimed illusionist entertaining audiences in the UAE and Middle East since 2000.
                         </p>
                         <p>
                             Adaptable to any event, Magician offers kid-friendly or adult-oriented magic packages with stage and close-up performances to suit any budget.

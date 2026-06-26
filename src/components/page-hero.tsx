@@ -25,12 +25,12 @@ export function PageHero({
     <section className="relative isolate overflow-hidden bg-background pt-44 pb-28 sm:pt-52 sm:pb-36">
       {imageUrl && (
         <>
-          <ParallaxImage src={imageUrl} speed={0.4} scale={1.18} opacity={0.5} />
+          <ParallaxImage src={imageUrl} speed={0.4} scale={1.18} opacity={0.8} />
           <div
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(180deg, oklch(0.16 0.005 60 / 0.7) 0%, oklch(0.14 0.005 60 / 0.55) 50%, var(--background) 100%)",
+                "linear-gradient(180deg, oklch(0.16 0.005 60 / 0.3) 0%, oklch(0.14 0.005 60 / 0.45) 50%, var(--background) 100%)",
             }}
           />
         </>
