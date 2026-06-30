@@ -5,7 +5,7 @@ import { ParallaxReveal } from "@/components/parallax";
 import { ParallaxSideImage } from "@/components/parallax-side-image";
 import { SeoTags } from "@/components/seo-tags";
 import aboutHero from "@/assets/about-hero.jpg";
-import philosophyImg from "@/assets/portfolio/portfolio-wedding-arabic.png";
+import philosophyImg from "@/assets/portfolio/portfolio-wedding-mandap.png";
 import { SITE } from "@/data/contact";
 import { pageMetadata } from "@/data/seo";
 
@@ -59,7 +59,6 @@ export default function AboutPage() {
                                 For corporate events this includes travel, sound, light, stage setup, translation equipment, and exhibition stands. We also organize Arabic, Indian, and Western weddings with live entertainment — magicians, clowns, jugglers, and mascots.
                             </p>
                             <p className="font-display italic text-cream/90 text-lg pt-2">&mdash; {SITE.motto}</p>
-                            <p className="font-sans text-[0.72rem] uppercase tracking-[0.25em] text-gold/90 mt-2">{SITE.tagline}</p>
                         </div>
                     </div>
                 </div>
@@ -107,10 +106,7 @@ export default function AboutPage() {
                 <div className="mx-auto max-w-3xl px-6 text-center">
                     <SectionLabel label="Our Promise" />
                     <p className="mt-8 font-display text-2xl sm:text-3xl font-light italic text-cream leading-snug">
-                        &ldquo;{SITE.motto}&rdquo;
-                    </p>
-                    <p className="mt-4 font-display text-lg text-gold tracking-[0.15em] uppercase">
-                        {SITE.tagline}
+                        {SITE.motto}
                     </p>
                     <p className="mt-6 text-muted-foreground text-sm">
                         Dubai &middot; Sharjah &middot; Abu Dhabi, UAE

@@ -6,7 +6,6 @@ import { ParallaxReveal } from "@/components/parallax";
 import { SeoTags } from "@/components/seo-tags";
 import { SERVICE_HERO_IMAGES, WEDDING_IMAGES } from "@/data/portfolio";
 import { pageMetadata } from "@/data/seo";
-import { SITE } from "@/data/contact";
 
 const heroImg = SERVICE_HERO_IMAGES.weddings;
 
@@ -45,7 +44,7 @@ const PROCESS = [
   { n: "IV", t: "Celebration", c: "A stress-free wedding day — we handle everything so you can simply enjoy." },
 ];
 
-const GALLERY_LABELS = ["Arabic Wedding", "Indian Wedding", "Western Wedding", "Wedding Stage Décor"];
+const GALLERY_LABELS = ["Floral Wedding Mandap", "Marble Aisle Wedding", "Blush Floral Stage", "Grand Ballroom Wedding"];
 
 export default function WeddingsPage() {
   const GALLERY = GALLERY_LABELS.map((label, i) => ({ t: label, image: WEDDING_IMAGES[i] }));
@@ -146,11 +145,8 @@ export default function WeddingsPage() {
         <div className="mx-auto max-w-3xl px-6 text-center">
           <span className="font-display text-[6rem] sm:text-[8rem] leading-none text-gold/50">&ldquo;</span>
           <blockquote className="-mt-10 sm:-mt-12 font-display text-2xl sm:text-3xl font-light italic text-cream leading-snug">
-            &ldquo;{SITE.motto}&rdquo;
+            You imagine it and we will make it happen.
           </blockquote>
-          <p className="mt-4 font-display text-lg text-gold tracking-[0.15em] uppercase">
-            {SITE.tagline}
-          </p>
           <Hairline className="w-16! mx-auto mt-8" />
           <p className="eyebrow mt-4">Future Vision Events &amp; Weddings &middot; Dubai</p>
           <SeoTags className="justify-center mt-4" compact tags={["Wedding Planner Dubai", "Wedding Decoration Dubai"]} />

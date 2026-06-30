@@ -17,8 +17,8 @@ export function SeoTags({
                 <li
                     key={tag}
                     className={cn(
-                        "rounded-sm border border-border/70 bg-surface/40 font-sans font-normal normal-case tracking-normal text-muted-foreground",
-                        compact ? "px-2 py-0.5 text-[0.58rem] leading-snug" : "px-2.5 py-1 text-[0.62rem] leading-snug",
+                        "rounded-full border border-border bg-background/80 font-sans font-normal normal-case tracking-normal text-muted-foreground shadow-sm",
+                        compact ? "px-2.5 py-0.5 text-[0.58rem] leading-snug" : "px-3 py-1 text-[0.62rem] leading-snug",
                     )}
                 >
                     {tag}

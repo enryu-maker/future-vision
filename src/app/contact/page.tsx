@@ -8,7 +8,7 @@ import { SeoTags } from "@/components/seo-tags";
 import { PageHero } from "@/components/page-hero";
 import { toast } from "sonner";
 import contactHero from "@/assets/contact-hero.jpg";
-import { OFFICES, PHONES, PHONES_INTERNATIONAL, SITE } from "@/data/contact";
+import { OFFICES, PHONES, SITE } from "@/data/contact";
 
 const EVENT_TYPES = ["Wedding", "Corporate Event", "Entertainment", "Other"];
 
@@ -41,11 +41,11 @@ export default function ContactPage() {
             <PageHero
                 eyebrow="Contact"
                 title={<>Get in touch in <em className="not-italic text-gold">Dubai</em></>}
-                intro="Reach our team at any of our Dubai, Sharjah, or Abu Dhabi offices. Call +971-50-3576449 (24-hour line) or email us to start planning your event."
+                intro="Reach our team at any of our Dubai, Sharjah, or Abu Dhabi offices. Call +971-56-9401230 or email us to start planning your event."
                 image={contactHero}
             />
 
-            <ParallaxReveal as="section" className="bg-background pb-32 pt-20">
+            <ParallaxReveal as="section" className="bg-background pb-32">
                 <div className="mx-auto max-w-[1400px] px-6 lg:px-12 pt-4">
                     <SeoTags
                         compact
@@ -68,30 +68,12 @@ export default function ContactPage() {
                             {PHONES.map((phone) => (
                                 <div key={phone.tel} className="flex items-start gap-4">
                                     <Phone className="h-4 w-4 mt-1 text-gold shrink-0" strokeWidth={1.25} />
-                                    <div>
-                                        <a href={`tel:${phone.tel}`} className="text-cream hover:text-gold transition-colors">{phone.display}</a>
-                                        {"note" in phone && phone.note && (
-                                            <p className="mt-1 text-xs text-muted-foreground">{phone.note}</p>
-                                        )}
-                                    </div>
+                                    <a href={`tel:${phone.tel}`} className="text-cream hover:text-gold transition-colors">{phone.display}</a>
                                 </div>
                             ))}
                             <div className="flex items-start gap-4">
                                 <Globe className="h-4 w-4 mt-1 text-gold shrink-0" strokeWidth={1.25} />
                                 <a href={SITE.url} className="text-cream hover:text-gold transition-colors">{SITE.url}</a>
-                            </div>
-                        </div>
-
-                        <Hairline className="w-16!" />
-
-                        <div>
-                            <SectionLabel label="International" />
-                            <div className="mt-6 space-y-3 text-sm">
-                                {PHONES_INTERNATIONAL.map((phone) => (
-                                    <a key={phone.tel} href={`tel:${phone.tel}`} className="block text-cream hover:text-gold transition-colors">
-                                        {phone.display}
-                                    </a>
-                                ))}
                             </div>
                         </div>
 

@@ -4,13 +4,32 @@ import { cn } from "@/lib/utils";
 import logoUrl from "@/assets/logo.png";
 import { ParallaxContent, ParallaxReveal } from "./parallax";
 
-export function Monogram({ className }: { className?: string }) {
+export function Monogram({
+  className,
+  size = "nav",
+}: {
+  className?: string;
+  size?: "nav" | "hero" | "footer";
+}) {
+  const sizes = {
+    nav: "h-11 w-auto max-w-[10.5rem] sm:h-12 sm:max-w-[12rem] lg:h-[3.25rem] lg:max-w-[14rem]",
+    hero: "h-[clamp(7rem,22vw,11.5rem)] w-auto max-w-[min(92vw,36rem)]",
+    footer: "h-12 w-auto max-w-[12rem] sm:max-w-[14rem]",
+  };
+
   return (
-    <Link href="/" className={cn("inline-flex items-center gap-3 group", className)} aria-label="Future Vision — home">
+    <Link
+      href="/"
+      className={cn("inline-flex items-center group shrink-0", className)}
+      aria-label="Future Vision — home"
+    >
       <img
         src={logoUrl.src}
         alt="Future Vision — Events & Weddings"
-        className="h-12 w-auto sm:h-14 lg:h-18 object-contain transition-opacity duration-500 group-hover:opacity-90"
+        className={cn(
+          sizes[size],
+          "object-contain object-left transition-opacity duration-500 group-hover:opacity-90",
+        )}
         loading="eager"
         decoding="async"
       />
@@ -45,11 +64,11 @@ export function GoldButton({
     "inline-flex items-center justify-center gap-3 px-7 py-3.5 text-[0.72rem] uppercase tracking-[0.28em] font-normal transition-all duration-500 text-center whitespace-nowrap";
   const styles = {
     outline:
-      "border border-gold/70 text-gold hover:border-gold hover:bg-gold/5",
+      "border border-gold/80 text-gold hover:border-gold hover:bg-gold/8 shadow-sm",
     solid:
-      "bg-gold text-background hover:bg-gold-soft",
+      "bg-gold text-primary-foreground hover:bg-gold-soft shadow-md shadow-gold/20",
     ghost:
-      "text-gold hover:text-gold-soft border-b border-gold/40 hover:border-gold rounded-none px-0 py-2",
+      "text-gold hover:text-gold-soft border-b border-gold/50 hover:border-gold rounded-none px-0 py-2",
   }[variant];
 
   const cls = cn(base, styles, className);
@@ -124,32 +143,31 @@ export function AbstractBackdrop({
   hue?: "neutral" | "warm" | "deep";
   className?: string;
 }) {
-  // CSS-only "subtle abstract motion" — no photo dependency.
   return (
     <div className={cn("pointer-events-none absolute inset-0 overflow-hidden grain", className)} aria-hidden>
       <div
-        className="absolute -top-1/4 left-1/2 h-[120vh] w-[120vh] -translate-x-1/2 rounded-full opacity-60 blur-3xl"
+        className="absolute -top-1/4 left-1/2 h-[120vh] w-[120vh] -translate-x-1/2 rounded-full opacity-70 blur-3xl"
         style={{
           background:
             hue === "warm"
-              ? "radial-gradient(circle at center, oklch(0.32 0.04 70 / 0.55), transparent 60%)"
+              ? "radial-gradient(circle at center, oklch(0.88 0.06 75 / 0.45), transparent 60%)"
               : hue === "deep"
-                ? "radial-gradient(circle at center, oklch(0.24 0.02 60 / 0.65), transparent 60%)"
-                : "radial-gradient(circle at center, oklch(0.34 0.025 75 / 0.5), transparent 60%)",
+                ? "radial-gradient(circle at center, oklch(0.82 0.05 70 / 0.35), transparent 60%)"
+                : "radial-gradient(circle at center, oklch(0.9 0.04 85 / 0.4), transparent 60%)",
           animation: "fv-drift 22s ease-in-out infinite",
         }}
       />
       <div
-        className="absolute bottom-[-30%] right-[-10%] h-[80vh] w-[80vh] rounded-full opacity-40 blur-3xl"
+        className="absolute bottom-[-30%] right-[-10%] h-[80vh] w-[80vh] rounded-full opacity-50 blur-3xl"
         style={{
           background:
-            "radial-gradient(circle at center, oklch(0.55 0.06 80 / 0.35), transparent 65%)",
+            "radial-gradient(circle at center, oklch(0.78 0.08 60 / 0.25), transparent 65%)",
           animation: "fv-drift 28s ease-in-out infinite reverse",
         }}
       />
       <div className="absolute inset-0" style={{
         background:
-          "linear-gradient(180deg, transparent 0%, oklch(0.22 0.005 65 / 0.4) 60%, var(--background) 100%)",
+          "linear-gradient(180deg, oklch(0.99 0.005 95 / 0.15) 0%, oklch(0.98 0.008 92 / 0.55) 60%, var(--background) 100%)",
       }} />
     </div>
   );
@@ -157,7 +175,7 @@ export function AbstractBackdrop({
 
 export function ContactBand() {
   return (
-    <section className="relative isolate overflow-hidden bg-surface py-32 sm:py-40">
+    <section className="relative isolate overflow-hidden bg-surface py-32 sm:py-40 border-t border-border">
       <AbstractBackdrop hue="warm" />
       <ParallaxReveal className="relative mx-auto max-w-3xl px-6 text-center">
         <ParallaxContent speed={0.08}>

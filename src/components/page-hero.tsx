@@ -1,7 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { AbstractBackdrop, Eyebrow, EditorialHeading } from "./luxury";
+import { Eyebrow, EditorialHeading } from "./luxury";
 import { ParallaxContent, ParallaxImage } from "./parallax";
 
 interface PageHeroProps {
@@ -16,37 +16,51 @@ export function PageHero({
   eyebrow,
   title,
   intro,
-  hue = "neutral",
   image,
 }: PageHeroProps) {
   const imageUrl = typeof image === "object" ? image.src : image;
 
   return (
-    <section className="relative isolate overflow-hidden bg-background pt-44 pb-28 sm:pt-52 sm:pb-36">
-      {imageUrl && (
-        <>
-          <ParallaxImage src={imageUrl} speed={0.4} scale={1.18} opacity={0.8} />
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(180deg, oklch(0.16 0.005 60 / 0.3) 0%, oklch(0.14 0.005 60 / 0.45) 50%, var(--background) 100%)",
-            }}
-          />
-        </>
-      )}
-      <AbstractBackdrop hue={hue} className={imageUrl ? "mix-blend-soft-light" : undefined} />
-      <ParallaxContent className="relative mx-auto max-w-[1400px] px-6 lg:px-12" speed={0.1}>
-        <Eyebrow>{eyebrow}</Eyebrow>
-        <EditorialHeading as="h1" className="mt-8 max-w-5xl">
-          {title}
-        </EditorialHeading>
-        {intro && (
-          <p className="mt-10 max-w-2xl text-sm sm:text-base text-muted-foreground leading-relaxed">
-            {intro}
-          </p>
+    <section className="relative isolate overflow-hidden bg-background border-b border-border/60">
+      <div className={imageUrl ? "grid lg:grid-cols-2" : undefined}>
+        {/* Text always on a solid panel — never over the photo */}
+        <ParallaxContent
+          className="relative z-10 flex flex-col justify-center bg-background px-6 pt-44 pb-16 sm:px-10 sm:pt-52 sm:pb-20 lg:px-12 lg:pb-24 xl:px-16"
+          speed={0.05}
+        >
+          <div className="max-w-2xl">
+            <Eyebrow>{eyebrow}</Eyebrow>
+            <EditorialHeading as="h1" className="mt-8">
+              {title}
+            </EditorialHeading>
+            {intro && (
+              <p className="mt-8 text-sm sm:text-base text-foreground/80 leading-relaxed">
+                {intro}
+              </p>
+            )}
+          </div>
+        </ParallaxContent>
+
+        {imageUrl && (
+          <div className="relative min-h-[32vh] sm:min-h-[36vh] lg:min-h-[min(70svh,42rem)] overflow-hidden">
+            <ParallaxImage src={imageUrl} speed={0.28} scale={1.06} opacity={1} />
+            <div
+              className="absolute inset-0 lg:hidden"
+              style={{
+                background:
+                  "linear-gradient(180deg, var(--background) 0%, transparent 28%)",
+              }}
+            />
+            <div
+              className="absolute inset-0 hidden lg:block"
+              style={{
+                background:
+                  "linear-gradient(90deg, var(--background) 0%, oklch(0.99 0.006 95 / 0.45) 10%, transparent 24%)",
+              }}
+            />
+          </div>
         )}
-      </ParallaxContent>
+      </div>
     </section>
   );
 }

@@ -29,7 +29,7 @@ const CATEGORIES = [
     },
     {
         t: "Magic & Illusion",
-        c: "Close-up and table magicians — adaptable for children's parties, weddings, and corporate events.",
+        c: "Close-up and table magicians plus Magician Spell — adaptable for children's parties, weddings, and corporate events.",
         tags: ["Luxury Entertainment Dubai", "Event Performers Dubai"],
     },
 ];
@@ -56,7 +56,7 @@ const ENTERTAINMENT_ACTS = [
     "Close-up Magicians",
 ];
 
-const FEATURED_LABELS = ["Dance Shows", "Live Entertainment", "Magician Shows"];
+const FEATURED_LABELS = ["Live Concert Dubai", "Carnival Showgirls", "Silver Dance Performers"];
 
 export default function EntertainmentPage() {
     const FEATURED = FEATURED_LABELS.map((label, i) => ({ t: label, image: ENTERTAINMENT_IMAGES[i] }));
@@ -127,24 +127,6 @@ export default function EntertainmentPage() {
                                 </div>
                             ))}
                         </div>
-                    </div>
-                </div>
-            </ParallaxReveal>
-
-            <ParallaxReveal as="section" className="bg-background py-28">
-                <div className="mx-auto grid max-w-[1400px] gap-16 px-6 lg:grid-cols-12 lg:px-12">
-                    <div className="lg:col-span-5">
-                        <SectionLabel index="IV" label="Featured" />
-                        <EditorialHeading className="mt-8">Magician for events</EditorialHeading>
-                    </div>
-                    <div className="lg:col-span-6 lg:col-start-7 text-muted-foreground leading-[1.85] space-y-5 text-sm sm:text-base">
-                        <p>
-                            Future Vision proudly presents Magician Spell — an acclaimed illusionist entertaining audiences in the UAE and Middle East since 2000.
-                        </p>
-                        <p>
-                            Adaptable to any event, Magician offers kid-friendly or adult-oriented magic packages with stage and close-up performances to suit any budget.
-                        </p>
-                        <SeoTags tags={["Artist Management Company Dubai", "Event Entertainment Services Dubai"]} compact />
                     </div>
                 </div>
             </ParallaxReveal>

@@ -14,7 +14,7 @@ import { HomeHero } from "@/components/home-hero";
 import { ParallaxReveal } from "@/components/parallax";
 import { ServiceRowImage } from "@/components/service-row-image";
 import { SeoTags } from "@/components/seo-tags";
-import heroImg from "@/assets/hero.jpg";
+import heroImg from "@/assets/portfolio/portfolio-entertainment-magician.png";
 import { PORTFOLIO_ITEMS, SERVICE_HERO_IMAGES } from "@/data/portfolio";
 import { SITE } from "@/data/contact";
 import { pageMetadata } from "@/data/seo";
@@ -79,12 +79,12 @@ export default function Home() {
                     <div className="lg:col-span-5">
                         <SectionLabel index="I" label="About" />
                         <EditorialHeading className="mt-10">
-                            Event Planners in<br /><em className="not-italic text-gold">Dubai, UAE</em>
+                            Event planners in<br /><em className="not-italic text-gold">Dubai, UAE</em>
                         </EditorialHeading>
                     </div>
                     <div className="lg:col-span-6 lg:col-start-7 space-y-6 text-muted-foreground leading-[1.85] text-sm sm:text-base">
                         <p>
-                            {SITE.name} is a full-service event management company based in Dubai with over 20 years of experience — a leading name in corporate events, weddings, and live entertainment across the UAE and Middle East.
+                            {SITE.name} is a full-service event management company based in Dubai with over 14 years of experience — a leading name in corporate events, weddings, and live entertainment across the UAE and Middle East.
                         </p>
                         <p>
                             From concept development and venue selection through technical planning to on-the-day production, we handle conferences, staff parties, exhibitions, product launches, Arabic, Indian and Western weddings, and private celebrations.
@@ -94,9 +94,6 @@ export default function Home() {
                         />
                         <p className="font-display italic text-cream/90 text-lg pt-2">
                             &mdash; {SITE.motto}
-                        </p>
-                        <p className="font-sans text-[0.72rem] uppercase tracking-[0.25em] text-gold/90 mt-2">
-                            {SITE.tagline}
                         </p>
                     </div>
                 </div>
@@ -114,7 +111,7 @@ export default function Home() {
                 </div>
                 <div className="border-t border-border">
                     {SERVICES.map((s) => (
-                        <Link key={s.to} href={s.to} className="group block border-b border-border transition-colors hover:bg-surface-2">
+                        <Link key={s.to} href={s.to} className="group block border-b border-border transition-colors hover:bg-background">
                             <div className="mx-auto grid max-w-[1400px] grid-cols-12 items-start gap-6 px-6 lg:px-12 py-14 lg:py-20">
                                 <div className="col-span-12 lg:col-span-1 font-display text-3xl text-gold/70">{s.n}</div>
                                 <div className="col-span-12 lg:col-span-2">
@@ -148,7 +145,7 @@ export default function Home() {
                         </div>
                     </div>
 
-                    <div className="mt-16 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-3">
+                    <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 sm:gap-5">
                         {PORTFOLIO.map((p) => (
                             <GalleryCard
                                 key={p.t}
@@ -167,14 +164,14 @@ export default function Home() {
                 </div>
             </ParallaxReveal>
 
-            <ParallaxReveal as="section" className="relative bg-surface-2 py-32" delay={200}>
+            <ParallaxReveal as="section" className="relative bg-surface py-32" delay={200}>
                 <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
                     <SectionLabel index="IV" label="Why Future Vision" />
                     <EditorialHeading className="mt-8 max-w-2xl">What we specialise in.</EditorialHeading>
 
-                    <div className="mt-20 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-4">
+                    <div className="mt-20 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 sm:gap-5">
                         {PILLARS.map((p) => (
-                            <div key={p.n} className="bg-surface-2 p-8 lg:p-10 flex flex-col">
+                            <div key={p.n} className="bg-background border border-border rounded-xl p-8 lg:p-10 flex flex-col shadow-sm">
                                 <span className="font-display text-2xl text-gold">{p.n}</span>
                                 <Hairline className="mt-6 w-12!" />
                                 <h3 className="mt-6 font-display text-2xl text-cream leading-tight">{p.title}</h3>
@@ -190,11 +187,8 @@ export default function Home() {
                 <div className="mx-auto max-w-3xl px-6 text-center">
                     <span className="font-display text-[6rem] sm:text-[8rem] leading-none text-gold/50">&ldquo;</span>
                     <blockquote className="-mt-10 sm:-mt-12 font-display text-2xl sm:text-3xl lg:text-4xl font-light italic text-cream leading-snug tracking-tight">
-                        &ldquo;{SITE.motto}&rdquo;
+                        You imagine it and we will make it happen — the best event management team in Dubai.
                     </blockquote>
-                    <p className="mt-6 font-display text-lg sm:text-xl text-gold tracking-[0.15em] uppercase">
-                        {SITE.tagline}
-                    </p>
                     <div className="mt-10 flex flex-col items-center gap-4">
                         <Hairline className="w-16!" />
                         <p className="eyebrow">{SITE.name} &middot; Dubai, UAE</p>

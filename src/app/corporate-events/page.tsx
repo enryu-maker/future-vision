@@ -6,7 +6,6 @@ import { ParallaxReveal } from "@/components/parallax";
 import { SeoTags } from "@/components/seo-tags";
 import { CORPORATE_IMAGES, SERVICE_HERO_IMAGES } from "@/data/portfolio";
 import { pageMetadata } from "@/data/seo";
-import { SITE } from "@/data/contact";
 
 const heroImg = SERVICE_HERO_IMAGES.corporate;
 
@@ -41,11 +40,12 @@ const HIGHLIGHTS = [
 ];
 
 const FEATURED_LABELS = [
-    "Annual Staff Party",
-    "Desert Corporate Event",
-    "Product Launch",
-    "Exhibition Stand",
-    "Dhow Party",
+    "Corporate Gala Ballroom",
+    "International Conference",
+    "Corporate Awards Gala",
+    "Emirates NBD Summit",
+    "WION Global Summit",
+    "Live Orchestra Gala",
 ];
 
 export default function CorporatePage() {
@@ -58,7 +58,7 @@ export default function CorporatePage() {
         <>
             <PageHero
                 eyebrow="Corporate Events"
-                title={<>Corporate event management company in <em className="not-italic text-gold">Dubai</em></>}
+                title={<>Corporate event management in <em className="not-italic text-gold">Dubai</em></>}
                 intro="Premier corporate event organizers in Dubai and the UAE — from large formal conferences to intimate business gatherings for companies across industries."
                 hue="neutral"
                 image={heroImg}
@@ -83,10 +83,7 @@ export default function CorporatePage() {
                             We work with clients from concept development and venue selection through technical planning to managing the actual event production — including travel, sound, light, stage setup, translation equipment, and exhibition stands.
                         </p>
                         <p className="font-display italic text-cream/90 text-lg">
-                            {SITE.motto}
-                        </p>
-                        <p className="font-sans text-[0.72rem] uppercase tracking-[0.25em] text-gold mt-2">
-                            {SITE.tagline}
+                            You imagine it and we will make it happen.
                         </p>
                     </div>
                 </div>
@@ -130,7 +127,7 @@ export default function CorporatePage() {
                 <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
                     <SectionLabel index="IV" label="Portfolio" />
                     <EditorialHeading className="mt-8">Recent corporate work.</EditorialHeading>
-                    <div className="mt-16 grid gap-px bg-border grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+                    <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 sm:gap-5">
                         {FEATURED.map((f) => (
                             <GalleryCard
                                 key={f.t}

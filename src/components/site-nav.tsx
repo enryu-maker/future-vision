@@ -29,7 +29,7 @@ export function SiteNav() {
     }
 
     useEffect(() => {
-        const onScroll = () => setScrolled(window.scrollY > 40);
+        const onScroll = () => setScrolled(window.scrollY > 24);
         onScroll();
         window.addEventListener("scroll", onScroll, { passive: true });
         return () => window.removeEventListener("scroll", onScroll);
@@ -38,16 +38,16 @@ export function SiteNav() {
     return (
         <header
             className={cn(
-                "fixed inset-x-0 top-0 z-50 transition-all duration-500",
+                "fixed inset-x-0 top-0 z-50 transition-all duration-500 border-b",
                 scrolled || open
-                    ? "bg-background/90 backdrop-blur-md border-b border-border"
-                    : "bg-transparent border-b border-transparent",
+                    ? "bg-background/95 backdrop-blur-xl border-border shadow-sm shadow-black/5"
+                    : "bg-background/80 backdrop-blur-lg border-border/60",
             )}
         >
-            <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-4 px-6 py-4 lg:px-12 lg:py-5">
-                <Monogram />
+            <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-4 px-6 py-4 sm:py-5 lg:px-12 lg:py-5 min-h-[5rem] lg:min-h-[5.75rem]">
+                <Monogram className="z-10" />
 
-                <nav className="hidden lg:flex items-center gap-5 xl:gap-6 2xl:gap-8">
+                <nav className="hidden lg:flex items-center gap-6 xl:gap-8 2xl:gap-10">
                     {NAV.slice(0, -1).map((item) => {
                         const isActive = item.href === "/" ? pathname === "/" : pathname === item.href;
                         return (
@@ -56,8 +56,8 @@ export function SiteNav() {
                                 href={item.href}
                                 title={"title" in item ? item.title : undefined}
                                 className={cn(
-                                    "text-[0.68rem] uppercase tracking-[0.22em] transition-colors duration-500 whitespace-nowrap",
-                                    isActive ? "text-gold" : "text-cream/75 hover:text-gold"
+                                    "text-[0.72rem] uppercase tracking-[0.2em] font-medium transition-colors duration-300 whitespace-nowrap",
+                                    isActive ? "text-gold" : "text-cream/80 hover:text-gold",
                                 )}
                             >
                                 {item.label}
@@ -72,16 +72,16 @@ export function SiteNav() {
 
                 <button
                     aria-label="Toggle menu"
-                    className="lg:hidden text-cream shrink-0"
+                    className="lg:hidden text-cream shrink-0 p-1"
                     onClick={() => setOpen((v) => !v)}
                 >
-                    {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                    {open ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
                 </button>
             </div>
 
             {open && (
-                <div className="lg:hidden border-t border-border bg-background">
-                    <div className="flex flex-col px-6 py-8 gap-6">
+                <div className="lg:hidden border-t border-border bg-background/98 backdrop-blur-xl">
+                    <div className="flex flex-col px-6 py-8 gap-5">
                         {NAV.map((item) => {
                             const isActive = item.href === "/" ? pathname === "/" : pathname === item.href;
                             return (
@@ -91,7 +91,7 @@ export function SiteNav() {
                                     title={"title" in item ? item.title : undefined}
                                     className={cn(
                                         "font-display text-2xl transition-colors",
-                                        isActive ? "text-gold" : "text-cream hover:text-gold"
+                                        isActive ? "text-gold" : "text-cream hover:text-gold",
                                     )}
                                 >
                                     {item.label}
