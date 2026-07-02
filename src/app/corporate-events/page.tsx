@@ -58,7 +58,7 @@ export default function CorporatePage() {
         <>
             <PageHero
                 eyebrow="Corporate Events"
-                title={<>Corporate event management in <em className="not-italic text-gold">Dubai</em></>}
+                title={<>Corporate event management company in <em className="not-italic text-gold">Dubai</em>, UAE</>}
                 intro="Premier corporate event organizers in Dubai and the UAE — from large formal conferences to intimate business gatherings for companies across industries."
                 hue="neutral"
                 image={heroImg}
@@ -67,7 +67,7 @@ export default function CorporatePage() {
             <ParallaxReveal as="section" className="bg-surface py-28">
                 <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
                     <SeoTags
-                        tags={["Corporate Event Management Dubai", "Corporate Event Planner Dubai", "Corporate Event Organizer Dubai", "Corporate Entertainment Company Dubai"]}
+                        tags={["Corporate Event Management Company in Dubai", "Corporate Event Planner Dubai", "Corporate Event Organizer Dubai", "Corporate Entertainment Company Dubai"]}
                     />
                 </div>
                 <div className="mx-auto grid max-w-[1400px] gap-16 px-6 lg:grid-cols-12 lg:px-12 mt-10">
@@ -96,7 +96,7 @@ export default function CorporatePage() {
                     <div className="mt-16 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-3">
                         {TYPES.map((x) => (
                             <div key={x.t} className="bg-background p-8 lg:p-10 flex flex-col">
-                                <h3 className="font-display text-2xl text-cream">{x.t}</h3>
+                                <h3 className="font-display text-2xl text-orange-600">{x.t}</h3>
                                 <Hairline className="mt-4 w-10!" />
                                 <p className="mt-4 text-sm text-muted-foreground leading-relaxed flex-grow">{x.c}</p>
                                 <SeoTags className="mt-5" tags={x.tags} compact />

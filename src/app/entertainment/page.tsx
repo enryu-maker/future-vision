@@ -29,7 +29,7 @@ const CATEGORIES = [
     },
     {
         t: "Magic & Illusion",
-        c: "Close-up and table magicians plus Magician Spell — adaptable for children's parties, weddings, and corporate events.",
+        c: "Close-up and table magicians avaliable for children's parties, weddings, and corporate events.",
         tags: ["Luxury Entertainment Dubai", "Event Performers Dubai"],
     },
 ];

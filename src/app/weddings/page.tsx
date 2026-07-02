@@ -27,7 +27,7 @@ const TRADITIONS = [
     t: "Indian Weddings",
     c: "Extravagant multi-day celebrations with mandap, doli, palkhi, fresh flower décor, and Bollywood choreography — flawlessly executed within your budget.",
     services: ["Wedding Stage Décor", "Indian Mandap & Jhula", "Doli & Palkhi", "Bollywood Dance Choreographers", "Ladies Sangeet", "Henna Designers", "Dhol Players", "Fresh Flower Decoration"],
-    tags: ["Indian Wedding Planner Dubai", "Wedding Decoration Dubai", "Wedding Management Company Dubai"],
+    tags: ["Indian Wedding Planner Dubai", "Wedding Decoration Dubai", ],
   },
   {
     t: "Western Weddings",
@@ -61,7 +61,7 @@ export default function WeddingsPage() {
 
       <ParallaxReveal as="section" className="bg-surface py-28">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
-          <SeoTags tags={["Wedding Planner Dubai", "Luxury Wedding Planner Dubai", "Wedding Event Management Dubai", "Wedding Management Company Dubai"]} />
+          <SeoTags tags={["Wedding Planner Dubai", "Luxury Wedding Planner Dubai", "Wedding Event Management Dubai", "Wedding decorator in Dubai"]} />
         </div>
         <div className="mx-auto grid max-w-[1400px] gap-16 px-6 lg:grid-cols-12 lg:px-12 mt-10">
           <div className="lg:col-span-5">

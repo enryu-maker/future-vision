@@ -72,7 +72,7 @@ const PORTFOLIO = PORTFOLIO_ITEMS.slice(0, 6);
 export default function Home() {
     return (
         <>
-            <HomeHero imageSrc={heroImg.src} />
+            <HomeHero imageSrc={corpImg.src} />
 
             <ParallaxReveal as="section" className="relative bg-background py-32 sm:py-44">
                 <div className="mx-auto grid max-w-[1400px] gap-16 px-6 lg:grid-cols-12 lg:px-12">

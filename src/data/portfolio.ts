@@ -48,5 +48,5 @@ export const ENTERTAINMENT_IMAGES = [entConcert, entShowgirls, entDancers] as co
 export const SERVICE_HERO_IMAGES = {
     corporate: corpGalaBallroom,
     weddings: wedMarbleAisle,
-    entertainment: entMagician,
+    entertainment: entDancers,
 } as const;

@@ -12,7 +12,7 @@ export function SiteFooter() {
                     <div className="lg:col-span-4">
                         <Monogram size="footer" />
                         <p className="mt-8 max-w-sm text-sm leading-relaxed text-background/70">
-                            {SITE.name} — full-service event management in Dubai, UAE with offices in Sharjah and Abu Dhabi.
+                            {SITE.name} — full-service event management company in Dubai, UAE with offices also Sharjah and Abu Dhabi.
                         </p>
                         <SeoTags
                             className="mt-4 [&_li]:border-background/20 [&_li]:bg-background/10 [&_li]:text-background/75"

@@ -12,7 +12,7 @@ export function Monogram({
   size?: "nav" | "hero" | "footer";
 }) {
   const sizes = {
-    nav: "h-11 w-auto max-w-[10.5rem] sm:h-12 sm:max-w-[12rem] lg:h-[3.25rem] lg:max-w-[14rem]",
+    nav: "h-16 w-auto max-w-[14rem] sm:h-20 sm:max-w-[16rem] lg:h-[5rem] lg:max-w-[20rem]",
     hero: "h-[clamp(7rem,22vw,11.5rem)] w-auto max-w-[min(92vw,36rem)]",
     footer: "h-12 w-auto max-w-[12rem] sm:max-w-[14rem]",
   };

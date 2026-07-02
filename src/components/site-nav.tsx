@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Monogram, GoldButton } from "./luxury";
 import { cn } from "@/lib/utils";
+import { SITE, PHONES } from "@/data/contact";
 
 const NAV = [
     { href: "/", label: "Home" },
@@ -66,7 +67,11 @@ export function SiteNav() {
                     })}
                 </nav>
 
-                <div className="hidden lg:block shrink-0">
+                <div className="hidden lg:flex items-center gap-6 shrink-0">
+                    <div className="flex flex-col text-right text-xs text-cream/80">
+                        <a href={`mailto:${SITE.email}`} className="hover:text-gold transition-colors">{SITE.email}</a>
+                        <a href={`tel:${PHONES[0].tel}`} className="hover:text-gold transition-colors">{PHONES[0].display}</a>
+                    </div>
                     <GoldButton to="/contact" variant="outline">Contact</GoldButton>
                 </div>
 
@@ -98,7 +103,11 @@ export function SiteNav() {
                                 </Link>
                             );
                         })}
-                        <GoldButton to="/contact" variant="outline" className="mt-4 self-start">
+                        <div className="mt-2 flex flex-col gap-2 text-sm text-cream/80">
+                            <a href={`mailto:${SITE.email}`} className="hover:text-gold transition-colors">{SITE.email}</a>
+                            <a href={`tel:${PHONES[0].tel}`} className="hover:text-gold transition-colors">{PHONES[0].display}</a>
+                        </div>
+                        <GoldButton to="/contact" variant="outline" className="mt-2 self-start">
                             Contact
                         </GoldButton>
                     </div>
