@@ -27,9 +27,9 @@ export function HomeHero({ imageSrc }: { imageSrc: string }) {
 
                     <Monogram size="hero" className="mt-6 sm:mt-8 [&_img]:object-center" />
 
-                    <h1 className="mt-6 font-display font-light leading-[1.06] tracking-[-0.02em] text-[clamp(2rem,5vw,4.25rem)] text-white sm:mt-8">
+                    <h1 className="mt-6 font-display font-light leading-[1.06] tracking-[-0.02em] text-[clamp(2rem,5vw,4.25rem)] text-gold sm:mt-8">
                         Best Event Management<br />
-                        <em className="not-italic text-gold-soft">Company in Dubai</em>
+                        <em className="not-italic text-gold">Company in Dubai</em>
                     </h1>
 
                     <p className="mt-6 max-w-xl text-sm leading-relaxed text-white/88 sm:text-base">

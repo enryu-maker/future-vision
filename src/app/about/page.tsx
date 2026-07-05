@@ -36,7 +36,7 @@ export default function AboutPage() {
             <PageHero
                 eyebrow="About Us"
                 title={<>Event planners in <em className="not-italic text-gold">Dubai, UAE</em></>}
-                intro="Future Vision is a full-service event management company based in Dubai — a leading name in corporate events, weddings, and live entertainment for over 14 years."
+                intro="Future Vision is a full-service event management company based in Dubai — a leading name in corporate events, weddings, and live entertainment for over 20 years."
                 image={aboutHero}
             />
 

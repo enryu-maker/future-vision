@@ -56,7 +56,7 @@ export function SiteFooter() {
                                 <li key={phone.tel}>
                                     <a href={`tel:${phone.tel}`} className="inline-flex items-center gap-2 hover:text-gold-soft transition-colors">
                                         <Phone className="h-3.5 w-3.5 text-gold-soft shrink-0" strokeWidth={1.25} />
-                                        {phone.display}
+                                        {phone.display} (24/7 hotline)
                                     </a>
                                 </li>
                             ))}
