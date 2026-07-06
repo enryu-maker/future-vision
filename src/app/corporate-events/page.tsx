@@ -113,7 +113,7 @@ export default function CorporatePage() {
                     <div className="mt-16 grid gap-px bg-border sm:grid-cols-3">
                         {HIGHLIGHTS.map((h) => (
                             <div key={h.t} className="bg-surface-2 p-8 lg:p-10 flex flex-col">
-                                <h3 className="font-display text-2xl text-cream">{h.t}</h3>
+                                <h3 className="font-display text-2xl text-orange-500">{h.t}</h3>
                                 <Hairline className="mt-4 w-10!" />
                                 <p className="mt-4 text-sm text-muted-foreground leading-relaxed flex-grow">{h.c}</p>
                                 <SeoTags className="mt-5" tags={h.tags} compact />
@@ -153,7 +153,7 @@ export default function CorporatePage() {
                             <div key={p.n}>
                                 <span className="font-display text-3xl text-orange-500">{p.n}</span>
                                 <Hairline className="mt-5 w-10!" />
-                                <h3 className="mt-5 font-display text-xl text-cream">{p.t}</h3>
+                                <h3 className="mt-5 font-display text-xl text-orange-500">{p.t}</h3>
                                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{p.c}</p>
                             </div>
                         ))}

@@ -76,7 +76,7 @@ export default function WeddingsPage() {
             <p>
               Our warehouse and equipment division keeps us cost competitive while ensuring excellent quality — all within your desired budget.
             </p>
-            <p className="font-display italic text-cream/90 text-lg">
+            <p className="font-display italic text-orange-500 text-xl">
               Your wedding is something you&apos;ll treasure for the rest of your life.
             </p>
           </div>
@@ -90,7 +90,7 @@ export default function WeddingsPage() {
           <div className="mt-16 grid gap-px bg-border lg:grid-cols-3">
             {TRADITIONS.map((s) => (
               <div key={s.t} className="bg-background p-8 lg:p-10 flex flex-col">
-                <h3 className="font-display text-2xl lg:text-3xl text-cream">{s.t}</h3>
+                <h3 className="font-display text-2xl lg:text-3xl text-orange-500">{s.t}</h3>
                 <Hairline className="mt-5 w-12!" />
                 <p className="mt-5 text-muted-foreground leading-relaxed text-sm flex-grow">{s.c}</p>
                 <ul className="mt-6 space-y-2">
@@ -134,7 +134,7 @@ export default function WeddingsPage() {
               <div key={p.n}>
                 <span className="font-display text-3xl text-orange-500">{p.n}</span>
                 <Hairline className="mt-5 w-10!" />
-                <h3 className="mt-5 font-display text-xl text-cream">{p.t}</h3>
+                <h3 className="mt-5 font-display text-xl text-orange-500">{p.t}</h3>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{p.c}</p>
               </div>
             ))}

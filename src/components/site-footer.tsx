@@ -8,9 +8,9 @@ export function SiteFooter() {
     return (
         <footer className="bg-cream text-background">
             <div className="mx-auto max-w-[1400px] px-6 lg:px-12 pt-24 pb-12">
-                <div className="grid gap-16 lg:grid-cols-12">
-                    <div className="lg:col-span-4">
-                        <Monogram size="footer" />
+                <div className="grid gap-16 lg:grid-cols-12 lg:gap-x-10">
+                    <div className="lg:col-span-5 min-w-0">
+                        <Monogram size="footer" className="brightness-110 contrast-105 block w-full max-w-full min-w-0 [&_img]:max-w-full" />
                         <p className="mt-8 max-w-sm text-sm leading-relaxed text-background/70">
                             {SITE.name} — full-service event management company in Dubai, UAE with offices also Sharjah and Abu Dhabi.
                         </p>
@@ -19,12 +19,12 @@ export function SiteFooter() {
                             compact
                             tags={["Event Management Company Dubai", "Corporate Event Management Dubai", "Wedding Planner Dubai", "Live Entertainment Dubai"]}
                         />
-                        <p className="mt-4 font-display italic text-background/90 text-sm">
+                        <p className="mt-6 font-display text-xl sm:text-2xl italic text-orange-500 leading-snug">
                             {SITE.motto}
                         </p>
                     </div>
 
-                    <div className="lg:col-span-2">
+                    <div className="lg:col-span-2 min-w-0">
                         <h4 className="eyebrow text-orange-400">Navigate</h4>
                         <ul className="mt-6 space-y-3 text-sm text-background/75">
                             <li><Link href="/" className="hover:text-orange-400 transition-colors">Home</Link></li>
@@ -34,7 +34,7 @@ export function SiteFooter() {
                         </ul>
                     </div>
 
-                    <div className="lg:col-span-3">
+                    <div className="lg:col-span-2 min-w-0">
                         <h4 className="eyebrow text-orange-400">Services</h4>
                         <ul className="mt-6 space-y-3 text-sm text-background/75">
                             <li><Link href="/corporate-events" title="Corporate Event Management Dubai" className="hover:text-orange-400 transition-colors">Corporate Events</Link></li>
@@ -43,7 +43,7 @@ export function SiteFooter() {
                         </ul>
                     </div>
 
-                    <div className="lg:col-span-3">
+                    <div className="lg:col-span-3 min-w-0">
                         <h4 className="eyebrow text-orange-400">Contact</h4>
                         <ul className="mt-6 space-y-3 text-sm text-background/75">
                             <li>
@@ -64,7 +64,7 @@ export function SiteFooter() {
                                 <a href={SITE.url} className="hover:text-orange-400 transition-colors">{SITE.url.replace("https://", "")}</a>
                             </li>
                         </ul>
-                        <div className="mt-6 flex gap-4 text-orange-400/80">
+                        <div className="mt-8 flex gap-5 text-orange-500">
                             <a
                                 href="https://www.instagram.com/futurevisionwedding?utm_source=qr&igsh=MXZxdWpxem9vbHZsbA=="
                                 target="_blank"
@@ -72,9 +72,15 @@ export function SiteFooter() {
                                 aria-label="Instagram"
                                 className="hover:text-orange-400 transition-colors"
                             >
-                                <Instagram className="h-4 w-4" />
+                                <Instagram className="h-7 w-7 sm:h-8 sm:w-8" strokeWidth={1.5} />
                             </a>
-                            <a href={`mailto:${SITE.email}`} aria-label="Email" className="hover:text-orange-400 transition-colors"><Mail className="h-4 w-4" /></a>
+                            <a
+                                href={`mailto:${SITE.email}`}
+                                aria-label="Email"
+                                className="hover:text-orange-400 transition-colors"
+                            >
+                                <Mail className="h-7 w-7 sm:h-8 sm:w-8" strokeWidth={1.5} />
+                            </a>
                         </div>
                     </div>
                 </div>

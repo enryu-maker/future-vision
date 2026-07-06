@@ -14,7 +14,7 @@ export function Monogram({
   const sizes = {
     nav: "h-16 w-auto max-w-[14rem] sm:h-20 sm:max-w-[16rem] lg:h-[5rem] lg:max-w-[20rem]",
     hero: "h-[clamp(7rem,22vw,11.5rem)] w-auto max-w-[min(92vw,36rem)]",
-    footer: "h-12 w-auto max-w-[12rem] sm:max-w-[14rem]",
+    footer: "h-20 w-auto max-w-full sm:h-24 lg:h-28 xl:h-32",
   };
 
   return (
