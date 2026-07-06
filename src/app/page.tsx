@@ -79,7 +79,7 @@ export default function Home() {
                     <div className="lg:col-span-5">
                         <SectionLabel index="I" label="About" />
                         <EditorialHeading className="mt-10">
-                            Event planners in<br /><em className="not-italic text-orange-500">Dubai, UAE</em>
+                           <br /><em className="not-italic text-orange-500"> Event planners in Dubai, UAE</em>
                         </EditorialHeading>
                     </div>
                     <div className="lg:col-span-6 lg:col-start-7 space-y-6 text-muted-foreground leading-[1.85] text-sm sm:text-base">
@@ -92,7 +92,7 @@ export default function Home() {
                         <SeoTags
                             tags={["Event Management Agency UAE", "Event Production Company Dubai", "Luxury Event Planner Dubai", "Event Management Services Dubai"]}
                         />
-                        <p className="font-display text-xl sm:text-2xl text-orange-500 pt-2 not-italic">
+                        <p className="font-display text-xl sm:text-2xl italic text-orange-500 pt-2">
                             &mdash; {SITE.motto}
                         </p>
                     </div>
@@ -187,7 +187,7 @@ export default function Home() {
                 <div className="mx-auto max-w-3xl px-6 text-center">
                     <span className="font-display text-[6rem] sm:text-[8rem] leading-none text-orange-500/50">&ldquo;</span>
                     <blockquote className="-mt-10 sm:-mt-12 font-display font-light leading-snug tracking-tight">
-                        <span className="block text-3xl sm:text-4xl lg:text-5xl text-orange-500 not-italic">
+                        <span className="block text-3xl sm:text-4xl lg:text-5xl italic text-orange-500">
                             {SITE.motto}
                         </span>
                         <span className="mt-4 block text-xl sm:text-2xl lg:text-3xl italic text-cream">

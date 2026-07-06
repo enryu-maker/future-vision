@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Instagram, Linkedin, Mail, Phone } from "lucide-react";
+import { Instagram, Mail, Phone } from "lucide-react";
 import { Monogram, Hairline } from "./luxury";
 import { SeoTags } from "./seo-tags";
 import { OFFICES, PHONES, SITE } from "@/data/contact";
@@ -65,8 +65,15 @@ export function SiteFooter() {
                             </li>
                         </ul>
                         <div className="mt-6 flex gap-4 text-orange-400/80">
-                            <a href="#" aria-label="Instagram" className="hover:text-orange-400 transition-colors"><Instagram className="h-4 w-4" /></a>
-                            <a href="#" aria-label="LinkedIn" className="hover:text-orange-400 transition-colors"><Linkedin className="h-4 w-4" /></a>
+                            <a
+                                href="https://www.instagram.com/futurevisionwedding?utm_source=qr&igsh=MXZxdWpxem9vbHZsbA=="
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Instagram"
+                                className="hover:text-orange-400 transition-colors"
+                            >
+                                <Instagram className="h-4 w-4" />
+                            </a>
                             <a href={`mailto:${SITE.email}`} aria-label="Email" className="hover:text-orange-400 transition-colors"><Mail className="h-4 w-4" /></a>
                         </div>
                     </div>

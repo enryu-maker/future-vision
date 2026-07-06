@@ -145,7 +145,7 @@ export default function WeddingsPage() {
       <ParallaxReveal as="section" className="bg-surface py-32">
         <div className="mx-auto max-w-3xl px-6 text-center">
           <span className="font-display text-[6rem] sm:text-[8rem] leading-none text-orange-500/50">&ldquo;</span>
-          <blockquote className="-mt-10 sm:-mt-12 font-display text-3xl sm:text-4xl lg:text-5xl font-light text-orange-500 leading-snug tracking-tight not-italic">
+          <blockquote className="-mt-10 sm:-mt-12 font-display text-3xl sm:text-4xl lg:text-5xl font-light italic text-orange-500 leading-snug tracking-tight">
             {SITE.motto}
           </blockquote>
           <Hairline className="w-16! mx-auto mt-8" />

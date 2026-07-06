@@ -82,7 +82,7 @@ export default function CorporatePage() {
                         <p>
                             We work with clients from concept development and venue selection through technical planning to managing the actual event production — including travel, sound, light, stage setup, translation equipment, and exhibition stands.
                         </p>
-                        <p className="font-display text-2xl sm:text-3xl text-orange-500">
+                        <p className="font-display text-2xl sm:text-3xl italic text-orange-500">
                             You imagine it and we will make it happen.
                         </p>
                     </div>

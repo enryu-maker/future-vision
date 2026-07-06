@@ -10,6 +10,8 @@ import { toast } from "sonner";
 import contactHero from "@/assets/contact-hero.jpg";
 import { OFFICES, PHONES, SITE } from "@/data/contact";
 
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xeebnyon";
+
 const EVENT_TYPES = ["Wedding", "Corporate Event", "Entertainment", "Other"];
 
 function Field({ label, children }: { label: string; children: ReactNode }) {
@@ -26,15 +28,31 @@ const inputCls =
 
 export default function ContactPage() {
     const [pending, setPending] = useState(false);
-    function onSubmit(e: FormEvent<HTMLFormElement>) {
+    async function onSubmit(e: FormEvent<HTMLFormElement>) {
         e.preventDefault();
         setPending(true);
         const form = e.currentTarget;
-        setTimeout(() => {
+        try {
+            const response = await fetch(FORMSPREE_ENDPOINT, {
+                method: "POST",
+                body: new FormData(form),
+                headers: { Accept: "application/json" },
+            });
+            if (response.ok) {
+                form.reset();
+                toast.success("Your enquiry has been received. We will reply within one business day.");
+            } else {
+                const data = await response.json().catch(() => null);
+                toast.error(
+                    (data && typeof data.error === "string" ? data.error : null) ??
+                        "Something went wrong. Please try again or email us directly.",
+                );
+            }
+        } catch {
+            toast.error("Something went wrong. Please try again or email us directly.");
+        } finally {
             setPending(false);
-            form.reset();
-            toast.success("Your enquiry has been received. We will reply within one business day.");
-        }, 600);
+        }
     }
     return (
         <>
@@ -93,7 +111,7 @@ export default function ContactPage() {
                         </div>
                     </aside>
 
-                    <form onSubmit={onSubmit} className="lg:col-span-7 lg:col-start-6 space-y-10">
+                    <form action={FORMSPREE_ENDPOINT} method="POST" onSubmit={onSubmit} className="lg:col-span-7 lg:col-start-6 space-y-10">
                         <EditorialHeading as="h2">Tell us about your event.</EditorialHeading>
                         <div className="grid gap-8 sm:grid-cols-2">
                             <Field label="Name"><input required name="name" type="text" className={inputCls} /></Field>

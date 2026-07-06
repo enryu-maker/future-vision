@@ -58,7 +58,7 @@ export default function AboutPage() {
                             <p>
                                 For corporate events this includes travel, sound, light, stage setup, translation equipment, and exhibition stands. We also organize Arabic, Indian, and Western weddings with live entertainment — magicians, clowns, jugglers, and mascots.
                             </p>
-                            <p className="font-display text-xl sm:text-2xl text-orange-500 pt-2 not-italic">&mdash; {SITE.motto}</p>
+                            <p className="font-display text-xl sm:text-2xl italic text-orange-500 pt-2">&mdash; {SITE.motto}</p>
                         </div>
                     </div>
                 </div>
@@ -105,7 +105,7 @@ export default function AboutPage() {
             <ParallaxReveal as="section" className="bg-background py-32">
                 <div className="mx-auto max-w-3xl px-6 text-center">
                     <SectionLabel label="Our Promise" />
-                    <p className="mt-8 font-display text-3xl sm:text-4xl lg:text-5xl font-light text-orange-500 leading-snug tracking-tight not-italic">
+                    <p className="mt-8 font-display text-3xl sm:text-4xl lg:text-5xl font-light italic text-orange-500 leading-snug tracking-tight">
                         {SITE.motto}
                     </p>
                     <p className="mt-6 text-muted-foreground text-sm">

@@ -69,8 +69,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-AE" className={`${inter.variable} ${cormorant.variable}`}>
-      <body className="antialiased bg-background text-foreground min-h-screen flex flex-col">
+    <html lang="en-AE" className={`${inter.variable} ${cormorant.variable}`} suppressHydrationWarning>
+      <body className="antialiased bg-background text-foreground min-h-screen flex flex-col" suppressHydrationWarning>
         <StructuredData />
         <SiteNav />
         <main className="flex-grow">{children}</main>
