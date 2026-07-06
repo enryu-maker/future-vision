@@ -4,6 +4,7 @@ import { PageHero } from "@/components/page-hero";
 import { GalleryCard } from "@/components/gallery-card";
 import { ParallaxReveal } from "@/components/parallax";
 import { SeoTags } from "@/components/seo-tags";
+import { SITE } from "@/data/contact";
 import { SERVICE_HERO_IMAGES, WEDDING_IMAGES } from "@/data/portfolio";
 import { pageMetadata } from "@/data/seo";
 
@@ -53,7 +54,7 @@ export default function WeddingsPage() {
     <>
       <PageHero
         eyebrow="Weddings"
-        title={<>Wedding planners in <em className="not-italic text-gold">Dubai, UAE</em></>}
+        title={<>Wedding planners in <em className="not-italic text-orange-500">Dubai, UAE</em></>}
         intro="Certified wedding planners in Dubai — we ensure you enjoy your special day while we take care of every preparation, from stage décor to fresh flowers."
         hue="warm"
         image={heroImg}
@@ -94,7 +95,7 @@ export default function WeddingsPage() {
                 <p className="mt-5 text-muted-foreground leading-relaxed text-sm flex-grow">{s.c}</p>
                 <ul className="mt-6 space-y-2">
                   {s.services.map((item) => (
-                    <li key={item} className="text-sm text-muted-foreground before:mr-2 before:text-gold before:content-['—']">
+                    <li key={item} className="text-sm text-muted-foreground before:mr-2 before:text-orange-500 before:content-['—']">
                       {item}
                     </li>
                   ))}
@@ -131,7 +132,7 @@ export default function WeddingsPage() {
           <div className="mt-16 grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
             {PROCESS.map((p) => (
               <div key={p.n}>
-                <span className="font-display text-3xl text-gold">{p.n}</span>
+                <span className="font-display text-3xl text-orange-500">{p.n}</span>
                 <Hairline className="mt-5 w-10!" />
                 <h3 className="mt-5 font-display text-xl text-cream">{p.t}</h3>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{p.c}</p>
@@ -143,9 +144,9 @@ export default function WeddingsPage() {
 
       <ParallaxReveal as="section" className="bg-surface py-32">
         <div className="mx-auto max-w-3xl px-6 text-center">
-          <span className="font-display text-[6rem] sm:text-[8rem] leading-none text-gold/50">&ldquo;</span>
-          <blockquote className="-mt-10 sm:-mt-12 font-display text-2xl sm:text-3xl font-light italic text-cream leading-snug">
-            You imagine it and we will make it happen.
+          <span className="font-display text-[6rem] sm:text-[8rem] leading-none text-orange-500/50">&ldquo;</span>
+          <blockquote className="-mt-10 sm:-mt-12 font-display text-3xl sm:text-4xl lg:text-5xl font-light text-orange-500 leading-snug tracking-tight not-italic">
+            {SITE.motto}
           </blockquote>
           <Hairline className="w-16! mx-auto mt-8" />
           <p className="eyebrow mt-4">Future Vision Events &amp; Weddings &middot; Dubai</p>

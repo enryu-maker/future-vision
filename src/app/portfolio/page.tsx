@@ -26,7 +26,7 @@ export default function PortfolioPage() {
         <>
             <PageHero
                 eyebrow="Portfolio"
-                title={<>Our work in <em className="not-italic text-gold">Dubai</em></>}
+                title={<>Our work in <em className="not-italic text-orange-500">Dubai</em></>}
                 intro="A selection of corporate events, weddings, and live entertainment produced by Future Vision across the UAE."
                 image={heroImg}
             />
@@ -46,7 +46,7 @@ export default function PortfolioPage() {
                                 onClick={() => setFilter(f)}
                                 className={cn(
                                     "eyebrow transition-colors",
-                                    filter === f ? "text-gold!" : "text-muted-foreground! hover:text-cream!",
+                                    filter === f ? "text-orange-500!" : "text-muted-foreground! hover:text-cream!",
                                 )}
                             >
                                 {FILTER_LABELS[f]}

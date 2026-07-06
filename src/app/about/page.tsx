@@ -35,7 +35,7 @@ export default function AboutPage() {
         <>
             <PageHero
                 eyebrow="About Us"
-                title={<>Event planners in <em className="not-italic text-gold">Dubai, UAE</em></>}
+                title={<> <em className="not-italic text-orange-500">Event planners in Dubai, UAE</em></>}
                 intro="Future Vision is a full-service event management company based in Dubai — a leading name in corporate events, weddings, and live entertainment for over 20 years."
                 image={aboutHero}
             />
@@ -58,7 +58,7 @@ export default function AboutPage() {
                             <p>
                                 For corporate events this includes travel, sound, light, stage setup, translation equipment, and exhibition stands. We also organize Arabic, Indian, and Western weddings with live entertainment — magicians, clowns, jugglers, and mascots.
                             </p>
-                            <p className="font-display italic text-cream/90 text-lg pt-2">&mdash; {SITE.motto}</p>
+                            <p className="font-display text-xl sm:text-2xl text-orange-500 pt-2 not-italic">&mdash; {SITE.motto}</p>
                         </div>
                     </div>
                 </div>
@@ -71,7 +71,7 @@ export default function AboutPage() {
                     <div className="mt-16 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-4">
                         {STATS.map((v, i) => (
                             <div key={v.t} className="bg-background p-8 lg:p-10 flex flex-col">
-                                <span className="font-display text-2xl text-gold">{String(i + 1).padStart(2, "0")}</span>
+                                <span className="font-display text-2xl text-orange-500">{String(i + 1).padStart(2, "0")}</span>
                                 <Hairline className="mt-6 w-10!" />
                                 <h3 className="mt-6 font-display text-2xl text-cream">{v.t}</h3>
                                 <p className="mt-4 text-sm text-muted-foreground leading-relaxed flex-grow">{v.c}</p>
@@ -92,7 +92,7 @@ export default function AboutPage() {
                     <div className="mt-16 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-4">
                         {PROCESS.map((p, i) => (
                             <div key={p.t} className="bg-surface-2 p-8 lg:p-10">
-                                <span className="font-display text-2xl text-gold">{String(i + 1).padStart(2, "0")}</span>
+                                <span className="font-display text-2xl text-orange-500">{String(i + 1).padStart(2, "0")}</span>
                                 <Hairline className="mt-6 w-10!" />
                                 <h3 className="mt-6 font-display text-2xl text-cream">{p.t}</h3>
                                 <p className="mt-4 text-sm text-muted-foreground leading-relaxed">{p.c}</p>
@@ -105,7 +105,7 @@ export default function AboutPage() {
             <ParallaxReveal as="section" className="bg-background py-32">
                 <div className="mx-auto max-w-3xl px-6 text-center">
                     <SectionLabel label="Our Promise" />
-                    <p className="mt-8 font-display text-2xl sm:text-3xl font-light italic text-cream leading-snug">
+                    <p className="mt-8 font-display text-3xl sm:text-4xl lg:text-5xl font-light text-orange-500 leading-snug tracking-tight not-italic">
                         {SITE.motto}
                     </p>
                     <p className="mt-6 text-muted-foreground text-sm">

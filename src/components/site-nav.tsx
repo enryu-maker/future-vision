@@ -58,7 +58,7 @@ export function SiteNav() {
                                 title={"title" in item ? item.title : undefined}
                                 className={cn(
                                     "text-[0.72rem] uppercase tracking-[0.2em] font-medium transition-colors duration-300 whitespace-nowrap",
-                                    isActive ? "text-gold" : "text-cream/80 hover:text-gold",
+                                    isActive ? "text-orange-500" : "text-cream/80 hover:text-orange-500",
                                 )}
                             >
                                 {item.label}
@@ -69,8 +69,8 @@ export function SiteNav() {
 
                 <div className="hidden lg:flex items-center gap-6 shrink-0">
                     <div className="flex flex-col text-right text-xs text-cream/80">
-                        <a href={`mailto:${SITE.email}`} className="hover:text-gold transition-colors">{SITE.email}</a>
-                        <a href={`tel:${PHONES[0].tel}`} className="hover:text-gold transition-colors">{PHONES[0].display}</a>
+                        <a href={`mailto:${SITE.email}`} className="hover:text-orange-500 transition-colors">{SITE.email}</a>
+                        <a href={`tel:${PHONES[0].tel}`} className="hover:text-orange-500 transition-colors">{PHONES[0].display}</a>
                     </div>
                     <GoldButton to="/contact" variant="outline">Contact</GoldButton>
                 </div>
@@ -96,7 +96,7 @@ export function SiteNav() {
                                     title={"title" in item ? item.title : undefined}
                                     className={cn(
                                         "font-display text-2xl transition-colors",
-                                        isActive ? "text-gold" : "text-cream hover:text-gold",
+                                        isActive ? "text-orange-500" : "text-cream hover:text-orange-500",
                                     )}
                                 >
                                     {item.label}
@@ -104,8 +104,8 @@ export function SiteNav() {
                             );
                         })}
                         <div className="mt-2 flex flex-col gap-2 text-sm text-cream/80">
-                            <a href={`mailto:${SITE.email}`} className="hover:text-gold transition-colors">{SITE.email}</a>
-                            <a href={`tel:${PHONES[0].tel}`} className="hover:text-gold transition-colors">{PHONES[0].display}</a>
+                            <a href={`mailto:${SITE.email}`} className="hover:text-orange-500 transition-colors">{SITE.email}</a>
+                            <a href={`tel:${PHONES[0].tel}`} className="hover:text-orange-500 transition-colors">{PHONES[0].display}</a>
                         </div>
                         <GoldButton to="/contact" variant="outline" className="mt-2 self-start">
                             Contact

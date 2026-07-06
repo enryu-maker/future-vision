@@ -22,7 +22,7 @@ function Field({ label, children }: { label: string; children: ReactNode }) {
 }
 
 const inputCls =
-    "w-full bg-transparent border-b border-border py-3 text-cream placeholder:text-muted-foreground/60 focus:outline-none focus:border-gold transition-colors font-sans text-base";
+    "w-full bg-transparent border-b border-border py-3 text-cream placeholder:text-muted-foreground/60 focus:outline-none focus:border-orange-500 transition-colors font-sans text-base";
 
 export default function ContactPage() {
     const [pending, setPending] = useState(false);
@@ -40,7 +40,7 @@ export default function ContactPage() {
         <>
             <PageHero
                 eyebrow="Contact"
-                title={<>Get in touch in <em className="not-italic text-gold">Dubai</em></>}
+                title={<>Get in touch in <em className="not-italic text-orange-500">Dubai</em></>}
                 intro="Reach our team at any of our Dubai, Sharjah, or Abu Dhabi offices. Call +971-56-9401230 or email us to start planning your event."
                 image={contactHero}
             />
@@ -62,18 +62,18 @@ export default function ContactPage() {
 
                         <div className="space-y-6 text-sm">
                             <div className="flex items-start gap-4">
-                                <Mail className="h-4 w-4 mt-1 text-gold shrink-0" strokeWidth={1.25} />
-                                <a href={`mailto:${SITE.email}`} className="text-cream hover:text-gold transition-colors">{SITE.email}</a>
+                                <Mail className="h-4 w-4 mt-1 text-orange-500 shrink-0" strokeWidth={1.25} />
+                                <a href={`mailto:${SITE.email}`} className="text-cream hover:text-orange-500 transition-colors">{SITE.email}</a>
                             </div>
                             {PHONES.map((phone) => (
                                 <div key={phone.tel} className="flex items-start gap-4">
-                                    <Phone className="h-4 w-4 mt-1 text-gold shrink-0" strokeWidth={1.25} />
-                                    <a href={`tel:${phone.tel}`} className="text-cream hover:text-gold transition-colors">{phone.display}</a>
+                                    <Phone className="h-4 w-4 mt-1 text-orange-500 shrink-0" strokeWidth={1.25} />
+                                    <a href={`tel:${phone.tel}`} className="text-cream hover:text-orange-500 transition-colors">{phone.display}</a>
                                 </div>
                             ))}
                             <div className="flex items-start gap-4">
-                                <Globe className="h-4 w-4 mt-1 text-gold shrink-0" strokeWidth={1.25} />
-                                <a href={SITE.url} className="text-cream hover:text-gold transition-colors">{SITE.url}</a>
+                                <Globe className="h-4 w-4 mt-1 text-orange-500 shrink-0" strokeWidth={1.25} />
+                                <a href={SITE.url} className="text-cream hover:text-orange-500 transition-colors">{SITE.url}</a>
                             </div>
                         </div>
 
@@ -83,7 +83,7 @@ export default function ContactPage() {
                             <SectionLabel label="Offices" />
                             {OFFICES.map((office) => (
                                 <div key={office.city} className="flex items-start gap-4 text-sm">
-                                    <MapPin className="h-4 w-4 mt-1 text-gold shrink-0" strokeWidth={1.25} />
+                                    <MapPin className="h-4 w-4 mt-1 text-orange-500 shrink-0" strokeWidth={1.25} />
                                     <div>
                                         <p className="text-cream font-medium">{office.city} Office</p>
                                         <p className="mt-1 text-muted-foreground leading-relaxed">{office.address}</p>
@@ -118,7 +118,7 @@ export default function ContactPage() {
                             <button
                                 type="submit"
                                 disabled={pending}
-                                className="inline-flex items-center justify-center gap-3 bg-gold px-8 py-4 text-[0.72rem] uppercase tracking-[0.28em] text-background transition-all duration-500 hover:bg-gold-soft disabled:opacity-60"
+                                className="inline-flex items-center justify-center gap-3 bg-orange-500 px-8 py-4 text-[0.72rem] uppercase tracking-[0.28em] text-background transition-all duration-500 hover:bg-orange-400 disabled:opacity-60"
                             >
                                 {pending ? "Sending…" : "Send Enquiry"}
                             </button>

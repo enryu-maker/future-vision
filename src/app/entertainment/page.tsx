@@ -65,7 +65,7 @@ export default function EntertainmentPage() {
         <>
             <PageHero
                 eyebrow="Entertainment"
-                title={<>Live entertainment in <em className="not-italic text-gold">Dubai</em></>}
+                title={<>Live entertainment in <em className="not-italic text-orange-500">Dubai</em></>}
                 intro="The best live entertainment acts in Dubai — dance shows and skilled entertainers for corporate events, weddings, and private parties across the UAE."
                 hue="deep"
                 image={heroImg}

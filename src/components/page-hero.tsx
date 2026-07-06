@@ -30,7 +30,7 @@ export function PageHero({
         >
           <div className="max-w-2xl">
             <Eyebrow>{eyebrow}</Eyebrow>
-            <EditorialHeading as="h1" className="mt-8 text-gold">
+            <EditorialHeading as="h1" className="mt-8 text-orange-500">
               {title}
             </EditorialHeading>
             {intro && (

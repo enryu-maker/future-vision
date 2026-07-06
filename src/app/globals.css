@@ -4,8 +4,6 @@
 @theme {
   --font-display: var(--font-serif);
   --font-sans: var(--font-sans);
-  --color-gold: oklch(0.74 0.08 85);
-  --color-gold-soft: oklch(0.82 0.06 85);
   --color-cream: oklch(0.95 0.01 70);
   --color-background: var(--bg-primary);
   --color-surface: var(--bg-secondary);

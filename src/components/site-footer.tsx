@@ -25,49 +25,49 @@ export function SiteFooter() {
                     </div>
 
                     <div className="lg:col-span-2">
-                        <h4 className="eyebrow text-gold-soft">Navigate</h4>
+                        <h4 className="eyebrow text-orange-400">Navigate</h4>
                         <ul className="mt-6 space-y-3 text-sm text-background/75">
-                            <li><Link href="/" className="hover:text-gold-soft transition-colors">Home</Link></li>
-                            <li><Link href="/portfolio" className="hover:text-gold-soft transition-colors">Portfolio</Link></li>
-                            <li><Link href="/about" className="hover:text-gold-soft transition-colors">About</Link></li>
-                            <li><Link href="/contact" className="hover:text-gold-soft transition-colors">Contact</Link></li>
+                            <li><Link href="/" className="hover:text-orange-400 transition-colors">Home</Link></li>
+                            <li><Link href="/portfolio" className="hover:text-orange-400 transition-colors">Portfolio</Link></li>
+                            <li><Link href="/about" className="hover:text-orange-400 transition-colors">About</Link></li>
+                            <li><Link href="/contact" className="hover:text-orange-400 transition-colors">Contact</Link></li>
                         </ul>
                     </div>
 
                     <div className="lg:col-span-3">
-                        <h4 className="eyebrow text-gold-soft">Services</h4>
+                        <h4 className="eyebrow text-orange-400">Services</h4>
                         <ul className="mt-6 space-y-3 text-sm text-background/75">
-                            <li><Link href="/corporate-events" title="Corporate Event Management Dubai" className="hover:text-gold-soft transition-colors">Corporate Events</Link></li>
-                            <li><Link href="/weddings" title="Wedding Planner Dubai" className="hover:text-gold-soft transition-colors">Weddings</Link></li>
-                            <li><Link href="/entertainment" title="Entertainment Agency Dubai" className="hover:text-gold-soft transition-colors">Entertainment</Link></li>
+                            <li><Link href="/corporate-events" title="Corporate Event Management Dubai" className="hover:text-orange-400 transition-colors">Corporate Events</Link></li>
+                            <li><Link href="/weddings" title="Wedding Planner Dubai" className="hover:text-orange-400 transition-colors">Weddings</Link></li>
+                            <li><Link href="/entertainment" title="Entertainment Agency Dubai" className="hover:text-orange-400 transition-colors">Entertainment</Link></li>
                         </ul>
                     </div>
 
                     <div className="lg:col-span-3">
-                        <h4 className="eyebrow text-gold-soft">Contact</h4>
+                        <h4 className="eyebrow text-orange-400">Contact</h4>
                         <ul className="mt-6 space-y-3 text-sm text-background/75">
                             <li>
-                                <a href={`mailto:${SITE.email}`} className="inline-flex items-center gap-2 hover:text-gold-soft transition-colors break-all">
-                                    <Mail className="h-3.5 w-3.5 text-gold-soft shrink-0" strokeWidth={1.25} />
+                                <a href={`mailto:${SITE.email}`} className="inline-flex items-center gap-2 hover:text-orange-400 transition-colors break-all">
+                                    <Mail className="h-3.5 w-3.5 text-orange-400 shrink-0" strokeWidth={1.25} />
                                     {SITE.email}
                                 </a>
                             </li>
                             {PHONES.map((phone) => (
                                 <li key={phone.tel}>
-                                    <a href={`tel:${phone.tel}`} className="inline-flex items-center gap-2 hover:text-gold-soft transition-colors">
-                                        <Phone className="h-3.5 w-3.5 text-gold-soft shrink-0" strokeWidth={1.25} />
+                                    <a href={`tel:${phone.tel}`} className="inline-flex items-center gap-2 hover:text-orange-400 transition-colors">
+                                        <Phone className="h-3.5 w-3.5 text-orange-400 shrink-0" strokeWidth={1.25} />
                                         {phone.display} (24/7 hotline)
                                     </a>
                                 </li>
                             ))}
                             <li>
-                                <a href={SITE.url} className="hover:text-gold-soft transition-colors">{SITE.url.replace("https://", "")}</a>
+                                <a href={SITE.url} className="hover:text-orange-400 transition-colors">{SITE.url.replace("https://", "")}</a>
                             </li>
                         </ul>
-                        <div className="mt-6 flex gap-4 text-gold-soft/80">
-                            <a href="#" aria-label="Instagram" className="hover:text-gold-soft transition-colors"><Instagram className="h-4 w-4" /></a>
-                            <a href="#" aria-label="LinkedIn" className="hover:text-gold-soft transition-colors"><Linkedin className="h-4 w-4" /></a>
-                            <a href={`mailto:${SITE.email}`} aria-label="Email" className="hover:text-gold-soft transition-colors"><Mail className="h-4 w-4" /></a>
+                        <div className="mt-6 flex gap-4 text-orange-400/80">
+                            <a href="#" aria-label="Instagram" className="hover:text-orange-400 transition-colors"><Instagram className="h-4 w-4" /></a>
+                            <a href="#" aria-label="LinkedIn" className="hover:text-orange-400 transition-colors"><Linkedin className="h-4 w-4" /></a>
+                            <a href={`mailto:${SITE.email}`} aria-label="Email" className="hover:text-orange-400 transition-colors"><Mail className="h-4 w-4" /></a>
                         </div>
                     </div>
                 </div>
@@ -75,7 +75,7 @@ export function SiteFooter() {
                 <div className="mt-16 grid gap-8 sm:grid-cols-3 border-t border-background/15 pt-12">
                     {OFFICES.map((office) => (
                         <div key={office.city}>
-                            <h4 className="eyebrow text-gold-soft">{office.city} Office</h4>
+                            <h4 className="eyebrow text-orange-400">{office.city} Office</h4>
                             <p className="mt-4 text-sm text-background/65 leading-relaxed">{office.address}</p>
                         </div>
                     ))}
