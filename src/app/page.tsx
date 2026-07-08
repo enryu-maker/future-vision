@@ -138,9 +138,19 @@ export default function Home() {
                             <SectionLabel index="III" label="Portfolio" />
                             <EditorialHeading className="mt-8">Recent work in Dubai.</EditorialHeading>
                         </div>
-                        <div className="flex flex-wrap gap-4">
-                            {["Corporate", "Weddings", "Entertainment"].map((c, i) => (
-                                <span key={c} className={`eyebrow ${i === 0 ? "text-orange-500!" : "text-muted-foreground!"}`}>{c}</span>
+                        <div className="flex flex-col md:flex-row md:flex-wrap gap-4 ">
+                            {[
+                                { label: "Corporate", href: "/corporate-events" },
+                                { label: "Weddings", href: "/weddings" },
+                                { label: "Entertainment", href: "/entertainment" },
+                            ].map((c) => (
+                                <Link
+                                    key={c.label}
+                                    href={c.href}
+                                    className={`eyebrow text-[0.75rem] text-muted-foreground hover:text-orange-500 transition-colors`}
+                                >
+                                    {c.label}
+                                </Link>
                             ))}
                         </div>
                     </div>
@@ -159,7 +169,7 @@ export default function Home() {
                     </div>
 
                     <div className="mt-16 flex justify-center">
-                        <GoldButton to="/portfolio" variant="outline">View Full Portfolio</GoldButton>
+                        <GoldButton to="/portfolio" variant="solid">View Full Portfolio</GoldButton>
                     </div>
                 </div>
             </ParallaxReveal>
@@ -191,7 +201,7 @@ export default function Home() {
                             {SITE.motto}
                         </span>
                         <span className="mt-4 block text-xl sm:text-2xl lg:text-3xl italic text-cream">
-                            &mdash; the best event management team in Dubai.
+                            &mdash; Creating Premium Events
                         </span>
                     </blockquote>
                     <div className="mt-10 flex flex-col items-center gap-4">

@@ -103,9 +103,9 @@ export function SectionLabel({
 }) {
   return (
     <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-orange-500 max-w-full">
-      {index && <span className="font-sans text-[0.7rem] tracking-[0.28em] shrink-0">{index}</span>}
-      <span className="h-px w-10 bg-orange-500/50 shrink-0 hidden sm:block" />
-      <span className="eyebrow text-orange-500! leading-relaxed">{label}</span>
+      {index && <span className="font-sans text-[0.7rem] tracking-[0.28em] shrink-0">{index}.</span>}
+      {/* <span className="h-px w-10 bg-orange-500/50 shrink-0 hidden sm:block" /> */}
+      <span className="eyebrow text-[0.78rem] text-orange-500! leading-relaxed">{label}</span>
     </div>
   );
 }
