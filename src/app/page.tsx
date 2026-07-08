@@ -79,12 +79,12 @@ export default function Home() {
                     <div className="lg:col-span-5">
                         <SectionLabel index="I" label="About" />
                         <EditorialHeading className="mt-10">
-                            Event planners in<br /><em className="not-italic text-gold">Dubai, UAE</em>
+                           <br /><em className="not-italic text-orange-500"> Event planners in Dubai, UAE</em>
                         </EditorialHeading>
                     </div>
                     <div className="lg:col-span-6 lg:col-start-7 space-y-6 text-muted-foreground leading-[1.85] text-sm sm:text-base">
                         <p>
-                            {SITE.name} is a full-service event management company based in Dubai with over 14 years of experience — a leading name in corporate events, weddings, and live entertainment across the UAE and Middle East.
+                            {SITE.name} is a full-service event management company based in Dubai with over 20 years of experience — a leading name in corporate events, weddings, and live entertainment across the UAE and Middle East.
                         </p>
                         <p>
                             From concept development and venue selection through technical planning to on-the-day production, we handle conferences, staff parties, exhibitions, product launches, Arabic, Indian and Western weddings, and private celebrations.
@@ -92,7 +92,7 @@ export default function Home() {
                         <SeoTags
                             tags={["Event Management Agency UAE", "Event Production Company Dubai", "Luxury Event Planner Dubai", "Event Management Services Dubai"]}
                         />
-                        <p className="font-display italic text-cream/90 text-lg pt-2">
+                        <p className="font-display text-xl sm:text-2xl italic text-orange-500 pt-2">
                             &mdash; {SITE.motto}
                         </p>
                     </div>
@@ -106,21 +106,21 @@ export default function Home() {
                             <SectionLabel index="II" label="Services" />
                             <EditorialHeading className="mt-8">Three disciplines, one standard.</EditorialHeading>
                         </div>
-                        <Link href="/portfolio" className="eyebrow gold-underline shrink-0">View portfolio</Link>
+                        <Link href="/portfolio" className="eyebrow orange-underline shrink-0">View portfolio</Link>
                     </div>
                 </div>
                 <div className="border-t border-border">
                     {SERVICES.map((s) => (
                         <Link key={s.to} href={s.to} className="group block border-b border-border transition-colors hover:bg-background">
                             <div className="mx-auto grid max-w-[1400px] grid-cols-12 items-start gap-6 px-6 lg:px-12 py-14 lg:py-20">
-                                <div className="col-span-12 lg:col-span-1 font-display text-3xl text-gold/70">{s.n}</div>
+                                <div className="col-span-12 lg:col-span-1 font-display text-3xl text-orange-500/70">{s.n}</div>
                                 <div className="col-span-12 lg:col-span-2">
                                     <ServiceRowImage src={s.image.src} alt={s.title} icon={s.icon} />
                                 </div>
                                 <div className="col-span-12 lg:col-span-8 flex flex-col gap-4">
                                     <div className="flex items-start justify-between gap-4">
-                                        <h2 className="font-display font-light text-cream text-3xl lg:text-5xl leading-[1.05] group-hover:text-gold transition-colors">{s.title}</h2>
-                                        <ArrowRight className="h-5 w-5 shrink-0 text-gold/60 group-hover:text-gold transition-transform duration-500 group-hover:translate-x-1 hidden lg:block" strokeWidth={1} />
+                                        <h2 className="font-display font-light text-cream text-3xl lg:text-5xl leading-[1.05] group-hover:text-orange-500 transition-colors">{s.title}</h2>
+                                        <ArrowRight className="h-5 w-5 shrink-0 text-orange-500/60 group-hover:text-orange-500 transition-transform duration-500 group-hover:translate-x-1 hidden lg:block" strokeWidth={1} />
                                     </div>
                                     <p className="text-muted-foreground leading-relaxed max-w-2xl">{s.copy}</p>
                                     <SeoTags tags={s.tags} compact />
@@ -138,11 +138,9 @@ export default function Home() {
                             <SectionLabel index="III" label="Portfolio" />
                             <EditorialHeading className="mt-8">Recent work in Dubai.</EditorialHeading>
                         </div>
-                        <div className="flex flex-col gap-y-3 md:flex-row md:flex-wrap md:gap-y-0 gap-x-6">
-                            {[{ label: "Corporate", href: "/corporate-events" }, { label: "Weddings", href: "/weddings" }, { label: "Entertainment", href: "/entertainment" }].map((c, i) => (
-                                <Link key={c.label} href={c.href} className='eyebrow text-[0.76rem] text-muted-foreground hover:text-gold'>
-                                    {c.label}
-                                </Link>
+                        <div className="flex flex-wrap gap-4">
+                            {["Corporate", "Weddings", "Entertainment"].map((c, i) => (
+                                <span key={c} className={`eyebrow ${i === 0 ? "text-orange-500!" : "text-muted-foreground!"}`}>{c}</span>
                             ))}
                         </div>
                     </div>
@@ -161,7 +159,7 @@ export default function Home() {
                     </div>
 
                     <div className="mt-16 flex justify-center">
-                        <GoldButton to="/portfolio" variant="solid">View Full Portfolio</GoldButton>
+                        <GoldButton to="/portfolio" variant="outline">View Full Portfolio</GoldButton>
                     </div>
                 </div>
             </ParallaxReveal>
@@ -174,9 +172,9 @@ export default function Home() {
                     <div className="mt-20 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 sm:gap-5">
                         {PILLARS.map((p) => (
                             <div key={p.n} className="bg-background border border-border rounded-xl p-8 lg:p-10 flex flex-col shadow-sm">
-                                <span className="font-display text-2xl text-gold">{p.n}</span>
+                                <span className="font-display text-2xl text-orange-500">{p.n}</span>
                                 <Hairline className="mt-6 w-12!" />
-                                <h3 className="mt-6 font-display text-2xl text-cream leading-tight">{p.title}</h3>
+                                <h3 className="mt-6 font-display text-3xl text-orange-500 leading-tight">{p.title}</h3>
                                 <p className="mt-4 text-sm text-muted-foreground leading-relaxed flex-grow">{p.body}</p>
                                 <SeoTags className="mt-6" tags={p.tags} compact />
                             </div>
@@ -186,10 +184,15 @@ export default function Home() {
             </ParallaxReveal>
 
             <ParallaxReveal as="section" className="relative bg-background py-32 sm:py-44" delay={250}>
-                <div className="mx-auto max-w-4xl px-6 text-center">
-                    <span className="font-display text-[6rem] sm:text-[8rem] leading-none text-gold/50">&ldquo;</span>
-                    <blockquote className="-mt-10 sm:-mt-12 font-display text-2xl sm:text-3xl lg:text-6xl font-light italic text-cream leading-snug tracking-tight">
-                        <span className=" text-gold">You imagine it and we will make it happen</span> <br/>— Creating Premium Events
+                <div className="mx-auto max-w-3xl px-6 text-center">
+                    <span className="font-display text-[6rem] sm:text-[8rem] leading-none text-orange-500/50">&ldquo;</span>
+                    <blockquote className="-mt-10 sm:-mt-12 font-display font-light leading-snug tracking-tight">
+                        <span className="block text-3xl sm:text-4xl lg:text-5xl italic text-orange-500">
+                            {SITE.motto}
+                        </span>
+                        <span className="mt-4 block text-xl sm:text-2xl lg:text-3xl italic text-cream">
+                            &mdash; the best event management team in Dubai.
+                        </span>
                     </blockquote>
                     <div className="mt-10 flex flex-col items-center gap-4">
                         <Hairline className="w-16!" />

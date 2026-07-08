@@ -7,7 +7,9 @@ import { GalleryCard } from "@/components/gallery-card";
 import { ParallaxReveal } from "@/components/parallax";
 import { SeoTags } from "@/components/seo-tags";
 import { cn } from "@/lib/utils";
-import { PORTFOLIO_FILTERS, PORTFOLIO_ITEMS } from "@/data/portfolio";
+import { PORTFOLIO_FILTERS, PORTFOLIO_ITEMS, SERVICE_HERO_IMAGES } from "@/data/portfolio";
+
+const heroImg = SERVICE_HERO_IMAGES.portfolio;
 
 const FILTER_LABELS: Record<(typeof PORTFOLIO_FILTERS)[number], string> = {
     All: "All",
@@ -24,8 +26,9 @@ export default function PortfolioPage() {
         <>
             <PageHero
                 eyebrow="Portfolio"
-                title={<>Our work in <em className="not-italic text-gold">Dubai</em></>}
+                title={<>Our work in <em className="not-italic text-orange-500">Dubai</em></>}
                 intro="A selection of corporate events, weddings, and live entertainment produced by Future Vision across the UAE."
+                image={heroImg}
             />
 
             <ParallaxReveal as="section" className="bg-background pb-32">
@@ -43,7 +46,7 @@ export default function PortfolioPage() {
                                 onClick={() => setFilter(f)}
                                 className={cn(
                                     "eyebrow transition-colors",
-                                    filter === f ? "text-gold!" : "text-muted-foreground! hover:text-cream!",
+                                    filter === f ? "text-orange-500!" : "text-muted-foreground! hover:text-cream!",
                                 )}
                             >
                                 {FILTER_LABELS[f]}

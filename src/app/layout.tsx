@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Cormorant_Garamond } from "next/font/google";
 import "../styles.css";
+import { GoogleAnalytics } from "@/components/google-analytics";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { StructuredData } from "@/components/structured-data";
@@ -69,8 +70,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-AE" className={`${inter.variable} ${cormorant.variable}`}>
-      <body className="antialiased bg-background text-foreground min-h-screen flex flex-col">
+    <html lang="en-AE" className={`${inter.variable} ${cormorant.variable}`} suppressHydrationWarning>
+      <body className="antialiased bg-background text-foreground min-h-screen flex flex-col" suppressHydrationWarning>
+        <GoogleAnalytics />
         <StructuredData />
         <SiteNav />
         <main className="flex-grow">{children}</main>

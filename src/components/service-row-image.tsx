@@ -25,7 +25,7 @@ export function ServiceRowImage({
         <div className="relative aspect-4/5 w-full max-w-[200px] overflow-hidden bg-surface rounded-lg shadow-sm">
             <ParallaxCardImage src={src} alt={alt} speed={0.18} />
             <div className="absolute inset-0 bg-background/10 group-hover:bg-background/5 transition-colors duration-700 pointer-events-none" />
-            <Icon className="absolute bottom-3 left-3 h-5 w-5 text-gold z-10" strokeWidth={1} />
+            <Icon className="absolute bottom-3 left-3 h-5 w-5 text-orange-500 z-10" strokeWidth={1} />
         </div>
     );
 }

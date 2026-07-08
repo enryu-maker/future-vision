@@ -49,4 +49,5 @@ export const SERVICE_HERO_IMAGES = {
     corporate: corpGalaBallroom,
     weddings: wedMarbleAisle,
     entertainment: entDancers,
+    portfolio: corpGalaAwards,
 } as const;

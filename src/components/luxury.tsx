@@ -14,7 +14,7 @@ export function Monogram({
   const sizes = {
     nav: "h-16 w-auto max-w-[14rem] sm:h-20 sm:max-w-[16rem] lg:h-[5rem] lg:max-w-[20rem]",
     hero: "h-[clamp(7rem,22vw,11.5rem)] w-auto max-w-[min(92vw,36rem)]",
-    footer: "h-12 w-auto max-w-[12rem] sm:max-w-[14rem]",
+    footer: "h-20 w-auto max-w-full sm:h-24 lg:h-28 xl:h-32",
   };
 
   return (
@@ -64,11 +64,11 @@ export function GoldButton({
     "inline-flex items-center justify-center gap-3 px-7 py-3.5 text-[0.72rem] uppercase tracking-[0.28em] font-normal transition-all duration-500 text-center whitespace-nowrap";
   const styles = {
     outline:
-      "border border-gold/80 text-gold hover:border-gold hover:bg-gold/8 shadow-sm",
+      "border border-orange-500/80 text-orange-500 hover:border-orange-500 hover:bg-orange-500/8 shadow-sm",
     solid:
-      "bg-gold text-primary-foreground hover:bg-gold-soft shadow-md shadow-gold/20",
+      "bg-orange-500 text-primary-foreground hover:bg-orange-400 shadow-md shadow-orange-500/20",
     ghost:
-      "text-gold hover:text-gold-soft border-b border-gold/50 hover:border-gold rounded-none px-0 py-2",
+      "text-orange-500 hover:text-orange-400 border-b border-orange-500/50 hover:border-orange-500 rounded-none px-0 py-2",
   }[variant];
 
   const cls = cn(base, styles, className);
@@ -102,10 +102,10 @@ export function SectionLabel({
   label: string;
 }) {
   return (
-    <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-gold max-w-full">
-      {index && <span className="font-sans text-[0.7rem] tracking-[0.28em] shrink-0">{index}.</span>}
-      {/* <span className="h-px w-10 bg-gold/50 shrink-0 hidden sm:block" /> */}
-      <span className="eyebrow text-[0.8rem] text-gold! leading-relaxed">{label}</span>
+    <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-orange-500 max-w-full">
+      {index && <span className="font-sans text-[0.7rem] tracking-[0.28em] shrink-0">{index}</span>}
+      <span className="h-px w-10 bg-orange-500/50 shrink-0 hidden sm:block" />
+      <span className="eyebrow text-orange-500! leading-relaxed">{label}</span>
     </div>
   );
 }
@@ -181,7 +181,7 @@ export function ContactBand() {
         <ParallaxContent speed={0.08}>
           <Eyebrow>Get in Touch</Eyebrow>
           <EditorialHeading className="mt-8">
-            Plan your next <em className="not-italic text-gold">event in Dubai</em>
+            <em className="not-italic text-orange-500">  Plan your next event in Dubai</em>
           </EditorialHeading>
           <p className="mx-auto mt-8 max-w-lg text-base text-muted-foreground leading-relaxed">
             Corporate events, weddings, conferences, exhibitions, product launches, gala dinners, and live entertainment — our team replies within one business day.

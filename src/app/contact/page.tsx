@@ -10,6 +10,8 @@ import { toast } from "sonner";
 import contactHero from "@/assets/contact-hero.jpg";
 import { OFFICES, PHONES, SITE } from "@/data/contact";
 
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xeebnyon";
+
 const EVENT_TYPES = ["Wedding", "Corporate Event", "Entertainment", "Other"];
 
 function Field({ label, children }: { label: string; children: ReactNode }) {
@@ -22,25 +24,41 @@ function Field({ label, children }: { label: string; children: ReactNode }) {
 }
 
 const inputCls =
-    "w-full bg-transparent border-b border-border py-3 text-cream placeholder:text-muted-foreground/60 focus:outline-none focus:border-gold transition-colors font-sans text-base";
+    "w-full bg-transparent border-b border-border py-3 text-cream placeholder:text-muted-foreground/60 focus:outline-none focus:border-orange-500 transition-colors font-sans text-base";
 
 export default function ContactPage() {
     const [pending, setPending] = useState(false);
-    function onSubmit(e: FormEvent<HTMLFormElement>) {
+    async function onSubmit(e: FormEvent<HTMLFormElement>) {
         e.preventDefault();
         setPending(true);
         const form = e.currentTarget;
-        setTimeout(() => {
+        try {
+            const response = await fetch(FORMSPREE_ENDPOINT, {
+                method: "POST",
+                body: new FormData(form),
+                headers: { Accept: "application/json" },
+            });
+            if (response.ok) {
+                form.reset();
+                toast.success("Your enquiry has been received. We will reply within one business day.");
+            } else {
+                const data = await response.json().catch(() => null);
+                toast.error(
+                    (data && typeof data.error === "string" ? data.error : null) ??
+                        "Something went wrong. Please try again or email us directly.",
+                );
+            }
+        } catch {
+            toast.error("Something went wrong. Please try again or email us directly.");
+        } finally {
             setPending(false);
-            form.reset();
-            toast.success("Your enquiry has been received. We will reply within one business day.");
-        }, 600);
+        }
     }
     return (
         <>
             <PageHero
                 eyebrow="Contact"
-                title={<>Get in touch in <em className="not-italic text-gold">Dubai</em></>}
+                title={<>Get in touch in <em className="not-italic text-orange-500">Dubai</em></>}
                 intro="Reach our team at any of our Dubai, Sharjah, or Abu Dhabi offices. Call +971-56-9401230 or email us to start planning your event."
                 image={contactHero}
             />
@@ -62,18 +80,18 @@ export default function ContactPage() {
 
                         <div className="space-y-6 text-sm">
                             <div className="flex items-start gap-4">
-                                <Mail className="h-4 w-4 mt-1 text-gold shrink-0" strokeWidth={1.25} />
-                                <a href={`mailto:${SITE.email}`} className="text-cream hover:text-gold transition-colors">{SITE.email}</a>
+                                <Mail className="h-4 w-4 mt-1 text-orange-500 shrink-0" strokeWidth={1.25} />
+                                <a href={`mailto:${SITE.email}`} className="text-cream hover:text-orange-500 transition-colors">{SITE.email}</a>
                             </div>
                             {PHONES.map((phone) => (
                                 <div key={phone.tel} className="flex items-start gap-4">
-                                    <Phone className="h-4 w-4 mt-1 text-gold shrink-0" strokeWidth={1.25} />
-                                    <a href={`tel:${phone.tel}`} className="text-cream hover:text-gold transition-colors">{phone.display}</a>
+                                    <Phone className="h-4 w-4 mt-1 text-orange-500 shrink-0" strokeWidth={1.25} />
+                                    <a href={`tel:${phone.tel}`} className="text-cream hover:text-orange-500 transition-colors">{phone.display}</a>
                                 </div>
                             ))}
                             <div className="flex items-start gap-4">
-                                <Globe className="h-4 w-4 mt-1 text-gold shrink-0" strokeWidth={1.25} />
-                                <a href={SITE.url} className="text-cream hover:text-gold transition-colors">{SITE.url}</a>
+                                <Globe className="h-4 w-4 mt-1 text-orange-500 shrink-0" strokeWidth={1.25} />
+                                <a href={SITE.url} className="text-cream hover:text-orange-500 transition-colors">{SITE.url}</a>
                             </div>
                         </div>
 
@@ -83,7 +101,7 @@ export default function ContactPage() {
                             <SectionLabel label="Offices" />
                             {OFFICES.map((office) => (
                                 <div key={office.city} className="flex items-start gap-4 text-sm">
-                                    <MapPin className="h-4 w-4 mt-1 text-gold shrink-0" strokeWidth={1.25} />
+                                    <MapPin className="h-4 w-4 mt-1 text-orange-500 shrink-0" strokeWidth={1.25} />
                                     <div>
                                         <p className="text-cream font-medium">{office.city} Office</p>
                                         <p className="mt-1 text-muted-foreground leading-relaxed">{office.address}</p>
@@ -93,7 +111,7 @@ export default function ContactPage() {
                         </div>
                     </aside>
 
-                    <form onSubmit={onSubmit} className="lg:col-span-7 lg:col-start-6 space-y-10">
+                    <form action={FORMSPREE_ENDPOINT} method="POST" onSubmit={onSubmit} className="lg:col-span-7 lg:col-start-6 space-y-10">
                         <EditorialHeading as="h2">Tell us about your event.</EditorialHeading>
                         <div className="grid gap-8 sm:grid-cols-2">
                             <Field label="Name"><input required name="name" type="text" className={inputCls} /></Field>
@@ -118,7 +136,7 @@ export default function ContactPage() {
                             <button
                                 type="submit"
                                 disabled={pending}
-                                className="inline-flex items-center justify-center gap-3 bg-gold px-8 py-4 text-[0.72rem] uppercase tracking-[0.28em] text-background transition-all duration-500 hover:bg-gold-soft disabled:opacity-60"
+                                className="inline-flex items-center justify-center gap-3 bg-orange-500 px-8 py-4 text-[0.72rem] uppercase tracking-[0.28em] text-background transition-all duration-500 hover:bg-orange-400 disabled:opacity-60"
                             >
                                 {pending ? "Sending…" : "Send Enquiry"}
                             </button>

@@ -26,7 +26,7 @@ export function GalleryCard({
                 }}
             />
             <div className="absolute inset-0 flex flex-col justify-end p-5 sm:p-6 lg:p-8">
-                <span className="eyebrow text-[0.7rem]! leading-relaxed text-gold-soft">{eyebrow}</span>
+                <span className="eyebrow text-[0.58rem]! leading-relaxed text-orange-400">{eyebrow}</span>
                 <h3 className="mt-2 font-display text-lg sm:text-xl lg:text-2xl text-background leading-tight">{title}</h3>
                 {subtitle && <p className="mt-1 text-xs text-background/70">{subtitle}</p>}
             </div>

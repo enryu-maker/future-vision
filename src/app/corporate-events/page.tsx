@@ -58,7 +58,7 @@ export default function CorporatePage() {
         <>
             <PageHero
                 eyebrow="Corporate Events"
-                title={<>Corporate event management company in <em className="not-italic text-gold">Dubai</em>, UAE</>}
+                title={<>Corporate event management company in <em className="not-italic text-orange-500">Dubai</em>, UAE</>}
                 intro="Premier corporate event organizers in Dubai and the UAE — from large formal conferences to intimate business gatherings for companies across industries."
                 hue="neutral"
                 image={heroImg}
@@ -82,7 +82,7 @@ export default function CorporatePage() {
                         <p>
                             We work with clients from concept development and venue selection through technical planning to managing the actual event production — including travel, sound, light, stage setup, translation equipment, and exhibition stands.
                         </p>
-                        <p className="font-display italic text-cream/90 text-lg">
+                        <p className="font-display text-2xl sm:text-3xl italic text-orange-500">
                             You imagine it and we will make it happen.
                         </p>
                     </div>
@@ -96,7 +96,7 @@ export default function CorporatePage() {
                     <div className="mt-16 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-3">
                         {TYPES.map((x) => (
                             <div key={x.t} className="bg-background p-8 lg:p-10 flex flex-col">
-                                <h3 className="font-display text-2xl text-orange-600">{x.t}</h3>
+                                <h3 className="font-display text-2xl text-orange-500">{x.t}</h3>
                                 <Hairline className="mt-4 w-10!" />
                                 <p className="mt-4 text-sm text-muted-foreground leading-relaxed flex-grow">{x.c}</p>
                                 <SeoTags className="mt-5" tags={x.tags} compact />
@@ -113,7 +113,7 @@ export default function CorporatePage() {
                     <div className="mt-16 grid gap-px bg-border sm:grid-cols-3">
                         {HIGHLIGHTS.map((h) => (
                             <div key={h.t} className="bg-surface-2 p-8 lg:p-10 flex flex-col">
-                                <h3 className="font-display text-2xl text-cream">{h.t}</h3>
+                                <h3 className="font-display text-2xl text-orange-500">{h.t}</h3>
                                 <Hairline className="mt-4 w-10!" />
                                 <p className="mt-4 text-sm text-muted-foreground leading-relaxed flex-grow">{h.c}</p>
                                 <SeoTags className="mt-5" tags={h.tags} compact />
@@ -151,9 +151,9 @@ export default function CorporatePage() {
                     <div className="mt-16 grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
                         {PROCESS.map((p) => (
                             <div key={p.n}>
-                                <span className="font-display text-3xl text-gold">{p.n}</span>
+                                <span className="font-display text-3xl text-orange-500">{p.n}</span>
                                 <Hairline className="mt-5 w-10!" />
-                                <h3 className="mt-5 font-display text-xl text-cream">{p.t}</h3>
+                                <h3 className="mt-5 font-display text-xl text-orange-500">{p.t}</h3>
                                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{p.c}</p>
                             </div>
                         ))}

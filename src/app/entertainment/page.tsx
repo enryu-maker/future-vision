@@ -65,7 +65,7 @@ export default function EntertainmentPage() {
         <>
             <PageHero
                 eyebrow="Entertainment"
-                title={<>Live entertainment in <em className="not-italic text-gold">Dubai</em></>}
+                title={<>Live entertainment in <em className="not-italic text-orange-500">Dubai</em></>}
                 intro="The best live entertainment acts in Dubai — dance shows and skilled entertainers for corporate events, weddings, and private parties across the UAE."
                 hue="deep"
                 image={heroImg}
@@ -84,7 +84,7 @@ export default function EntertainmentPage() {
                     <div className="mt-16 grid gap-px bg-border sm:grid-cols-3">
                         {CATEGORIES.map((c) => (
                             <div key={c.t} className="bg-surface p-8 lg:p-10 flex flex-col">
-                                <h3 className="font-display text-2xl text-cream">{c.t}</h3>
+                                <h3 className="font-display text-2xl text-orange-500">{c.t}</h3>
                                 <Hairline className="mt-4 w-10!" />
                                 <p className="mt-4 text-sm text-muted-foreground leading-relaxed flex-grow">{c.c}</p>
                                 <SeoTags className="mt-5" tags={c.tags} compact />
@@ -101,7 +101,7 @@ export default function EntertainmentPage() {
                     <div className="mt-16 grid gap-px bg-border sm:grid-cols-3">
                         {DANCE_STYLES.map((d) => (
                             <div key={d.t} className="bg-background p-8 lg:p-10">
-                                <h3 className="font-display text-2xl text-cream">{d.t}</h3>
+                                <h3 className="font-display text-2xl text-orange-500">{d.t}</h3>
                                 <Hairline className="mt-4 w-10!" />
                                 <p className="mt-4 text-sm text-muted-foreground leading-relaxed">{d.c}</p>
                             </div>
@@ -123,7 +123,7 @@ export default function EntertainmentPage() {
                         <div className="grid gap-px bg-border sm:grid-cols-2">
                             {ENTERTAINMENT_ACTS.map((act) => (
                                 <div key={act} className="bg-surface-2 p-5">
-                                    <p className="text-sm text-cream">{act}</p>
+                                    <p className="text-sm text-orange-500">{act}</p>
                                 </div>
                             ))}
                         </div>

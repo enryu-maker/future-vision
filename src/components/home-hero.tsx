@@ -23,13 +23,13 @@ export function HomeHero({ imageSrc }: { imageSrc: string }) {
                 speed={0.06}
             >
                 <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
-                    <Eyebrow className="text-gold-soft!">Dubai, UAE</Eyebrow>
+                    <Eyebrow className="text-orange-400!">Dubai, UAE</Eyebrow>
 
                     <Monogram size="hero" className="mt-6 sm:mt-8 [&_img]:object-center" />
 
-                    <h1 className="mt-6 font-display font-light leading-[1.06] tracking-[-0.02em] text-[clamp(2rem,5vw,4.25rem)] text-white sm:mt-8">
+                    <h1 className="mt-6 font-display font-light leading-[1.06] tracking-[-0.02em] text-[clamp(2rem,5vw,4.25rem)] text-orange-500 sm:mt-8">
                         Best Event Management<br />
-                        <em className="not-italic text-gold-soft">Company in Dubai</em>
+                        <em className="not-italic text-orange-500">Company in Dubai</em>
                     </h1>
 
                     <p className="mt-6 max-w-xl text-sm leading-relaxed text-white/88 sm:text-base">
@@ -44,15 +44,15 @@ export function HomeHero({ imageSrc }: { imageSrc: string }) {
 
                     <div className="mt-8 flex flex-wrap justify-center gap-4">
                         <GoldButton to="/portfolio" variant="solid">Our Services</GoldButton>
-                        <GoldButton to="/contact" variant="outline" className="border-white/70! text-white! hover:border-gold-soft! hover:bg-white/10! hover:text-gold-soft!">
+                        <GoldButton to="/contact" variant="outline" className="border-white/70! text-white! hover:border-orange-400! hover:bg-white/10! hover:text-orange-400!">
                             Contact Us
                         </GoldButton>
                     </div>
                 </div>
             </ParallaxContent>
 
-            <div className="absolute bottom-8 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-2 text-gold-soft/90">
-                <span className="eyebrow text-[0.6rem]! text-gold-soft!">Scroll</span>
+            <div className="absolute bottom-8 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-2 text-orange-400/90">
+                <span className="eyebrow text-[0.6rem]! text-orange-400!">Scroll</span>
                 <ChevronDown className="h-4 w-4" style={{ animation: "fv-scroll-cue 2.4s ease-in-out infinite" }} />
             </div>
         </section>

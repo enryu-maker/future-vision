@@ -58,8 +58,6 @@
     --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
     --color-sidebar-border: var(--sidebar-border);
     --color-sidebar-ring: var(--sidebar-ring);
-    --color-gold: var(--gold);
-    --color-gold-soft: var(--gold-soft);
     --color-cream: var(--cream);
     --color-surface: var(--surface);
     --color-surface-2: var(--surface-2);
@@ -79,10 +77,8 @@
     --card-foreground: var(--cream);
     --popover: var(--background);
     --popover-foreground: var(--cream);
-    --primary: oklch(0.62 0.16 52);
+    --primary: oklch(0.705 0.213 47.604);
     --primary-foreground: oklch(0.99 0.005 95);
-    --gold: oklch(0.62 0.17 52);
-    --gold-soft: oklch(0.7 0.15 55);
     --secondary: oklch(0.955 0.01 88);
     --secondary-foreground: var(--cream);
     --muted: oklch(0.955 0.01 88);
@@ -93,7 +89,7 @@
     --destructive-foreground: oklch(0.99 0.005 95);
     --border: oklch(0.2 0.025 55 / 10%);
     --input: oklch(0.2 0.025 55 / 14%);
-    --ring: oklch(0.62 0.17 52 / 40%);
+    --ring: oklch(0.705 0.213 47.604 / 40%);
     --chart-1: oklch(0.646 0.222 41.116);
     --chart-2: oklch(0.6 0.118 184.704);
     --chart-3: oklch(0.398 0.07 227.392);
@@ -186,7 +182,7 @@
     font-weight: 400;
     letter-spacing: 0.32em;
     text-transform: uppercase;
-    color: var(--gold);
+    color: oklch(0.705 0.213 47.604);
 }
 
 @utility hairline {
@@ -210,7 +206,7 @@
         background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.6'/></svg>");
     }
 
-    .gold-underline {
+    .orange-underline {
         background-image: linear-gradient(currentColor, currentColor);
         background-position: 0 100%;
         background-repeat: no-repeat;
@@ -218,7 +214,7 @@
         transition: background-size 600ms ease;
     }
 
-    .gold-underline:hover {
+    .orange-underline:hover {
         background-size: 100% 1px;
     }
 }
