@@ -138,9 +138,11 @@ export default function Home() {
                             <SectionLabel index="III" label="Portfolio" />
                             <EditorialHeading className="mt-8">Recent work in Dubai.</EditorialHeading>
                         </div>
-                        <div className="flex flex-wrap gap-4">
-                            {["Corporate", "Weddings", "Entertainment"].map((c, i) => (
-                                <span key={c} className={`eyebrow ${i === 0 ? "text-gold!" : "text-muted-foreground!"}`}>{c}</span>
+                        <div className="flex flex-col gap-y-3 md:flex-row md:flex-wrap md:gap-y-0 gap-x-6">
+                            {[{ label: "Corporate", href: "/corporate-events" }, { label: "Weddings", href: "/weddings" }, { label: "Entertainment", href: "/entertainment" }].map((c, i) => (
+                                <Link key={c.label} href={c.href} className='eyebrow text-[0.76rem] text-muted-foreground hover:text-gold'>
+                                    {c.label}
+                                </Link>
                             ))}
                         </div>
                     </div>
@@ -159,7 +161,7 @@ export default function Home() {
                     </div>
 
                     <div className="mt-16 flex justify-center">
-                        <GoldButton to="/portfolio" variant="outline">View Full Portfolio</GoldButton>
+                        <GoldButton to="/portfolio" variant="solid">View Full Portfolio</GoldButton>
                     </div>
                 </div>
             </ParallaxReveal>
@@ -184,10 +186,10 @@ export default function Home() {
             </ParallaxReveal>
 
             <ParallaxReveal as="section" className="relative bg-background py-32 sm:py-44" delay={250}>
-                <div className="mx-auto max-w-3xl px-6 text-center">
+                <div className="mx-auto max-w-4xl px-6 text-center">
                     <span className="font-display text-[6rem] sm:text-[8rem] leading-none text-gold/50">&ldquo;</span>
-                    <blockquote className="-mt-10 sm:-mt-12 font-display text-2xl sm:text-3xl lg:text-4xl font-light italic text-cream leading-snug tracking-tight">
-                        You imagine it and we will make it happen — the best event management team in Dubai.
+                    <blockquote className="-mt-10 sm:-mt-12 font-display text-2xl sm:text-3xl lg:text-6xl font-light italic text-cream leading-snug tracking-tight">
+                        <span className=" text-gold">You imagine it and we will make it happen</span> <br/>— Creating Premium Events
                     </blockquote>
                     <div className="mt-10 flex flex-col items-center gap-4">
                         <Hairline className="w-16!" />
