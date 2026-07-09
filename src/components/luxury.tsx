@@ -12,9 +12,9 @@ export function Monogram({
   size?: "nav" | "hero" | "footer";
 }) {
   const sizes = {
-    nav: "h-16 w-auto max-w-[14rem] sm:h-20 sm:max-w-[16rem] lg:h-[5rem] lg:max-w-[20rem]",
-    hero: "h-[clamp(7rem,22vw,11.5rem)] w-auto max-w-[min(92vw,36rem)]",
-    footer: "h-20 w-auto max-w-full sm:h-24 lg:h-28 xl:h-32",
+    nav: "h-11 w-auto max-w-[min(78vw,19rem)] sm:h-14 sm:max-w-[min(82vw,24rem)] lg:h-16 lg:max-w-[28rem]",
+    hero: "h-[clamp(4.5rem,18vw,9rem)] w-auto max-w-[min(92vw,36rem)]",
+    footer: "h-16 w-auto max-w-full sm:h-20 lg:h-24 xl:h-28",
   };
 
   return (
@@ -122,7 +122,7 @@ export function EditorialHeading({
   return (
     <Tag
       className={cn(
-        "font-display font-light text-cream leading-[1.02] tracking-[-0.015em]",
+        "font-display font-bold text-cream leading-[1.02] tracking-[-0.015em]",
         Tag === "h1"
           ? "text-[clamp(2.25rem,6vw,5rem)] leading-[1.05]"
           : Tag === "h2"

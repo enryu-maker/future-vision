@@ -78,15 +78,15 @@ export default function EntertainmentPage() {
                 <div className="mx-auto max-w-[1400px] px-6 lg:px-12 mt-10">
                     <SectionLabel index="I" label="Categories" />
                     <EditorialHeading className="mt-8 max-w-xl">Live performance for every occasion.</EditorialHeading>
-                    <p className="mt-6 max-w-2xl text-muted-foreground leading-relaxed text-sm sm:text-base">
+                    <p className="mt-6 max-w-2xl text-muted-foreground leading-relaxed text-base">
                         We present performers with professionalism, great talent, and passion — experts who bring events to life.
                     </p>
                     <div className="mt-16 grid gap-px bg-border sm:grid-cols-3">
                         {CATEGORIES.map((c) => (
                             <div key={c.t} className="bg-surface p-8 lg:p-10 flex flex-col">
-                                <h3 className="font-display text-2xl text-orange-500">{c.t}</h3>
+                                <h3 className="font-display text-2xl lg:text-3xl text-orange-500">{c.t}</h3>
                                 <Hairline className="mt-4 w-10!" />
-                                <p className="mt-4 text-sm text-muted-foreground leading-relaxed flex-grow">{c.c}</p>
+                                <p className="mt-4 text-base sm:text-sm text-muted-foreground leading-relaxed flex-grow">{c.c}</p>
                                 <SeoTags className="mt-5" tags={c.tags} compact />
                             </div>
                         ))}
@@ -101,9 +101,9 @@ export default function EntertainmentPage() {
                     <div className="mt-16 grid gap-px bg-border sm:grid-cols-3">
                         {DANCE_STYLES.map((d) => (
                             <div key={d.t} className="bg-background p-8 lg:p-10">
-                                <h3 className="font-display text-2xl text-orange-500">{d.t}</h3>
+                                <h3 className="font-display text-2xl lg:text-3xl text-orange-500">{d.t}</h3>
                                 <Hairline className="mt-4 w-10!" />
-                                <p className="mt-4 text-sm text-muted-foreground leading-relaxed">{d.c}</p>
+                                <p className="mt-4 text-base sm:text-sm text-muted-foreground leading-relaxed">{d.c}</p>
                             </div>
                         ))}
                     </div>
@@ -115,7 +115,7 @@ export default function EntertainmentPage() {
                     <div className="lg:col-span-5">
                         <SectionLabel index="III" label="Entertainers" />
                         <EditorialHeading className="mt-8">Musicians, DJs &amp; more.</EditorialHeading>
-                        <p className="mt-6 text-muted-foreground leading-relaxed text-sm sm:text-base">
+                        <p className="mt-6 text-muted-foreground leading-relaxed text-base">
                             From elegant violinists for formal corporate events to live bands and DJs for parties — good music is the life of any event.
                         </p>
                     </div>

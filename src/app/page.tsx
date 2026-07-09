@@ -82,7 +82,7 @@ export default function Home() {
                            <br /><em className="not-italic text-orange-500"> Event planners in Dubai, UAE</em>
                         </EditorialHeading>
                     </div>
-                    <div className="lg:col-span-6 lg:col-start-7 space-y-6 text-muted-foreground leading-[1.85] text-sm sm:text-base">
+                    <div className="lg:col-span-6 lg:col-start-7 space-y-6 text-muted-foreground leading-[1.85] text-base">
                         <p>
                             {SITE.name} is a full-service event management company based in Dubai with over 20 years of experience — a leading name in corporate events, weddings, and live entertainment across the UAE and Middle East.
                         </p>
@@ -119,10 +119,10 @@ export default function Home() {
                                 </div>
                                 <div className="col-span-12 lg:col-span-8 flex flex-col gap-4">
                                     <div className="flex items-start justify-between gap-4">
-                                        <h2 className="font-display font-light text-cream text-3xl lg:text-5xl leading-[1.05] group-hover:text-orange-500 transition-colors">{s.title}</h2>
+                                        <h2 className="font-display font-bold text-cream text-3xl lg:text-5xl leading-[1.05] group-hover:text-orange-500 transition-colors">{s.title}</h2>
                                         <ArrowRight className="h-5 w-5 shrink-0 text-orange-500/60 group-hover:text-orange-500 transition-transform duration-500 group-hover:translate-x-1 hidden lg:block" strokeWidth={1} />
                                     </div>
-                                    <p className="text-muted-foreground leading-relaxed max-w-2xl">{s.copy}</p>
+                                    <p className="text-base text-muted-foreground leading-relaxed max-w-2xl">{s.copy}</p>
                                     <SeoTags tags={s.tags} compact />
                                 </div>
                             </div>
@@ -182,40 +182,16 @@ export default function Home() {
                     <div className="mt-20 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 sm:gap-5">
                         {PILLARS.map((p) => (
                             <div key={p.n} className="bg-background border border-border rounded-xl p-8 lg:p-10 flex flex-col shadow-sm">
-                                <span className="font-display text-2xl text-orange-500">{p.n}</span>
+                                <span className="font-display text-3xl sm:text-2xl text-orange-500">{p.n}</span>
                                 <Hairline className="mt-6 w-12!" />
-                                <h3 className="mt-6 font-display text-3xl text-orange-500 leading-tight">{p.title}</h3>
-                                <p className="mt-4 text-sm text-muted-foreground leading-relaxed flex-grow">{p.body}</p>
+                                <h3 className="mt-6 font-display text-2xl lg:text-3xl text-orange-500 leading-tight">{p.title}</h3>
+                                <p className="mt-4 text-base sm:text-sm text-muted-foreground leading-relaxed flex-grow">{p.body}</p>
                                 <SeoTags className="mt-6" tags={p.tags} compact />
                             </div>
                         ))}
                     </div>
                 </div>
             </ParallaxReveal>
-
-            <ParallaxReveal as="section" className="relative bg-background py-32 sm:py-44" delay={250}>
-                <div className="mx-auto max-w-3xl px-6 text-center">
-                    <span className="font-display text-[6rem] sm:text-[8rem] leading-none text-orange-500/50">&ldquo;</span>
-                    <blockquote className="-mt-10 sm:-mt-12 font-display font-light leading-snug tracking-tight">
-                        <span className="block text-3xl sm:text-4xl lg:text-5xl italic text-orange-500">
-                            {SITE.motto}
-                        </span>
-                        <span className="mt-4 block text-xl sm:text-2xl lg:text-3xl italic text-cream">
-                            &mdash; Creating Premium Events
-                        </span>
-                    </blockquote>
-                    <div className="mt-10 flex flex-col items-center gap-4">
-                        <Hairline className="w-16!" />
-                        <p className="eyebrow">{SITE.name} &middot; Dubai, UAE</p>
-                        <SeoTags
-                            className="justify-center"
-                            compact
-                            tags={["Best Event Management Company in Dubai", "Top Event Planners in Dubai"]}
-                        />
-                    </div>
-                </div>
-            </ParallaxReveal>
-
             <ContactBand />
         </>
     );

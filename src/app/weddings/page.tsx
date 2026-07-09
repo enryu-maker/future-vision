@@ -69,7 +69,7 @@ export default function WeddingsPage() {
             <SectionLabel index="I" label="About" />
             <EditorialHeading className="mt-8">Your day, beautifully planned.</EditorialHeading>
           </div>
-          <div className="lg:col-span-6 lg:col-start-7 text-muted-foreground leading-[1.85] space-y-5 text-sm sm:text-base">
+          <div className="lg:col-span-6 lg:col-start-7 text-muted-foreground leading-[1.85] space-y-5 text-base">
             <p>
               As wedding planners in Dubai, Future Vision makes sure you enjoy your day while we take care of all preparations — Wedding Stage Décor, Indian Mandap, Doli, Palkhi, and fresh flower décor across the UAE.
             </p>
@@ -92,10 +92,10 @@ export default function WeddingsPage() {
               <div key={s.t} className="bg-background p-8 lg:p-10 flex flex-col">
                 <h3 className="font-display text-2xl lg:text-3xl text-orange-500">{s.t}</h3>
                 <Hairline className="mt-5 w-12!" />
-                <p className="mt-5 text-muted-foreground leading-relaxed text-sm flex-grow">{s.c}</p>
+                <p className="mt-5 text-base sm:text-sm text-muted-foreground leading-relaxed flex-grow">{s.c}</p>
                 <ul className="mt-6 space-y-2">
                   {s.services.map((item) => (
-                    <li key={item} className="text-sm text-muted-foreground before:mr-2 before:text-orange-500 before:content-['—']">
+                    <li key={item} className="text-base sm:text-sm text-muted-foreground before:mr-2 before:text-orange-500 before:content-['—']">
                       {item}
                     </li>
                   ))}
@@ -132,10 +132,10 @@ export default function WeddingsPage() {
           <div className="mt-16 grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
             {PROCESS.map((p) => (
               <div key={p.n}>
-                <span className="font-display text-3xl text-orange-500">{p.n}</span>
+                <span className="font-display text-4xl sm:text-3xl text-orange-500">{p.n}</span>
                 <Hairline className="mt-5 w-10!" />
-                <h3 className="mt-5 font-display text-xl text-orange-500">{p.t}</h3>
-                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{p.c}</p>
+                <h3 className="mt-5 font-display text-2xl sm:text-xl text-orange-500">{p.t}</h3>
+                <p className="mt-3 text-base sm:text-sm text-muted-foreground leading-relaxed">{p.c}</p>
               </div>
             ))}
           </div>

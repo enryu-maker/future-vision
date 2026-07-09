@@ -39,14 +39,12 @@ export function SiteNav() {
     return (
         <header
             className={cn(
-                "fixed inset-x-0 top-0 z-50 transition-all duration-500 border-b",
-                scrolled || open
-                    ? "bg-background/95 backdrop-blur-xl border-border shadow-sm shadow-black/5"
-                    : "bg-background/80 backdrop-blur-lg border-border/60",
+                "brand-panel grain fixed inset-x-0 top-0 z-50 transition-all duration-500 border-b border-white/10",
+                scrolled || open ? "shadow-lg shadow-black/30" : "",
             )}
         >
-            <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-4 px-6 py-4 sm:py-5 lg:px-12 lg:py-5 min-h-[5rem] lg:min-h-[5.75rem]">
-                <Monogram className="z-10" />
+            <div className="relative mx-auto flex max-w-[1400px] items-center justify-between gap-4 px-6 py-4 sm:py-5 lg:px-12 lg:py-5 min-h-[4.5rem] sm:min-h-[5rem] lg:min-h-[5.75rem]">
+                <Monogram className="z-10 min-w-0 max-w-[78vw] sm:max-w-none" />
 
                 <nav className="hidden lg:flex items-center gap-6 xl:gap-8 2xl:gap-10">
                     {NAV.slice(0, -1).map((item) => {
@@ -58,7 +56,7 @@ export function SiteNav() {
                                 title={"title" in item ? item.title : undefined}
                                 className={cn(
                                     "text-[0.72rem] uppercase tracking-[0.2em] font-medium transition-colors duration-300 whitespace-nowrap",
-                                    isActive ? "text-orange-500" : "text-cream/80 hover:text-orange-500",
+                                    isActive ? "text-orange-500" : "text-white/80 hover:text-orange-500",
                                 )}
                             >
                                 {item.label}
@@ -68,7 +66,7 @@ export function SiteNav() {
                 </nav>
 
                 <div className="hidden lg:flex items-center gap-6 shrink-0">
-                    <div className="flex flex-col text-right text-xs text-cream/80">
+                    <div className="flex flex-col text-right text-xs text-white/75">
                         <a href={`mailto:${SITE.email}`} className="hover:text-orange-500 transition-colors">{SITE.email}</a>
                         <a href={`tel:${PHONES[0].tel}`} className="hover:text-orange-500 transition-colors">{PHONES[0].display}</a>
                     </div>
@@ -77,7 +75,7 @@ export function SiteNav() {
 
                 <button
                     aria-label="Toggle menu"
-                    className="lg:hidden text-cream shrink-0 p-1"
+                    className="lg:hidden text-white shrink-0 p-1"
                     onClick={() => setOpen((v) => !v)}
                 >
                     {open ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
@@ -85,7 +83,7 @@ export function SiteNav() {
             </div>
 
             {open && (
-                <div className="lg:hidden border-t border-border bg-background/98 backdrop-blur-xl">
+                <div className="lg:hidden relative border-t border-white/10">
                     <div className="flex flex-col px-6 py-8 gap-5">
                         {NAV.map((item) => {
                             const isActive = item.href === "/" ? pathname === "/" : pathname === item.href;
@@ -95,15 +93,15 @@ export function SiteNav() {
                                     href={item.href}
                                     title={"title" in item ? item.title : undefined}
                                     className={cn(
-                                        "font-display text-2xl transition-colors",
-                                        isActive ? "text-orange-500" : "text-cream hover:text-orange-500",
+                                        "font-display text-3xl font-bold transition-colors",
+                                        isActive ? "text-orange-500" : "text-white hover:text-orange-500",
                                     )}
                                 >
                                     {item.label}
                                 </Link>
                             );
                         })}
-                        <div className="mt-2 flex flex-col gap-2 text-sm text-cream/80">
+                        <div className="mt-2 flex flex-col gap-3 text-base text-white/80">
                             <a href={`mailto:${SITE.email}`} className="hover:text-orange-500 transition-colors">{SITE.email}</a>
                             <a href={`tel:${PHONES[0].tel}`} className="hover:text-orange-500 transition-colors">{PHONES[0].display}</a>
                         </div>

@@ -75,7 +75,7 @@ export default function CorporatePage() {
                         <SectionLabel index="I" label="About" />
                         <EditorialHeading className="mt-8">A premier corporate event company.</EditorialHeading>
                     </div>
-                    <div className="lg:col-span-6 lg:col-start-7 text-muted-foreground leading-[1.85] space-y-5 text-sm sm:text-base">
+                    <div className="lg:col-span-6 lg:col-start-7 text-muted-foreground leading-[1.85] space-y-5 text-base">
                         <p>
                             Future Vision is one of the premier event management companies in Dubai, famed for quality, planning, and management of corporate events across the UAE.
                         </p>
@@ -83,7 +83,7 @@ export default function CorporatePage() {
                             We work with clients from concept development and venue selection through technical planning to managing the actual event production — including travel, sound, light, stage setup, translation equipment, and exhibition stands.
                         </p>
                         <p className="font-display text-2xl sm:text-3xl italic text-orange-500">
-                            You imagine it and we will make it happen.
+                           Creating premium Events
                         </p>
                     </div>
                 </div>
@@ -96,9 +96,9 @@ export default function CorporatePage() {
                     <div className="mt-16 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-3">
                         {TYPES.map((x) => (
                             <div key={x.t} className="bg-background p-8 lg:p-10 flex flex-col">
-                                <h3 className="font-display text-2xl text-orange-500">{x.t}</h3>
+                                <h3 className="font-display text-2xl lg:text-3xl text-orange-500">{x.t}</h3>
                                 <Hairline className="mt-4 w-10!" />
-                                <p className="mt-4 text-sm text-muted-foreground leading-relaxed flex-grow">{x.c}</p>
+                                <p className="mt-4 text-base sm:text-sm text-muted-foreground leading-relaxed flex-grow">{x.c}</p>
                                 <SeoTags className="mt-5" tags={x.tags} compact />
                             </div>
                         ))}
@@ -113,9 +113,9 @@ export default function CorporatePage() {
                     <div className="mt-16 grid gap-px bg-border sm:grid-cols-3">
                         {HIGHLIGHTS.map((h) => (
                             <div key={h.t} className="bg-surface-2 p-8 lg:p-10 flex flex-col">
-                                <h3 className="font-display text-2xl text-orange-500">{h.t}</h3>
+                                <h3 className="font-display text-2xl lg:text-3xl text-orange-500">{h.t}</h3>
                                 <Hairline className="mt-4 w-10!" />
-                                <p className="mt-4 text-sm text-muted-foreground leading-relaxed flex-grow">{h.c}</p>
+                                <p className="mt-4 text-base sm:text-sm text-muted-foreground leading-relaxed flex-grow">{h.c}</p>
                                 <SeoTags className="mt-5" tags={h.tags} compact />
                             </div>
                         ))}
@@ -145,16 +145,16 @@ export default function CorporatePage() {
                 <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
                     <SectionLabel index="V" label="Process" />
                     <EditorialHeading className="mt-8">Four stages to success.</EditorialHeading>
-                    <p className="mt-6 max-w-2xl text-muted-foreground leading-relaxed text-sm sm:text-base">
+                    <p className="mt-6 max-w-2xl text-muted-foreground leading-relaxed text-base">
                         Careful planning is the secret to a successful event. We work closely with clients from concept through to the final guest departure.
                     </p>
                     <div className="mt-16 grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
                         {PROCESS.map((p) => (
                             <div key={p.n}>
-                                <span className="font-display text-3xl text-orange-500">{p.n}</span>
+                                <span className="font-display text-4xl sm:text-3xl text-orange-500">{p.n}</span>
                                 <Hairline className="mt-5 w-10!" />
-                                <h3 className="mt-5 font-display text-xl text-orange-500">{p.t}</h3>
-                                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{p.c}</p>
+                                <h3 className="mt-5 font-display text-2xl sm:text-xl text-orange-500">{p.t}</h3>
+                                <p className="mt-3 text-base sm:text-sm text-muted-foreground leading-relaxed">{p.c}</p>
                             </div>
                         ))}
                     </div>

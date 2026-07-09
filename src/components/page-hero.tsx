@@ -34,7 +34,7 @@ export function PageHero({
               {title}
             </EditorialHeading>
             {intro && (
-              <p className="mt-8 text-sm sm:text-base text-foreground/80 leading-relaxed">
+              <p className="mt-8 text-base text-foreground/80 leading-relaxed">
                 {intro}
               </p>
             )}

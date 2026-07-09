@@ -61,6 +61,7 @@
     --color-cream: var(--cream);
     --color-surface: var(--surface);
     --color-surface-2: var(--surface-2);
+    --color-brand-panel: var(--brand-panel);
     --font-display: "Cormorant Garamond", ui-serif, Georgia, serif;
     --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 }
@@ -73,6 +74,7 @@
     --surface-2: oklch(0.96 0.01 88);
     --foreground: oklch(0.38 0.02 58);
     --cream: oklch(0.2 0.025 55);
+    --brand-panel: #0b0c0e;
     --card: var(--surface);
     --card-foreground: var(--cream);
     --popover: var(--background);
@@ -171,7 +173,7 @@
     h5,
     h6 {
         font-family: var(--font-display);
-        font-weight: 300;
+        font-weight: 700;
         letter-spacing: -0.01em;
     }
 }
@@ -216,6 +218,15 @@
 
     .orange-underline:hover {
         background-size: 100% 1px;
+    }
+
+    .brand-panel {
+        background-color: var(--brand-panel);
+    }
+
+    .brand-panel.grain::after {
+        opacity: 0.1;
+        mix-blend-mode: soft-light;
     }
 }
 

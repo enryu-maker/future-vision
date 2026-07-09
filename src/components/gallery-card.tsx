@@ -25,10 +25,10 @@ export function GalleryCard({
                         "linear-gradient(180deg, transparent 35%, oklch(0.18 0.02 55 / 0.75) 100%)",
                 }}
             />
-            <div className="absolute inset-0 flex flex-col justify-end p-5 sm:p-6 lg:p-8">
-                <span className="eyebrow text-[0.7rem]! leading-relaxed text-orange-400">{eyebrow}</span>
-                <h3 className="mt-2 font-display text-lg sm:text-xl lg:text-2xl text-background leading-tight">{title}</h3>
-                {subtitle && <p className="mt-1 text-xs text-background/70">{subtitle}</p>}
+            <div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-6 lg:p-8">
+                <span className="eyebrow text-sm! sm:text-[0.7rem]! leading-relaxed text-orange-400">{eyebrow}</span>
+                <h3 className="mt-2 font-display text-2xl sm:text-2xl lg:text-3xl text-background leading-tight">{title}</h3>
+                {subtitle && <p className="mt-1.5 text-sm sm:text-xs text-background/80">{subtitle}</p>}
             </div>
         </article>
     );

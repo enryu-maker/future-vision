@@ -51,7 +51,7 @@ export default function AboutPage() {
                     <div className="lg:col-span-6 lg:col-start-7">
                         <SectionLabel index="I" label="Who We Are" />
                         <EditorialHeading className="mt-8">Full-service event management.</EditorialHeading>
-                        <div className="mt-8 text-muted-foreground leading-[1.85] space-y-5 text-sm sm:text-base">
+                        <div className="mt-8 text-muted-foreground leading-[1.85] space-y-5 text-base">
                             <p>
                                 As a full-service entertainment and event management company, Future Vision works with clients from concept development, venue selection, and technical planning through to managing the actual event production.
                             </p>
@@ -71,10 +71,10 @@ export default function AboutPage() {
                     <div className="mt-16 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-4">
                         {STATS.map((v, i) => (
                             <div key={v.t} className="bg-background p-8 lg:p-10 flex flex-col">
-                                <span className="font-display text-2xl text-orange-500">{String(i + 1).padStart(2, "0")}</span>
+                                <span className="font-display text-3xl sm:text-2xl text-orange-500">{String(i + 1).padStart(2, "0")}</span>
                                 <Hairline className="mt-6 w-10!" />
-                                <h3 className="mt-6 font-display text-2xl text-cream">{v.t}</h3>
-                                <p className="mt-4 text-sm text-muted-foreground leading-relaxed flex-grow">{v.c}</p>
+                                <h3 className="mt-6 font-display text-2xl lg:text-3xl text-cream">{v.t}</h3>
+                                <p className="mt-4 text-base sm:text-sm text-muted-foreground leading-relaxed flex-grow">{v.c}</p>
                                 <SeoTags className="mt-5" tags={v.tags} compact />
                             </div>
                         ))}
@@ -86,16 +86,16 @@ export default function AboutPage() {
                 <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
                     <SectionLabel index="III" label="Our Process" />
                     <EditorialHeading className="mt-8 max-w-xl">Four stages to every event.</EditorialHeading>
-                    <p className="mt-6 max-w-2xl text-muted-foreground leading-relaxed text-sm sm:text-base">
+                    <p className="mt-6 max-w-2xl text-muted-foreground leading-relaxed text-base">
                         Careful planning is the secret to a successful event. We work closely with clients from concept through to the final guest departure.
                     </p>
                     <div className="mt-16 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-4">
                         {PROCESS.map((p, i) => (
                             <div key={p.t} className="bg-surface-2 p-8 lg:p-10">
-                                <span className="font-display text-2xl text-orange-500">{String(i + 1).padStart(2, "0")}</span>
+                                <span className="font-display text-3xl sm:text-2xl text-orange-500">{String(i + 1).padStart(2, "0")}</span>
                                 <Hairline className="mt-6 w-10!" />
-                                <h3 className="mt-6 font-display text-2xl text-cream">{p.t}</h3>
-                                <p className="mt-4 text-sm text-muted-foreground leading-relaxed">{p.c}</p>
+                                <h3 className="mt-6 font-display text-2xl lg:text-3xl text-cream">{p.t}</h3>
+                                <p className="mt-4 text-base sm:text-sm text-muted-foreground leading-relaxed">{p.c}</p>
                             </div>
                         ))}
                     </div>
