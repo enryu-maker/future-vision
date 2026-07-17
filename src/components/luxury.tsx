@@ -97,15 +97,18 @@ export function GoldButton({
 export function SectionLabel({
   index,
   label,
+  className,
 }: {
   index?: string;
   label: string;
+  className?: string;
 }) {
   return (
-    <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-orange-500 max-w-full">
-      {index && <span className="font-sans text-[0.7rem] tracking-[0.28em] shrink-0">{index}.</span>}
-      {/* <span className="h-px w-10 bg-orange-500/50 shrink-0 hidden sm:block" /> */}
-      <span className="eyebrow text-[0.78rem] text-orange-500! leading-relaxed">{label}</span>
+    <div className={cn("flex flex-wrap items-center gap-x-4 gap-y-2 text-orange-500 max-w-full", className)}>
+      {index && <span className="font-sans text-sm font-bold tracking-[0.28em] shrink-0 sm:text-base">{index}.</span>}
+      <span className="eyebrow text-sm! font-bold! tracking-[0.28em]! text-orange-500! leading-relaxed sm:text-base!">
+        {label}
+      </span>
     </div>
   );
 }
@@ -179,16 +182,16 @@ export function ContactBand() {
       <AbstractBackdrop hue="warm" />
       <ParallaxReveal className="relative mx-auto max-w-3xl px-6 text-center">
         <ParallaxContent speed={0.08}>
-          <Eyebrow>Get in Touch</Eyebrow>
+          <Eyebrow className="text-sm! font-bold! sm:text-base!">Get in Touch</Eyebrow>
           <EditorialHeading className="mt-8">
-            <em className="not-italic text-orange-500">  Plan your next event in Dubai</em>
+            <em className="not-italic text-orange-500">Plan your next event in Dubai</em>
           </EditorialHeading>
-          <p className="mx-auto mt-8 max-w-lg text-base text-muted-foreground leading-relaxed">
+          <p className="mx-auto mt-8 max-w-lg text-base sm:text-lg text-muted-foreground leading-relaxed">
             Corporate events, weddings, conferences, exhibitions, product launches, gala dinners, and live entertainment — our team replies within one business day.
           </p>
           <div className="mt-12 flex flex-wrap justify-center gap-4">
             <GoldButton to="/contact" variant="solid">Contact Us</GoldButton>
-            <GoldButton to="/portfolio" variant="outline">View Portfolio</GoldButton>
+            <GoldButton to="/portfolio" variant="solid">View Portfolio</GoldButton>
           </div>
         </ParallaxContent>
       </ParallaxReveal>

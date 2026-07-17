@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import type { ServiceIcon } from "@/components/service-row-image";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import {
     ContactBand,
     EditorialHeading,
@@ -9,12 +8,11 @@ import {
     Hairline,
     SectionLabel,
 } from "@/components/luxury";
+import { AnimatedCounter } from "@/components/animated-counter";
 import { GalleryCard } from "@/components/gallery-card";
 import { HomeHero } from "@/components/home-hero";
 import { ParallaxReveal } from "@/components/parallax";
-import { ServiceRowImage } from "@/components/service-row-image";
 import { SeoTags } from "@/components/seo-tags";
-import heroImg from "@/assets/portfolio/portfolio-entertainment-magician.png";
 import { PORTFOLIO_ITEMS, SERVICE_HERO_IMAGES } from "@/data/portfolio";
 import { SITE } from "@/data/contact";
 import { pageMetadata } from "@/data/seo";
@@ -35,7 +33,6 @@ const SERVICES = [
         n: "01",
         title: "Corporate Events",
         to: "/corporate-events",
-        icon: "building" satisfies ServiceIcon,
         image: corpImg,
         copy: "Conferences, product launches, gala dinners, exhibitions, team building, and annual corporate celebrations across Dubai and the UAE.",
         tags: ["Corporate Event Management Dubai", "Conference Organizer Dubai", "Product Launch Event Agency Dubai", "Exhibition Management Company Dubai", "Gala Dinner Organizer Dubai"],
@@ -44,7 +41,6 @@ const SERVICES = [
         n: "02",
         title: "Weddings",
         to: "/weddings",
-        icon: "sparkles" satisfies ServiceIcon,
         image: wedImg,
         copy: "Arabic, Indian, and Western weddings with full planning, stage décor, mandap, fresh flowers, and destination celebrations.",
         tags: ["Wedding Planner Dubai", "Luxury Wedding Planner Dubai", "Indian Wedding Planner Dubai", "Wedding Decoration Dubai", "Destination Wedding Planner Dubai"],
@@ -53,104 +49,195 @@ const SERVICES = [
         n: "03",
         title: "Entertainment",
         to: "/entertainment",
-        icon: "music" satisfies ServiceIcon,
         image: entImg,
         copy: "Dance shows, live bands, DJs, musicians, magicians, and performers for corporate events, weddings, and private parties.",
         tags: ["Entertainment Agency Dubai", "Live Entertainment Dubai", "Corporate Entertainment Dubai", "Event Performers Dubai", "Artist Management Company Dubai"],
     },
 ] as const;
 
-const PILLARS = [
+const WHY_CHOOSE = [
+    "Over 20 Years of Industry Experience",
+    "Creative Event Concepts",
+    "End-to-End Event Planning",
+    "Professional Production Team",
+    "High Quality Equipment",
+    "Customized Event Solutions",
+    "On-Time Project Delivery",
+    "Dedicated Client Support",
+    "Airport Transfers",
+] as const;
+
+const EVENT_TYPES = [
     { n: "01", title: "Conferences", body: "Multi-day conferences, seminars, and business meetings with full AV, staging, and guest management.", tags: ["Conference Organizer Dubai", "Conference Management Company Dubai", "MICE Events Dubai"] },
     { n: "02", title: "Exhibitions", body: "Custom exhibition stands, trade shows, and branded environments for expos across Dubai.", tags: ["Exhibition Management Company Dubai", "Trade Show Organizer Dubai", "Exhibition Stand Contractor Dubai"] },
     { n: "03", title: "Product Launches", body: "Brand activations, experiential marketing, and launch events that make your product unforgettable.", tags: ["Product Launch Event Agency Dubai", "Brand Activation Agency Dubai", "Experiential Marketing Agency Dubai"] },
     { n: "04", title: "Gala Dinners", body: "Annual galas, award ceremonies, and VIP evenings with luxury production and entertainment.", tags: ["Gala Dinner Organizer Dubai", "Corporate Gala Dinner Dubai", "Award Ceremony Organizer Dubai"] },
 ];
 
+const STATS = [
+    { value: 20, suffix: "+", label: "Years Experience" },
+    { value: 1000, suffix: "+", label: "Successful Events" },
+    { value: 500, suffix: "+", label: "Happy Clients" },
+    { value: 100, suffix: "%", label: "Client Satisfaction" },
+] as const;
+
 const PORTFOLIO = PORTFOLIO_ITEMS.slice(0, 6);
 
 export default function Home() {
     return (
         <>
-            <HomeHero imageSrc={corpImg.src} />
+            <HomeHero images={[corpImg.src, wedImg.src, entImg.src]} />
 
-            <ParallaxReveal as="section" className="relative bg-background py-32 sm:py-44">
-                <div className="mx-auto grid max-w-[1400px] gap-16 px-6 lg:grid-cols-12 lg:px-12">
+            <ParallaxReveal as="section" className="relative bg-background py-24 sm:py-32">
+                <div className="mx-auto grid max-w-[1400px] gap-12 px-6 lg:grid-cols-12 lg:gap-16 lg:px-12">
                     <div className="lg:col-span-5">
-                        <SectionLabel index="I" label="About" />
-                        <EditorialHeading className="mt-10">
-                           <br /><em className="not-italic text-orange-500"> Event planners in Dubai, UAE</em>
+                        <SectionLabel label="About Us" />
+                        <EditorialHeading className="mt-8 text-[clamp(2rem,4.5vw,3.5rem)]">
+                            Event planners in{" "}
+                            <em className="not-italic text-orange-500">Dubai, UAE</em>
                         </EditorialHeading>
                     </div>
-                    <div className="lg:col-span-6 lg:col-start-7 space-y-6 text-muted-foreground leading-[1.85] text-base">
+                    <div className="lg:col-span-6 lg:col-start-7 space-y-6 text-muted-foreground leading-[1.85] text-base sm:text-lg">
                         <p>
-                            {SITE.name} is a full-service event management company based in Dubai with over 20 years of experience — a leading name in corporate events, weddings, and live entertainment across the UAE and Middle East.
+                            Future Vision Events is one of the UAE&apos;s leading event management companies, dedicated to creating memorable experiences through innovative planning, flawless execution, and exceptional customer service.
                         </p>
                         <p>
-                            From concept development and venue selection through technical planning to on-the-day production, we handle conferences, staff parties, exhibitions, product launches, Arabic, Indian and Western weddings, and private celebrations.
+                            From intimate celebrations to large-scale corporate events, our experienced team manages every detail with precision and creativity. Our commitment to quality, reliability, and customer satisfaction has earned us the trust of clients across the UAE.
+                        </p>
+                        <p>
+                            Whether it is a corporate conference, product launch, exhibition, wedding, gala dinner, or entertainment event, we transform every vision into reality.
                         </p>
                         <SeoTags
                             tags={["Event Management Agency UAE", "Event Production Company Dubai", "Luxury Event Planner Dubai", "Event Management Services Dubai"]}
                         />
-                        <p className="font-display text-xl sm:text-2xl italic text-orange-500 pt-2">
-                            &mdash; {SITE.motto}
+                        <p className="font-display text-2xl sm:text-3xl italic text-orange-500 pt-2">
+                            {SITE.motto}
                         </p>
                     </div>
                 </div>
             </ParallaxReveal>
 
-            <ParallaxReveal as="section" className="relative bg-surface" delay={100}>
-                <div className="mx-auto max-w-[1400px] px-6 lg:px-12 pt-24 pb-10">
-                    <div className="flex flex-wrap items-end justify-between gap-6">
-                        <div className="max-w-2xl">
-                            <SectionLabel index="II" label="Services" />
-                            <EditorialHeading className="mt-8">Three disciplines, one standard.</EditorialHeading>
-                        </div>
-                        <Link href="/portfolio" className="eyebrow orange-underline shrink-0">View portfolio</Link>
-                    </div>
-                </div>
-                <div className="border-t border-border">
-                    {SERVICES.map((s) => (
-                        <Link key={s.to} href={s.to} className="group block border-b border-border transition-colors hover:bg-background">
-                            <div className="mx-auto grid max-w-[1400px] grid-cols-12 items-start gap-6 px-6 lg:px-12 py-14 lg:py-20">
-                                <div className="col-span-12 lg:col-span-1 font-display text-3xl text-orange-500/70">{s.n}</div>
-                                <div className="col-span-12 lg:col-span-2">
-                                    <ServiceRowImage src={s.image.src} alt={s.title} icon={s.icon} />
-                                </div>
-                                <div className="col-span-12 lg:col-span-8 flex flex-col gap-4">
-                                    <div className="flex items-start justify-between gap-4">
-                                        <h2 className="font-display font-bold text-cream text-3xl lg:text-5xl leading-[1.05] group-hover:text-orange-500 transition-colors">{s.title}</h2>
-                                        <ArrowRight className="h-5 w-5 shrink-0 text-orange-500/60 group-hover:text-orange-500 transition-transform duration-500 group-hover:translate-x-1 hidden lg:block" strokeWidth={1} />
-                                    </div>
-                                    <p className="text-base text-muted-foreground leading-relaxed max-w-2xl">{s.copy}</p>
-                                    <SeoTags tags={s.tags} compact />
-                                </div>
+            <ParallaxReveal as="section" className="relative bg-surface py-24 sm:py-28" delay={80}>
+                <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
+                    <SectionLabel label="Why Choose Us" />
+                    <EditorialHeading className="mt-8 max-w-3xl text-[clamp(2rem,4vw,3.25rem)]">
+                        Why Choose Future Vision Events
+                    </EditorialHeading>
+                    <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                        {WHY_CHOOSE.map((item) => (
+                            <div
+                                key={item}
+                                className="flex items-start gap-4 rounded-xl border border-border bg-background p-6 shadow-sm"
+                            >
+                                <CheckCircle2 className="mt-0.5 h-6 w-6 shrink-0 text-orange-500" strokeWidth={2} />
+                                <p className="font-display text-xl sm:text-2xl font-bold text-cream leading-snug">{item}</p>
                             </div>
-                        </Link>
-                    ))}
+                        ))}
+                    </div>
                 </div>
             </ParallaxReveal>
 
-            <ParallaxReveal as="section" className="relative bg-background py-32" delay={150}>
+            <ParallaxReveal as="section" className="relative bg-background" delay={100}>
+                <div className="mx-auto max-w-[1400px] px-6 lg:px-12 pt-24 pb-10">
+                    <div className="flex flex-wrap items-end justify-between gap-6">
+                        <div className="max-w-2xl">
+                            <SectionLabel label="Services" />
+                            <EditorialHeading className="mt-8 text-[clamp(2rem,4vw,3.25rem)]">
+                                Three disciplines, one standard.
+                            </EditorialHeading>
+                        </div>
+                        <GoldButton to="/portfolio" variant="solid" className="shrink-0">
+                            View Portfolio
+                        </GoldButton>
+                    </div>
+                </div>
+                <div className="mx-auto max-w-[1400px] px-6 lg:px-12 pb-24">
+                    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                        {SERVICES.map((s) => (
+                            <Link
+                                key={s.to}
+                                href={s.to}
+                                className="group flex flex-col overflow-hidden rounded-xl border border-border bg-surface shadow-sm transition-all duration-500 hover:border-orange-500/40 hover:shadow-md"
+                            >
+                                <div className="relative aspect-4/3 overflow-hidden bg-background">
+                                    <img
+                                        src={s.image.src}
+                                        alt={s.title}
+                                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/35 to-transparent" />
+                                </div>
+                                <div className="flex flex-1 flex-col gap-4 p-6 sm:p-8">
+                                    <div className="flex items-start justify-between gap-3">
+                                        <div>
+                                            <span className="font-display text-lg text-orange-500/80">{s.n}</span>
+                                            <h2 className="mt-1 font-display text-2xl sm:text-3xl font-bold text-cream leading-tight group-hover:text-orange-500 transition-colors">
+                                                {s.title}
+                                            </h2>
+                                        </div>
+                                        <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-orange-500 text-white transition-transform duration-500 group-hover:translate-x-1">
+                                            <ArrowRight className="h-5 w-5" strokeWidth={2} />
+                                        </span>
+                                    </div>
+                                    <p className="text-base text-muted-foreground leading-relaxed">{s.copy}</p>
+                                    <SeoTags tags={s.tags} compact />
+                                </div>
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+            </ParallaxReveal>
+
+            <ParallaxReveal as="section" className="relative bg-surface py-24 sm:py-32" delay={120}>
+                <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
+                    <SectionLabel label="Event Types" />
+                    <EditorialHeading className="mt-8 max-w-2xl text-[clamp(2rem,4vw,3.25rem)]">
+                        What we specialise in.
+                    </EditorialHeading>
+
+                    <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                        {STATS.map((stat) => (
+                            <AnimatedCounter
+                                key={stat.label}
+                                value={stat.value}
+                                suffix={stat.suffix}
+                                label={stat.label}
+                            />
+                        ))}
+                    </div>
+
+                    <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 sm:gap-5">
+                        {EVENT_TYPES.map((p) => (
+                            <div key={p.n} className="bg-background border border-border rounded-xl p-8 lg:p-10 flex flex-col shadow-sm">
+                                <span className="font-display text-3xl sm:text-2xl text-orange-500">{p.n}</span>
+                                <Hairline className="mt-6 w-12!" />
+                                <h3 className="mt-6 font-display text-2xl lg:text-3xl font-bold text-orange-500 leading-tight">{p.title}</h3>
+                                <p className="mt-4 text-base sm:text-sm text-muted-foreground leading-relaxed flex-grow">{p.body}</p>
+                                <SeoTags className="mt-6" tags={p.tags} compact />
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </ParallaxReveal>
+
+            <ParallaxReveal as="section" className="relative bg-background py-24 sm:py-32" delay={150}>
                 <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
                     <div className="flex flex-wrap items-end justify-between gap-6">
                         <div className="max-w-2xl">
-                            <SectionLabel index="III" label="Portfolio" />
-                            <EditorialHeading className="mt-8">Recent work in Dubai.</EditorialHeading>
+                            <SectionLabel label="Portfolio" />
+                            <EditorialHeading className="mt-8 text-[clamp(2rem,4vw,3.25rem)]">
+                                Recent work in Dubai.
+                            </EditorialHeading>
                         </div>
-                        <div className="flex flex-col md:flex-row md:flex-wrap gap-4 ">
+                        <div className="flex flex-wrap gap-3">
                             {[
                                 { label: "Corporate", href: "/corporate-events" },
                                 { label: "Weddings", href: "/weddings" },
                                 { label: "Entertainment", href: "/entertainment" },
                             ].map((c) => (
-                                <Link
-                                    key={c.label}
-                                    href={c.href}
-                                    className={`eyebrow text-[0.75rem] text-muted-foreground hover:text-orange-500 transition-colors`}
-                                >
+                                <GoldButton key={c.label} to={c.href} variant="solid" className="px-5! py-3! text-[0.68rem]!">
                                     {c.label}
-                                </Link>
+                                </GoldButton>
                             ))}
                         </div>
                     </div>
@@ -174,24 +261,26 @@ export default function Home() {
                 </div>
             </ParallaxReveal>
 
-            <ParallaxReveal as="section" className="relative bg-surface py-32" delay={200}>
+            <ParallaxReveal as="section" className="relative bg-surface py-24 sm:py-32" delay={200}>
                 <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
-                    <SectionLabel index="IV" label="Why Future Vision" />
-                    <EditorialHeading className="mt-8 max-w-2xl">What we specialise in.</EditorialHeading>
+                    <SectionLabel label="Why Future Vision" />
+                    <EditorialHeading className="mt-8 max-w-2xl text-[clamp(2rem,4vw,3.25rem)]">
+                        Trusted results across the UAE.
+                    </EditorialHeading>
 
-                    <div className="mt-20 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 sm:gap-5">
-                        {PILLARS.map((p) => (
-                            <div key={p.n} className="bg-background border border-border rounded-xl p-8 lg:p-10 flex flex-col shadow-sm">
-                                <span className="font-display text-3xl sm:text-2xl text-orange-500">{p.n}</span>
-                                <Hairline className="mt-6 w-12!" />
-                                <h3 className="mt-6 font-display text-2xl lg:text-3xl text-orange-500 leading-tight">{p.title}</h3>
-                                <p className="mt-4 text-base sm:text-sm text-muted-foreground leading-relaxed flex-grow">{p.body}</p>
-                                <SeoTags className="mt-6" tags={p.tags} compact />
-                            </div>
+                    <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                        {STATS.map((stat) => (
+                            <AnimatedCounter
+                                key={`why-${stat.label}`}
+                                value={stat.value}
+                                suffix={stat.suffix}
+                                label={stat.label}
+                            />
                         ))}
                     </div>
                 </div>
             </ParallaxReveal>
+
             <ContactBand />
         </>
     );

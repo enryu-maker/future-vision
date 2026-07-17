@@ -6,6 +6,7 @@ import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { StructuredData } from "@/components/structured-data";
 import { Toaster } from "@/components/ui/sonner";
+import { WhatsAppButton } from "@/components/whatsapp-button";
 import { SITE } from "@/data/contact";
 import { DEFAULT_DESCRIPTION, UAE_KEYWORDS } from "@/data/seo";
 
@@ -77,6 +78,7 @@ export default function RootLayout({
         <SiteNav />
         <main className="flex-grow">{children}</main>
         <SiteFooter />
+        <WhatsAppButton />
         <Toaster />
       </body>
     </html>

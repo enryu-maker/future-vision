@@ -3,7 +3,7 @@ export const SITE = {
     shortName: "Future Vision",
     url: "https://futurevision.ae",
     email: "futurevision@eim.ae",
-    motto: "Creating premium Events",
+    motto: "From Vision to Reality",
     region: "Dubai, UAE",
 } as const;
 
