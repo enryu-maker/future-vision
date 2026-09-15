@@ -9,12 +9,32 @@ import { pageMetadata } from "@/data/seo";
 
 const heroImg = SERVICE_HERO_IMAGES.corporate;
 
-export const metadata: Metadata = pageMetadata({
-    title: "Corporate Event Management Dubai | Corporate Event Planner Dubai",
-    description:
-        "Corporate Event Management Dubai — Future Vision is a leading Corporate Event Planner Dubai, Corporate Event Organizer Dubai, and Corporate Entertainment Company Dubai. Team Building Events Dubai, Corporate Conference Organizer Dubai, Corporate Gala Dinner Dubai, and Corporate Event Production Dubai.",
-    path: "/corporate-events",
+const corporateSeo = pageMetadata({
+  title: "Gala Dinner, Award Ceremony & Product Launch Company Dubai",
+  description:
+    "Corporate gala dinner and award ceremony organizers in Dubai offering product launches, event planning, production and event permit support across the UAE.",
+  path: "/corporate-events",
 });
+
+export const metadata: Metadata = {
+  ...corporateSeo,
+  title: {
+    absolute: "Gala Dinner, Award Ceremony & Product Launch Company Dubai",
+  },
+  keywords: [
+    "Corporate Gala Dinner Organizer in Dubai",
+    "Award Ceremony organizers in Dubai",
+    "Product Launch Company in Dubai",
+  ],
+  alternates: {
+    ...corporateSeo.alternates,
+    languages: {
+      "en-AE": "https://www.futurevision.ae/corporate-events",
+      "x-default": "https://www.futurevision.ae/corporate-events",
+    },
+  },
+};
+
 
 const TYPES = [
     { t: "Annual Staff Parties", c: "Theme-driven celebrations for employees — holiday gatherings, milestone recognition, and annual corporate events across Dubai.", tags: ["Annual Corporate Event Dubai", "Corporate Event Management Dubai"] },
