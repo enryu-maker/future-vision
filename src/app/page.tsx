@@ -16,17 +16,37 @@ import { SeoTags } from "@/components/seo-tags";
 import { PORTFOLIO_ITEMS, SERVICE_HERO_IMAGES } from "@/data/portfolio";
 import { SITE } from "@/data/contact";
 import { pageMetadata } from "@/data/seo";
+import OrganizationSchema from "@/components/organization-schema";
 
 const corpImg = SERVICE_HERO_IMAGES.corporate;
 const wedImg = SERVICE_HERO_IMAGES.weddings;
 const entImg = SERVICE_HERO_IMAGES.entertainment;
 
-export const metadata: Metadata = pageMetadata({
-    title: "Best Event Management Company in Dubai | Event Planner Dubai",
-    description:
-        "Top Event Planners in Dubai — Future Vision is the Best Event Management Company in Dubai for Corporate Event Management Dubai, Wedding Planner Dubai, Conference Organizer Dubai, Exhibition Management Company Dubai, Product Launch Event Agency Dubai, Gala Dinner Organizer Dubai, and Live Entertainment Dubai.",
-    path: "/",
+const homeSeo = pageMetadata({
+  title: "Event Management Company & Event Organizers in Dubai UAE",
+  description:
+    "Future Vision is an event management company in Dubai UAE offering professional event organizing, planning and event permit support for events across Dubai.",
+  path: "/",
 });
+
+export const metadata: Metadata = {
+  ...homeSeo,
+  title: {
+    absolute: "Event Management Company & Event Organizers in Dubai UAE",
+  },
+  keywords: [
+    "Event Management Company in Dubai",
+    "Event Organizers in Dubai UAE",
+    "Event Permit Dubai UAE",
+  ],
+  alternates: {
+    ...homeSeo.alternates,
+    languages: {
+      "en-AE": "https://www.futurevision.ae/",
+      "x-default": "https://www.futurevision.ae/",
+    },
+  },
+};
 
 const SERVICES = [
     {
@@ -86,6 +106,7 @@ const PORTFOLIO = PORTFOLIO_ITEMS.slice(0, 6);
 export default function Home() {
     return (
         <>
+            <OrganizationSchema />
             <HomeHero images={[corpImg.src, wedImg.src, entImg.src]} />
 
             <ParallaxReveal as="section" className="relative bg-background py-24 sm:py-32">
