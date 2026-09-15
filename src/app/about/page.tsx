@@ -9,12 +9,32 @@ import philosophyImg from "@/assets/portfolio/portfolio-wedding-mandap.png";
 import { SITE } from "@/data/contact";
 import { pageMetadata } from "@/data/seo";
 
-export const metadata: Metadata = pageMetadata({
-    title: "About — Best Event Management Company in Dubai",
-    description:
-        "About Future Vision — Best Event Management Company in Dubai with 14+ years. Event Management Company Dubai, Corporate Event Management Dubai, Wedding Planner Dubai, Conference Organizer Dubai, Exhibition Management Company Dubai, and Live Entertainment Dubai across UAE.",
-    path: "/about",
+const aboutSeo = pageMetadata({
+  title: "Event Planning, Conference and Production Company Dubai UAE",
+  description:
+    "Future Vision is an event planning and production company in Dubai UAE, organizing conferences, corporate events and complete event production services.",
+  path: "/about",
 });
+
+export const metadata: Metadata = {
+  ...aboutSeo,
+  title: {
+    absolute: "Event Planning, Conference and Production Company Dubai UAE",
+  },
+  keywords: [
+    "Event Planning Company in Dubai",
+    "Conference Organizers in Dubai",
+    "Event Production Company in Dubai UAE",
+  ],
+  alternates: {
+    ...aboutSeo.alternates,
+    languages: {
+      "en-AE": "https://www.futurevision.ae/about",
+      "x-default": "https://www.futurevision.ae/about",
+    },
+  },
+};
+
 
 const STATS = [
     { t: "14+ Years", c: "Experience in corporate events, weddings, and entertainment across the UAE and Middle East.", tags: ["Event Management Company Dubai", "Top Event Planners in Dubai"] },
