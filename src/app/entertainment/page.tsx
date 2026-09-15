@@ -9,12 +9,25 @@ import { pageMetadata } from "@/data/seo";
 
 const heroImg = SERVICE_HERO_IMAGES.entertainment;
 
-export const metadata: Metadata = pageMetadata({
-    title: "Entertainment Agency Dubai | Live Entertainment Dubai",
-    description:
-        "Entertainment Agency Dubai — Future Vision provides Live Entertainment Dubai, Corporate Entertainment Dubai, Event Performers Dubai, Artist Management Company Dubai, Event Entertainment Services Dubai, and Luxury Entertainment Dubai for events across UAE.",
-    path: "/entertainment",
+const entertainmentSeo = pageMetadata({
+  title: "Entertainment Agency & Party Planners in Dubai UAE",
+  description:
+    "Entertainment agency and party planners in Dubai UAE offering DJs, live bands, dancers, musicians, performers and entertainment for memorable events.",
+  path: "/entertainment",
 });
+
+export const metadata: Metadata = {
+  ...entertainmentSeo,
+  title: { absolute: "Entertainment Agency & Party Planners in Dubai UAE" },
+  keywords: ["Entertainment Agency in Dubai UAE", "Party planners in Dubai"],
+  alternates: {
+    ...entertainmentSeo.alternates,
+    languages: {
+      "en-AE": "https://www.futurevision.ae/entertainment",
+      "x-default": "https://www.futurevision.ae/entertainment",
+    },
+  },
+};
 
 const CATEGORIES = [
     {
