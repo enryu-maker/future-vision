@@ -10,12 +10,32 @@ import { pageMetadata } from "@/data/seo";
 
 const heroImg = SERVICE_HERO_IMAGES.weddings;
 
-export const metadata: Metadata = pageMetadata({
-  title: "Wedding Planner Dubai | Luxury Wedding Planner Dubai",
+const weddingsSeo = pageMetadata({
+  title: "Wedding Planners & Indian Destination Weddings in Dubai UAE",
   description:
-    "Wedding Planner Dubai — Future Vision is a leading Luxury Wedding Planner Dubai, Wedding Event Management Dubai, Indian Wedding Planner Dubai, Destination Wedding Planner Dubai, Beach Wedding Planner Dubai, and Wedding Decoration Dubai company in UAE.",
+    "Wedding planners and decorators in Dubai UAE specializing in Indian and destination weddings, with complete planning, décor and celebration management.",
   path: "/weddings",
 });
+
+export const metadata: Metadata = {
+  ...weddingsSeo,
+  title: {
+    absolute: "Wedding Planners & Indian Destination Weddings in Dubai UAE",
+  },
+  keywords: [
+    "Wedding Decorators in Dubai",
+    "Wedding Planners in Dubai UAE",
+    "Indian Wedding Planner in Dubai UAE",
+    "Destination Wedding Planner in Dubai UAE",
+  ],
+  alternates: {
+    ...weddingsSeo.alternates,
+    languages: {
+      "en-AE": "https://www.futurevision.ae/weddings",
+      "x-default": "https://www.futurevision.ae/weddings",
+    },
+  },
+};
 
 const TRADITIONS = [
   {
