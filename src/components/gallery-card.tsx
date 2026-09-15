@@ -1,0 +1,35 @@
+"use client";
+
+import { ParallaxCardImage } from "./parallax";
+
+export function GalleryCard({
+    src,
+    alt,
+    eyebrow,
+    title,
+    subtitle,
+}: {
+    src: string;
+    alt: string;
+    eyebrow: string;
+    title: string;
+    subtitle?: string;
+}) {
+    return (
+        <article className="group relative aspect-4/5 overflow-hidden bg-surface rounded-lg shadow-sm">
+            <ParallaxCardImage src={src} alt={alt} speed={0.22} />
+            <div
+                className="absolute inset-0"
+                style={{
+                    background:
+                        "linear-gradient(180deg, transparent 35%, oklch(0.18 0.02 55 / 0.75) 100%)",
+                }}
+            />
+            <div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-6 lg:p-8">
+                <span className="eyebrow text-sm! sm:text-[0.7rem]! leading-relaxed text-orange-400">{eyebrow}</span>
+                <h3 className="mt-2 font-display text-2xl sm:text-2xl lg:text-3xl text-background leading-tight">{title}</h3>
+                {subtitle && <p className="mt-1.5 text-sm sm:text-xs text-background/80">{subtitle}</p>}
+            </div>
+        </article>
+    );
+}
