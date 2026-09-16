@@ -15,9 +15,9 @@ import { pageMetadata } from "@/data/seo";
 const heroImg = SERVICE_HERO_IMAGES.corporate;
 
 const permitSeo = pageMetadata({
-  title: "Event Permit Dubai UAE — What Organizers Should Know",
+  title: "Event Permit Dubai UAE | Event Planning & Production",
   description:
-    "Event permits in Dubai UAE explained — venue approval, event type and scale, location and production elements. Future Vision manages events across Dubai, Sharjah and Abu Dhabi.",
+    "Learn about event permits in Dubai UAE, venue approvals and requirements, with expert event planning and production support from Future Vision Events team.",
   path: "/weddings/event-permit-dubai",
 });
 
