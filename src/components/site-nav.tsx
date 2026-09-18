@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Monogram, GoldButton } from "./luxury";
 import { cn } from "@/lib/utils";
 import { SITE, PHONES } from "@/data/contact";
@@ -19,8 +19,6 @@ const NAV = [
     href: "/weddings",
     label: "Weddings",
     title: "Wedding Planner Dubai",
-    children: [
-    ],
   },
   {
     href: "/entertainment",
@@ -62,84 +60,35 @@ export function SiteNav() {
 
         <nav className="hidden lg:flex items-center gap-6 xl:gap-8 2xl:gap-10">
           {NAV.slice(0, -1).map((item) => {
-            const hasChildren = "children" in item;
             const isActive =
-              item.href === "/"
-                ? pathname === "/"
-                : hasChildren
-                  ? pathname.startsWith(item.href)
-                  : pathname === item.href;
-
-            if (!hasChildren) {
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  title={"title" in item ? item.title : undefined}
-                  className={cn(
-                    "text-[0.72rem] uppercase tracking-[0.2em] font-medium transition-colors duration-300 whitespace-nowrap",
-                    isActive
-                      ? "text-orange-500"
-                      : "text-white/80 hover:text-orange-500",
-                  )}
-                >
-                  {item.label}
-                </Link>
-              );
-            }
-
+              item.href === "/" ? pathname === "/" : pathname === item.href;
             return (
-              <div key={item.href} className="group relative">
-                <Link
-                  href={item.href}
-                  title={"title" in item ? item.title : undefined}
-                  className={cn(
-                    "flex items-center gap-1 text-[0.72rem] uppercase tracking-[0.2em] font-medium transition-colors duration-300 whitespace-nowrap",
-                    isActive
-                      ? "text-orange-500"
-                      : "text-white/80 hover:text-orange-500",
-                  )}
-                >
-                  {item.label}
-                  <ChevronDown
-                    className="h-3.5 w-3.5 transition-transform duration-300 group-hover:rotate-180"
-                    strokeWidth={2}
-                  />
-                </Link>
-
-                <div className="invisible absolute left-0 top-full z-50 pt-5 opacity-0 transition-all duration-300 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-                  <div className="brand-panel min-w-[15rem] border border-white/10 py-3 shadow-lg shadow-black/40">
-                    {item.children.map((child) => (
-                      <Link
-                        key={child.href}
-                        href={child.href}
-                        title={child.title}
-                        className={cn(
-                          "block px-5 py-3 text-[0.72rem] uppercase tracking-[0.2em] font-medium transition-colors duration-300 whitespace-nowrap",
-                          pathname === child.href
-                            ? "text-orange-500"
-                            : "text-white/80 hover:text-orange-500",
-                        )}
-                      >
-                        {child.label}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              </div>
+              <Link
+                key={item.href}
+                href={item.href}
+                title={"title" in item ? item.title : undefined}
+                className={cn(
+                  "text-[0.72rem] uppercase tracking-[0.2em] font-medium transition-colors duration-300 whitespace-nowrap",
+                  isActive
+                    ? "text-orange-500"
+                    : "text-white/80 hover:text-orange-500",
+                )}
+              >
+                {item.label}
+              </Link>
             );
           })}
         </nav>
 
         <div className="hidden lg:flex items-center gap-6 shrink-0">
           <div className="flex flex-col text-right text-xs text-white/75">
-            <a
+            
               href={`mailto:${SITE.email}`}
               className="hover:text-orange-500 transition-colors"
             >
               {SITE.email}
             </a>
-            <a
+            
               href={`tel:${PHONES[0].tel}`}
               className="hover:text-orange-500 transition-colors"
             >
@@ -164,55 +113,32 @@ export function SiteNav() {
         <div className="lg:hidden relative border-t border-white/10">
           <div className="flex flex-col px-6 py-8 gap-5">
             {NAV.map((item) => {
-              const hasChildren = "children" in item;
               const isActive =
                 item.href === "/" ? pathname === "/" : pathname === item.href;
-
               return (
-                <div key={item.href} className="flex flex-col gap-3">
-                  <Link
-                    href={item.href}
-                    title={"title" in item ? item.title : undefined}
-                    className={cn(
-                      "font-display text-3xl font-bold transition-colors",
-                      isActive
-                        ? "text-orange-500"
-                        : "text-white hover:text-orange-500",
-                    )}
-                  >
-                    {item.label}
-                  </Link>
-
-                  {hasChildren && (
-                    <div className="flex flex-col gap-3 border-l border-white/15 pl-5">
-                      {item.children.map((child) => (
-                        <Link
-                          key={child.href}
-                          href={child.href}
-                          title={child.title}
-                          className={cn(
-                            "font-display text-xl transition-colors",
-                            pathname === child.href
-                              ? "text-orange-500"
-                              : "text-white/75 hover:text-orange-500",
-                          )}
-                        >
-                          {child.label}
-                        </Link>
-                      ))}
-                    </div>
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  title={"title" in item ? item.title : undefined}
+                  className={cn(
+                    "font-display text-3xl font-bold transition-colors",
+                    isActive
+                      ? "text-orange-500"
+                      : "text-white hover:text-orange-500",
                   )}
-                </div>
+                >
+                  {item.label}
+                </Link>
               );
             })}
             <div className="mt-2 flex flex-col gap-3 text-base text-white/80">
-              <a
+              
                 href={`mailto:${SITE.email}`}
                 className="hover:text-orange-500 transition-colors"
               >
                 {SITE.email}
               </a>
-              <a
+              
                 href={`tel:${PHONES[0].tel}`}
                 className="hover:text-orange-500 transition-colors"
               >
