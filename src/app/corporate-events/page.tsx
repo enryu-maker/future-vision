@@ -25,6 +25,7 @@ export const metadata: Metadata = {
     "Corporate Gala Dinner Organizer in Dubai",
     "Award Ceremony organizers in Dubai",
     "Product Launch Company in Dubai",
+    "Event Permit Dubai UAE",
   ],
   alternates: {
     ...corporateSeo.alternates,
@@ -59,6 +60,46 @@ const HIGHLIGHTS = [
     { t: "Full Production", c: "Sound, light, stage, translation equipment, travel, and exhibition stands under one roof.", tags: ["Corporate Event Production Dubai", "Exhibition Management Company Dubai"] },
 ];
 
+const PERMIT_FACTORS = [
+    { n: "01", t: "Venue Approval", c: "Many hotels, event halls, and outdoor venues in Dubai have their own booking and compliance process that ties into local permitting requirements." },
+    { n: "02", t: "Event Type and Scale", c: "A private wedding inside a hotel ballroom is treated differently from a public exhibition, a large corporate conference, or a live entertainment show with performers." },
+    { n: "03", t: "Location", c: "Permits for outdoor, beachfront, or public-space events are typically more involved than events held inside a licensed venue." },
+    { n: "04", t: "Entertainment and Production", c: "Live bands, performers, or large-scale staging can bring additional considerations depending on the venue and audience size." },
+];
+
+const PERMIT_FAQS = [
+    {
+        q: "Does every event in Dubai need a permit?",
+        a: "Requirements vary by event type, venue, and location. Many events held inside licensed hotels or event venues are managed as part of that venue's own booking and compliance process, while public or outdoor events typically involve additional approvals. It's best to confirm directly with your venue or the relevant Dubai authority for your specific event.",
+    },
+    {
+        q: "Does Future Vision arrange event permits for clients?",
+        a: "Permit and licensing requirements are typically managed through your venue or the relevant government authority, and they vary depending on your event. Future Vision's focus is on the planning, design, and production side of your event — get in touch and our team can talk through your event details with you.",
+    },
+    {
+        q: "What types of events does Future Vision manage?",
+        a: "We manage corporate events (conferences, product launches, gala dinners, exhibitions, and team building), weddings (Arabic, Indian, and Western), and entertainment bookings (live bands, DJs, musicians, dancers, and performers) across Dubai and the wider UAE.",
+    },
+    {
+        q: "How far in advance should I start planning?",
+        a: "Since venue booking, approvals, and production all take time, it's best to start as early as possible — particularly for large-scale conferences, exhibitions, or weddings with custom décor. Reach out early and we can help map out a realistic timeline.",
+    },
+    {
+        q: "Do you work outside Dubai?",
+        a: "Yes. Alongside our Dubai office, we also have offices in Sharjah and Abu Dhabi, and produce events across the UAE.",
+    },
+];
+
+const permitFaqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: PERMIT_FAQS.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+};
+
 const FEATURED_LABELS = [
     "Corporate Gala Ballroom",
     "International Conference",
@@ -76,6 +117,13 @@ export default function CorporatePage() {
 
     return (
         <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(permitFaqSchema).replace(/</g, "\\u003c"),
+                }}
+            />
+
             <PageHero
                 eyebrow="Corporate Events"
                 title={<>Corporate event management company in <em className="not-italic text-orange-500">Dubai</em>, UAE</>}
@@ -177,6 +225,49 @@ export default function CorporatePage() {
                                 <p className="mt-3 text-base sm:text-sm text-muted-foreground leading-relaxed">{p.c}</p>
                             </div>
                         ))}
+                    </div>
+                </div>
+            </ParallaxReveal>
+
+            <ParallaxReveal as="section" className="bg-surface-2 py-28">
+                <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
+                    <SectionLabel index="VI" label="Event Permits" />
+                    <EditorialHeading className="mt-8 max-w-3xl">Event permits in Dubai, UAE.</EditorialHeading>
+                    <p className="mt-6 max-w-3xl text-muted-foreground leading-[1.85] text-base">
+                        If you&apos;re organizing a corporate event, wedding, exhibition, or entertainment show in Dubai, permits and approvals are usually one of the first practical questions that come up — right alongside venue, budget, and date. Requirements can differ depending on the type of event, the venue, and whether it&apos;s held indoors, outdoors, or in a public space, so it&apos;s worth understanding the basics early, before your planning timeline gets tight.
+                    </p>
+                    <p className="mt-5 max-w-3xl text-muted-foreground leading-[1.85] text-base">
+                        Dubai regulates public and commercial events to keep them safe, properly licensed, and aligned with local guidelines. Depending on your event, this can involve the following.
+                    </p>
+
+                    <div className="mt-14 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-4">
+                        {PERMIT_FACTORS.map((p) => (
+                            <div key={p.n} className="bg-surface-2 p-8 lg:p-10 flex flex-col">
+                                <span className="font-display text-3xl sm:text-2xl text-orange-500">{p.n}</span>
+                                <Hairline className="mt-6 w-10!" />
+                                <h3 className="mt-6 font-display text-2xl lg:text-3xl text-cream leading-tight">{p.t}</h3>
+                                <p className="mt-4 text-base sm:text-sm text-muted-foreground leading-relaxed">{p.c}</p>
+                            </div>
+                        ))}
+                    </div>
+
+                    <p className="mt-12 max-w-3xl text-muted-foreground leading-[1.85] text-base">
+                        Because requirements can vary case by case, it&apos;s always worth confirming directly with your venue and the relevant Dubai authority for your specific event, rather than assuming one approval process fits every occasion.
+                    </p>
+
+                    <SeoTags className="mt-8" tags={["Event Permit Dubai UAE"]} compact />
+
+                    <div className="mt-20 max-w-4xl">
+                        <SectionLabel label="FAQs" />
+                        <EditorialHeading className="mt-8">Event permit questions.</EditorialHeading>
+                        <div className="mt-12 space-y-9">
+                            {PERMIT_FAQS.map((f) => (
+                                <div key={f.q}>
+                                    <h3 className="font-display text-2xl lg:text-3xl text-orange-500 leading-snug">{f.q}</h3>
+                                    <p className="mt-4 text-base text-muted-foreground leading-[1.85]">{f.a}</p>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </ParallaxReveal>
