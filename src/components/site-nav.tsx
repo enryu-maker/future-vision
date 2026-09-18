@@ -20,11 +20,6 @@ const NAV = [
     label: "Weddings",
     title: "Wedding Planner Dubai",
     children: [
-      {
-        href: "/weddings/event-permit-dubai",
-        label: "Event Permits",
-        title: "Event Permit Dubai UAE",
-      },
     ],
   },
   {
