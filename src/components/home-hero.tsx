@@ -65,7 +65,7 @@ export function HomeHero({ images }: { images: string[] }) {
 
                     <h1 className="mt-8 font-display font-bold leading-[1.08] tracking-[-0.02em] text-[clamp(1.85rem,4.8vw,3.75rem)] text-white">
                         We are one of the{" "}
-                        <span className="text-orange-500">BEST</span> Event Management company in Dubai, Creating Extraordinary Events Across the UAE.
+                        <span className="text-orange-500">BEST</span> Event Management company in Dubai, Elegant Wedding Planners in Dubai, U.A.E.
                     </h1>
 
                     <p className="mt-6 max-w-3xl text-base leading-relaxed text-white/88 sm:text-lg">
