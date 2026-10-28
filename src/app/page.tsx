@@ -164,7 +164,7 @@ export default function Home() {
                         <div className="max-w-2xl">
                             <SectionLabel label="Services" />
                             <EditorialHeading className="mt-8 text-[clamp(2rem,4vw,3.25rem)]">
-                                Three disciplines, one standard.
+                                Wedding Planners in Dubai, U.A.E
                             </EditorialHeading>
                         </div>
                         <GoldButton to="/portfolio" variant="solid" className="shrink-0">
